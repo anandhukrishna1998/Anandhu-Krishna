@@ -440,3 +440,8 @@ $(function() {
 
 });
 
+document.getElementById('toggleDarkMode').addEventListener('click', function() {
+    debugger
+    document.body.classList.toggle('dark-mode');
+})
+
