@@ -3,8 +3,3 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
     document.body.classList.add('dark-mode');
 }
 
-// Toggle dark mode on button click
-document.getElementById('toggleDarkMode').addEventListener('click', function() {
-    debugger
-    document.body.classList.toggle('dark-mode');
-});
