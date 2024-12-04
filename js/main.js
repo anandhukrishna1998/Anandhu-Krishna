@@ -440,3 +440,36 @@ $(function() {
 
 });
 
+function switchLanguage(lang) {
+    // Get current language
+    const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+    
+    // Toggle between languages
+    const newLang = currentLang === 'en' ? 'fr' : 'en';
+    
+    // Save language preference
+    localStorage.setItem('preferredLanguage', newLang);
+    
+    // Update all translatable elements
+    document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[newLang][key]) {
+            element.textContent = translations[newLang][key];
+        }
+    });
+
+    // Update button text and flag
+    const langButton = document.getElementById('translate_button');
+    const flagImg = document.querySelector('#lang-switch img');
+    
+    if (newLang === 'fr') {
+        langButton.textContent = 'EN';
+        flagImg.src = 'images/uk.png';
+        flagImg.alt = 'UK Flag';
+    } else {
+        langButton.textContent = 'FR';
+        flagImg.src = 'images/Flag_of_France.png';
+        flagImg.alt = 'French Flag';
+    }
+}
+

@@ -7,5 +7,363 @@ body {
 /* Dark mode styles */
 body.dark-mode {
     background-color: #1a1a1a;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-mode .ftco-navbar-light {
+    background: #2d2d2d !important;
+}
+
+body.dark-mode .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.dark-mode .heading-section h2,
+body.dark-mode .heading-section h1 {
     color: #ffffff;
+}
+
+body.dark-mode .bg-light {
+    background-color: #2d2d2d !important;
+}
+
+/* Dark mode toggle button styles */
+#dark-mode-toggle {
+    background: transparent;
+    border: none;
+    padding: 0.4rem;
+    margin-top: 0.4rem;
+    margin-left: -0.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    position: relative;
+}
+
+#dark-mode-toggle:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#dark-mode-toggle i {
+    font-size: 1.3rem;
+    color: #3e64ff;
+    transition: all 0.5s ease;
+}
+
+body.dark-mode #dark-mode-toggle i {
+    color: #ffffff;
+}
+
+#dark-mode-toggle:hover i {
+    transform: scale(1.1);
+}
+
+body.dark-mode .ftco-animate {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-mode .ftco-animate p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Update subheading color to maintain blue in dark mode */
+.subheading {
+    color: #3e64ff;  /* Default blue color */
+}
+
+body.dark-mode .subheading {
+    color: #3e64ff !important;  /* Same blue color in dark mode */
+}
+
+/* Preserve about section text color */
+body.dark-mode .col-md-12.heading-section.ftco-animate p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Preserve list text colors */
+body.dark-mode ul.about-info li span:not(:first-child) {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Heading styles for dark mode */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode .heading-section h1,
+body.dark-mode .heading-section h2,
+body.dark-mode .position {
+    color: #ffffff !important;
+}
+
+/* Make headings pure white in dark mode */
+body.dark-mode h1,
+body.dark-mode h2 {
+    color: #ffffff !important;  /* Pure white */
+}
+
+/* Make project complete span white in dark mode */
+body.dark-mode .counter-wrap .text p span {
+    color: #ffffff !important;
+}
+
+/* Make the number blue in dark mode */
+body.dark-mode .counter-wrap .text p span.number {
+    color: #3e64ff !important;  /* Blue color */
+}
+
+/* Make list labels white in dark mode */
+body.dark-mode ul.about-info li span:first-child {
+    color: #ffffff !important;
+}
+
+/* Navigation styles for dark mode */
+body.dark-mode #navi li a {
+    color: #ffffff;  /* White color for nav links in dark mode */
+}
+
+body.dark-mode #navi li a.current {
+    color: #3e64ff;  /* Keep the blue color for active items */
+    margin-left: 20px;
+    position: relative;
+}
+
+body.dark-mode #navi li a.current:after {
+    position: absolute;
+    top: 50%;
+    left: -24px;
+    width: 20px;
+    height: 2px;
+    content: '';
+    transform: translateY(-50%);
+    background: #3e64ff;  /* Keep the blue line for active items */
+}
+
+/* Navbar brand styles for dark mode */
+body.dark-mode .navbar-brand {
+    color: #ffffff;  /* Make "nandhu" white */
+}
+
+body.dark-mode .navbar-brand span {
+    color: #000000;  /* Make "A" black */
+    position: relative;
+    z-index: 2;
+}
+
+/* Keep the blue background circle behind "A" */
+body.dark-mode .navbar-brand:after {
+    background: #3e64ff;  /* Keep the blue circle in dark mode */
+}
+
+.navbar-brand {
+  font-weight: 900;
+  font-size: 26px;
+  position: relative;
+  z-index: 0; }
+  .navbar-brand:after {
+    position: absolute;
+    top: 50%;
+    left: -12px;
+    width: 40px;
+    height: 40px;
+    content: '';
+    background: #3e64ff;
+    z-index: -1;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%; }
+  .navbar-brand span {
+    color: #fff; }
+
+/* Progress bar styles for dark mode */
+body.dark-mode .progress-wrap h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .progress-bar {
+    color: #ffffff;
+}
+
+body.dark-mode .progress-bar span {
+    color: #ffffff;
+}
+
+/* Change background color of skill cards in dark mode */
+body.dark-mode .bg-white.rounded-lg.shadow {
+    background-color: #2d2d2d !important;  /* Same dark gray as other dark mode elements */
+}
+
+/* Adjust text colors inside the skill cards for dark mode */
+body.dark-mode .bg-white.rounded-lg.shadow h2 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .bg-white.rounded-lg.shadow .h2 {
+    color: #ffffff !important;
+}
+
+/* Make contact section h3 headings white in dark mode */
+body.dark-mode .box h3 {
+    color: #ffffff !important;
+}
+
+/* Make service block spans white in dark mode */
+body.dark-mode .block-7 span {
+    color: #ffffff !important;
+}
+
+/* Make counter block spans white in dark mode */
+body.dark-mode .block-18 .text span {
+    color: #ffffff !important;
+}
+
+/* Make service section headings white in dark mode */
+body.dark-mode .services-1 .desc h3 {
+    color: #ffffff !important;
+}
+
+/* Keep the hover state color black as per original design */
+body.dark-mode .services-1:hover h3 {
+    color: #000000 !important;
+}
+
+/* Make service description paragraphs white in dark mode */
+body.dark-mode .services-1 .desc p {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Keep the hover state text white */
+body.dark-mode .services-1:hover p {
+    color: #ffffff !important;
+}
+
+/* Keep section headings blue in both light and dark mode */
+.heading {
+    color: #3e64ff !important;
+}
+
+body.dark-mode .heading {
+    color: #3e64ff !important;
+}
+
+/* Override any other dark mode heading styles for these specific headings */
+body.dark-mode h2.heading {
+    color: #3e64ff !important;
+}
+
+/* Navbar brand styles for both light and dark mode when scrolled */
+.ftco-navbar-light.scrolled .navbar-brand {
+    color: #000000;
+}
+
+/* Override for dark mode when scrolled */
+body.dark-mode .ftco-navbar-light.scrolled .navbar-brand {
+    color: #ffffff !important;
+}
+
+/* Keep the "A" span black in dark mode even when scrolled */
+body.dark-mode .ftco-navbar-light.scrolled .navbar-brand span {
+    color: #000000;
+}
+
+/* Shadow styles for counter blocks in dark mode */
+body.dark-mode .block-18.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.1) !important;
+}
+
+:root {
+  --toggleHeight: 1.6em;
+  --toggleWidth: 3em;
+  --toggleBtnRadius: 1em;
+  --bgColor--night: #423966;
+  --mooncolor: #D9FBFF;
+  --bgColor--day: #9ee3fb;
+}
+
+
+.tdnn {
+  position: relative;
+  height: var(--toggleHeight);
+  width: var(--toggleWidth);
+  border-radius: var(--toggleHeight);
+  transition: all 500ms ease-in-out;
+  background: var(--bgColor--night);
+  cursor: pointer;
+}
+
+.moon {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  transition: all 400ms ease-in-out;
+  top: 0.3em;
+  left: 0.3em;
+  transform: rotate(-75deg);
+  width: var(--toggleBtnRadius);
+  height: var(--toggleBtnRadius);
+  background: var(--bgColor--night);
+  box-shadow: 
+    0.3em 0.25em 0 0em var(--mooncolor) inset,
+    rgba(255, 255, 255, 0.1) 0em -0.7em 0 -0.45em,
+    rgba(255, 255, 255, 0.1) 0.3em 0.7em 0 -0.45em;
+}
+
+.sun {
+  top: 0.45em;
+  left: 1.8em;
+  transform: rotate(0deg);
+  width: 0.7em;
+  height: 0.7em;
+  background: #fff;
+  box-shadow: 0.3em 0.3em 0 0.5em #fff inset,
+    0 -0.5em 0 -0.27em #fff,
+    0.35em -0.35em 0 -0.3em #fff,
+    0.5em 0 0 -0.27em #fff,
+    0.35em 0.35em 0 -0.3em #fff,
+    0 0.5em 0 -0.27em #fff,
+    -0.35em 0.35em 0 -0.3em #fff,
+    -0.5em 0 0 -0.27em #fff,
+    -0.35em -0.35em 0 -0.3em #fff;
+}
+
+.day {
+  background: #FFBF71;
+}
+
+/* Dark mode styles */
+[data-theme='dark'] .heading-section h3.mb-4 {
+    color: #fff !important;
+}
+
+/* Make "Get in Touch" heading white in dark mode */
+body.dark-mode .heading-section h3.mb-4 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .heading-section h2.mb-4 {
+    color: #ffffff !important;
+}
+
+/* Make all contact section headings white in dark mode */
+body.dark-mode .contact-section .heading-section h2,
+body.dark-mode .contact-section .heading-section h3 {
+    color: #ffffff !important;
+}
+
+/* Make form labels and placeholders more visible in dark mode */
+body.dark-mode .contact-form input::placeholder,
+body.dark-mode .contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Make form placeholders black in dark mode */
+body.dark-mode .contact-form input::placeholder,
+body.dark-mode .contact-form textarea::placeholder {
+    color: #000000 !important;
 }

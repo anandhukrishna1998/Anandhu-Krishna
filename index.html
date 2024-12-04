@@ -23,6 +23,8 @@
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -40,19 +42,25 @@
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav nav ml-auto">
-					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-					<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-					<li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
-					<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
-					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+					<li class="nav-item"><a href="#home-section" class="nav-link"><span data-translate="home">Home</span></a></li>
+					<li class="nav-item"><a href="#about-section" class="nav-link"><span data-translate="about">About</span></a></li>
+					<li class="nav-item"><a href="#resume-section" class="nav-link"><span data-translate="resume">Resume</span></a></li>
+					<li class="nav-item"><a href="#services-section" class="nav-link"><span data-translate="services">Services</span></a></li>
+					<li class="nav-item"><a href="#projects-section" class="nav-link"><span data-translate="projects">Projects</span></a></li>
+					<li class="nav-item"><a href="#contact-section" class="nav-link"><span data-translate="contact">Contact</span></a></li>
 					<li class="nav-item">
-						<a href="indexfr.html" class="nav-link" style="display: inline-block;">
-							<span id="translate_button" style="display: inline-block;">FR</span>
-							<img src="images/Flag_of_France.png" alt="French Flag"
-								style="width: 20px; height: 13px; display: inline-block; vertical-align: middle;">
-						</a>
+						<button id="dark-mode-toggle" aria-label="Toggle Dark Mode">
+							<i class="material-icons">light_mode</i>
+						</button>
 					</li>
+					<li class="nav-item" style="margin-right: -15px; margin-top: 9px;">
+						<button id="lang-switch" class="nav-link" style="display: inline-block; background: none; border: none; padding: 0; margin: 0; outline: none; box-shadow: none;">
+							<span id="translate_button" style="display: inline-block; margin-left: 15px;">FR</span>
+							<img src="images/Flag_of_France.png" alt="French Flag"
+								style="width: 20px; height: 13px; display: inline-block; vertical-align: middle; margin-left: 8px; margin-top: -1px;">
+						</button>
+					</li>
+					
 
 
 
@@ -66,9 +74,9 @@
 			<div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
 				<div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
 					<div class="text text-center">
-						<span class="subheading">Hey! I am</span>
+						<span class="subheading" data-translate="hey">Hey! I am</span>
 						<h1>Anandhu Krishna</h1>
-						<h2>I'm a
+						<h2><span data-translate="iam">I'm a</span>
 							<span class="txt-rotate" data-period="2000"
 								data-rotate='["Data Scientist .", "Python Developer.", "Travel Enthusiast ." ]'></span>
 						</h2>
@@ -99,16 +107,16 @@
 					<div class="row justify-content-start pb-3">
 						<div class="col-md-12 heading-section ftco-animate">
 							
-							<h2 class="mb-4">About Me</h2>
-							<p>A data scientist who have the requirements to travel, and living with a bucketlist to
-								execute before the timeline without getting any syntax errors.</p>
+							
+							<h2 class="mb-4" data-translate="about_me">About Me</h2>
+							<p data-translate="about_description">A data scientist who have the requirements to travel, and living with a bucketlist to execute before the timeline without getting any syntax errors.</p>
 							<ul class="about-info mt-4 px-md-0 px-2">
-								<li class="d-flex"><span>Name:</span> <span>Anandhu Krishna</span></li>
-								<li class="d-flex"><span>Date of birth:</span> <span>November 14, 1998</span></li>
-								<li class="d-flex"><span>Address:</span> <span>Paris, France</span></li>
-								<li class="d-flex"><span>Zip code:</span> <span>94270</span></li>
-								<li class="d-flex"><span>Email:</span> <span>anandhukrishna091@gmail.com</span></li>
-								<li class="d-flex"><span>Phone: </span> <span>+33-07 80 86 43 13</span></li>
+								<li class="d-flex"><span data-translate="name_label">Name:</span> <span>Anandhu Krishna</span></li>
+								<li class="d-flex"><span data-translate="dob_label">Date of birth:</span> <span>November 14, 1998</span></li>
+								<li class="d-flex"><span data-translate="address_label">Address:</span> <span data-translate="location">Paris, France</span></li>
+								<li class="d-flex"><span data-translate="zip_label">Zip code:</span> <span>94270</span></li>
+								<li class="d-flex"><span data-translate="email_label">Email:</span> <span data-translate="email">anandhukrishna091@gmail.com</span></li>
+								<li class="d-flex"><span data-translate="phone_label">Phone:</span> <span data-translate="phone">+33-07 80 86 43 13</span></li>
 							</ul>
 						</div>
 					</div>
@@ -116,14 +124,15 @@
 						<div class="text">
 							<p class="mb-4">
 								<span class="number" data-number="6">6</span>
-								<span>Project complete</span>
+								<span data-translate="project_count">Project complete</span>
 							</p>
 							<p><a href="https://drive.google.com/file/d/13GgrZhllOIw6-u2Nar3mZuctM0mZDY4z/view?usp=share_link"
-									target="_blank" class="btn btn-primary py-3 px-3">Download English CV</a></p>
+									target="_blank" class="btn btn-primary py-3 px-3" data-translate="download_en_cv">Download English CV</a></p>
 							<p><a href="https://drive.google.com/file/d/1zgNppm6xekjNzFu-mNV3QmgDYaRk0nzg/view?usp=share_link"
-									target="_blank" class="btn btn-primary py-3 px-3">Download French CV</a></p>
+									target="_blank" class="btn btn-primary py-3 px-3" data-translate="download_fr_cv">Download French CV</a></p>
 						</div>
 					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -135,32 +144,30 @@
 				<div class="col-md-3">
 					<nav id="navi">
 						<ul>
-							<li><a href="#page-5">Work Experience</a></li>
-							<li><a href="#page-1">Education</a></li>
-							<li><a href="#page-2">Certification</a></li>
-							<li><a href="#page-3">Skills</a></li>
-							<li><a href="#page-4">Awards</a></li>
-							<li><a href="#page-6">Languages</a></li>
+							<li><a href="#page-5"><span data-translate="work_experience">Work Experience</span></a></li>
+							<li><a href="#page-1"><span data-translate="education">Education</span></a></li>
+							<li><a href="#page-2"><span data-translate="certification">Certification</span></a></li>
+							<li><a href="#page-3"><span data-translate="skills">Skills</span></a></li>
+							<li><a href="#page-4"><span data-translate="awards">Awards</span></a></li>
+							<li><a href="#page-6"><span data-translate="languages_section">Languages</span></a></li>
 						</ul>
 					</nav>
 				</div>
 				<div class="col-md-9">
 					<div id="page-5" class="page five">
-						<h2 class="heading">Work Experience</h2>
+						<h2 class="heading" data-translate="professional_exp">Professional Experience</h2>
 						<div class="resume-wrap d-flex ftco-animate">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="flaticon-ideas"></span>
 							</div>
 							<div class="text pl-3">
 								<span class="date">02/2021-08/2023</span>
-								<h2>Data Scientist</h2>
+								<h2 data-translate="software_engineer">Software Engineer</h2>
 								<span class="position">6D Technologies</span>
-								<li>Working on the data preparation and analytics team.</li>
-								<li>Collaborated with different telecom clients from different parts of the world.</li>
-								<li>Worked on Churn Model Customer Retention.</li>
-								<li>Worked on the Campaign Simulation model.</li>
-								<li>Worked on Upsell/Crossell model. </li>
-								<li> Done EDA on extensive user data.</li>
+								<li data-translate="customer_loyalty">Work on Customer Loyalty model</li>
+								<li data-translate="campaign_simulation">Work on Campaign Simulation model</li>
+								<li data-translate="upsell_model">Work on Upsell/Crossell model. </li>
+								<li data-translate="eda_work">Done EDA on extensive user data.</li>
 								<li>Hands-on experience in Linux machines.</li>
 				
 							</div>
@@ -188,12 +195,7 @@
 								<span class="date">2023-2025</span>
 								<h2>Msc computer science in data science and analysis</h2>
 								<span class="position">Epita - school of engineering and computer science</span>
-								<p>I am currently pursuing a Master's in Computer Science specializing in Data Science
-									and Analysis, which provides a comprehensive foundation in machine learning,
-									programming, and practical experience. This program equips IT engineers and
-									specialists with advanced skills in developing methods, algorithms, and software for
-									efficient data processing and extracting valuable insights, positioning them for
-									success in the evolving landscape of business and technology.</p>
+								<p data-translate="masters_description">I am currently pursuing a Master's in Computer Science specializing in Data Science and Analysis, which provides a comprehensive foundation in machine learning, programming, and practical experience. This program equips IT engineers and specialists with advanced skills in developing methods, algorithms, and software for efficient data processing and extracting valuable insights, positioning them for success in the evolving landscape of business and technology.</p>
 							</div>
 						</div>
 						<div class="resume-wrap d-flex ftco-animate">
@@ -204,8 +206,7 @@
 								<span class="date">2016-2020</span>
 								<h2>Bachelor of Technology in Information technology</h2>
 								<span class="position">Viswajyothi College of Engineering and Technology</span>
-								<p>They were splendid four years of my academic life where I experienced the most
-									challenging and memorable times.</p>
+								<p data-translate="academic_life">They were splendid four years of my academic life where I experienced the most challenging and memorable times.</p>
 							</div>
 						</div>
 						<div class="resume-wrap d-flex ftco-animate">
@@ -214,9 +215,9 @@
 							</div>
 							<div class="text pl-3">
 								<span class="date">2014-2016</span>
-								<h2>Higher secondary in Computer Science</h2>
-								<span class="position">St. Augustine's Higher Secondary School</span>
-								<p>One of the best two years in my entire academic life where I identified myself.</p>
+								<h2 data-translate="higher_secondary">Higher secondary in Computer Science</h2>
+								<span class="position" data-translate="school_name">St. Augustine's Higher Secondary School</span>
+								<p data-translate="school_description">One of the best two years in my entire academic life where I identified myself.</p>
 							</div>
 						</div>
 
@@ -224,92 +225,63 @@
 					</div>
 
 					<div id="page-2" class="page two">
-						<h2 class="heading">Certifications</h2>
+						<h2 class="heading" data-translate="certifications_heading">Certifications</h2>
+						
+						<!-- Google Analytics Certification -->
 						<div class="resume-wrap d-flex ftco-animate">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="flaticon-ideas"></span>
 							</div>
 							<div class="text pl-3">
 								<span class="date">2021</span>
-								<h2>Google Data Analytics Specialization</h2>
-								<span class="position"> Google</span>
-								<p> Having completed the Google Data Analytics Professional Certificate, I've gained
-									proficiency in spreadsheets, SQL, and data processing techniques. This has empowered
-									me to effectively prepare, process, analyze, and share data for informed
-									decision-making.</p>
+								<h2 data-translate="google_analytics_title">Google Data Analytics Specialization</h2>
+								<span class="position" data-translate="coursera_position">Coursera</span>
+								<p data-translate="google_analytics_desc">Having completed the Google Data Analytics Professional Certificate, I've gained proficiency in spreadsheets, SQL, and data processing techniques. This has empowered me to effectively prepare, process, analyze, and share data for informed decision-making.</p>
 							</div>
 						</div>
+
+						<!-- Cybersecurity Certification -->
 						<div class="resume-wrap d-flex ftco-animate">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="flaticon-ideas"></span>
 							</div>
 							<div class="text pl-3">
 								<span class="date">2020</span>
-								<h2>Google IT Automation with Python Specialization</h2>
-								<span class="position"> Google </span>
-								<p>I've completed a comprehensive six-course certificate program developed by Google,
-									focusing on in-demand skills such as Python, Git, and IT automation. Through
-									hands-on learning, I've mastered Python coding with a focus on automating tasks in
-									IT support and systems administration, demonstrating proficiency in Git,
-									troubleshooting, debugging, and applying automation at scale using configuration
-									management and cloud technologies.</p>
+								<h2 data-translate="cybersecurity_title">Fundamentals for Cybersecurity by IBM</h2>
+								<span class="position" data-translate="ibm_position">IBM</span>
+								<p data-translate="cybersecurity_desc">Completed comprehensive training in cybersecurity fundamentals, covering essential security principles, threat detection, and best practices for maintaining secure systems.</p>
 							</div>
 						</div>
+
+						<!-- AWS Certification -->
 						<div class="resume-wrap d-flex ftco-animate">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="flaticon-ideas"></span>
 							</div>
 							<div class="text pl-3">
 								<span class="date">2020</span>
-								<h2>Cloud Engineering</h2>
-								<span class="position">Google</span>
-								<p>I've completed a comprehensive program focusing on cloud architecture, designed to
-									prepare professionals for the Google Cloud Associate Cloud Engineer certification.
-									Through a combination of presentations, demos, and hands-on labs, I gained practical
-									experience deploying infrastructure components and solutions in the cloud</p>
+								<h2 data-translate="aws_title">AWS Cloud Practitioner</h2>
+								<span class="position" data-translate="aws_position">Amazon Web Services</span>
+								<p data-translate="aws_desc">Gained foundational understanding of AWS Cloud concepts, services, security, architecture, pricing, and support.</p>
 							</div>
 						</div>
+
+						<!-- Azure Certification -->
 						<div class="resume-wrap d-flex ftco-animate">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="flaticon-ideas"></span>
 							</div>
 							<div class="text pl-3">
 								<span class="date">2020</span>
-								<h2>AWS Fundamentals Specialization</h2>
-								<span class="position">AWS </span>
-								<p>I've completed a specialized training program focusing on Amazon Web Services (AWS),
-									gaining proficiency in core services, security concepts, and strategies for workload
-									migration. Additionally, I learned to build and deploy serverless applications with
-									AWS, reinforced through hands-on labs and exercises, enhancing my expertise in cloud
-									computing.</p>
+								<h2 data-translate="azure_title">Microsoft Azure Fundamentals</h2>
+								<span class="position" data-translate="microsoft_position">Microsoft</span>
+								<p data-translate="azure_desc">Acquired knowledge of cloud concepts, Azure services, Azure workloads, security, privacy, pricing, and support.</p>
 							</div>
 						</div>
-						<!-- 		<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">2020</span>
-		    					<h2>Fundamentals for Cybersecurity by IBM</h2>
-		    					<span class="position">Coursera</span>
-		    					<p>Fundamentals for Cybersecurity by IBM on Coursera. Certificate earned at July 2020.</p>
-		    				</div>
-	    				</div> 
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">2017-2018</span>
-		    					<h2>UI/UX Designer</h2>
-		    					<span class="position">Cambridge University</span>
-		    					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-		    				</div>
-	    				</div> -->
 					</div>
 
 					<div id="page-3" class="page three">
-						<h2 class="heading">Skills</h2>
+						<h2 class="heading" data-translate="skills">Skills</h2>
 						<div class="row progress-circle mb-5">
 							<div class="col-lg-4 mb-4">
 								<div class="bg-white rounded-lg shadow p-4">
@@ -493,11 +465,11 @@
 								</div> 
 							<div class="col-md-6 animate-box">
 								<div class="progress-wrap ftco-animate">
-									<h3>Photoshop</h3>
+									<h3 data-translate="photoshop">Photoshop</h3>
 									<div class="progress">
 										<div class="progress-bar color-6" role="progressbar" aria-valuenow="60"
 											aria-valuemin="0" aria-valuemax="100" style="width:60%">
-											<span>60%</span>
+											<span data-translate="skill_percent_60">60%</span>
 										</div>
 									</div>
 								</div>
@@ -505,16 +477,16 @@
 						</div>
 					</div>
 					<div id="page-4" class="page four">
-						<h2 class="heading">Awards</h2>
+						<h2 class="heading" data-translate="awards">Awards</h2>
 						<div class="resume-wrap d-flex ftco-animate">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="flaticon-ideas"></span>
 							</div>
 							<div class="text pl-3">
 								<span class="date">2018-2019</span>
-								<h2>General Secretary</h2>
+								<h2 data-translate="general_secretary">General Secretary</h2>
 								<span class="position">Viswajyothi College of Engineering and Technology</span>
-								<p>General Secretary of College Student Council.</p>
+								<p data-translate="secretary_description">Served as General Secretary of Computer Science Association</p>
 							</div>
 						</div>
 						<!--    <div class="resume-wrap d-flex ftco-animate">
@@ -553,11 +525,11 @@
 					</div>
 
 					<div id="page-6" class="page six">
-						<h2 class="heading">Lanuguages</h2>
+						<h2 class="heading" data-translate="languages_title">Languages</h2>
 						<div class="row progress-circle mb-5">
 							<div class="col-lg-4 mb-4">
 								<div class="bg-white rounded-lg shadow p-4">
-									<h2 class="h5 font-weight-bold text-center mb-4">English</h2>
+									<h2 class="h5 font-weight-bold text-center mb-4" data-translate="english">English</h2>
 
 									<!-- Progress bar 1 -->
 									<div class="progress mx-auto" data-value='80'>
@@ -580,7 +552,7 @@
 
 							<div class="col-lg-4 mb-4">
 								<div class="bg-white rounded-lg shadow p-4">
-									<h2 class="h5 font-weight-bold text-center mb-4">French</h2>
+									<h2 class="h5 font-weight-bold text-center mb-4" data-translate="french">French</h2>
 
 									<!-- Progress bar 1 -->
 									<div class="progress mx-auto" data-value='50'>
@@ -627,7 +599,7 @@
 						<div class="row">
 							<div class="col-md-6 animate-box">
 								<div class="progress-wrap ftco-animate">
-									<h3>Hindi</h3>
+									<h3 data-translate="hindi">Hindi</h3>
 									<div class="progress">
 										<div class="progress-bar color-1" role="progressbar" aria-valuenow="40"
 											aria-valuemin="0" aria-valuemax="100" style="width:40%">
@@ -638,7 +610,7 @@
 							</div>
 							<div class="col-md-6 animate-box">
 								<div class="progress-wrap ftco-animate">
-									<h3>Tamil</h3>
+									<h3 data-translate="tamil">Tamil</h3>
 									<div class="progress">
 										<div class="progress-bar color-2" role="progressbar" aria-valuenow="50"
 											aria-valuemin="0" aria-valuemax="100" style="width:40%">
@@ -663,8 +635,8 @@
 			<div class="row justify-content-center py-5 mt-5">
 				<div class="col-md-12 heading-section text-center ftco-animate">
 					
-					<h2 class="mb-4">Services</h2>
-					<p>My Services </p>
+					<h2 class="mb-4" data-translate="services_heading">Services</h2>
+					<p data-translate="services_subtitle">My Services</p>
 				</div>
 			</div>
 			<div class="row">
@@ -708,8 +680,8 @@
 							<i class="flaticon-ux-design"></i>
 						</span>
 						<div class="desc">
-							<h3 class="mb-5">Software Developing</h3>
-							<p>Designing and developing python aplications.</p>
+							<h3 class="mb-5" data-translate="software_dev_title">Software Developing</h3>
+							<p data-translate="software_dev_desc">Designing and developing python applications.</p>
 						</div>
 					</a>
 				</div>
@@ -720,7 +692,7 @@
 						</span>
 						<div class="desc">
 							<h3 class="mb-5">Cloud System Development</h3>
-							<p>Helping businesses to build cloud infrastructure and help them in their migration.</p>
+							<p data-translate="cloud_infrastructure_desc">Helping businesses to build cloud infrastructure and help them in their migration.</p>
 						</div>
 					</a>
 				</div>
@@ -730,9 +702,8 @@
 							<i class="flaticon-analysis"></i>
 						</span>
 						<div class="desc">
-							<h3 class="mb-5">Data Analytics</h3>
-							<p>Data Analyst with 3 years of experience in interpreting and analyzing data for driving
-								business solutions.</p>
+							<h3 class="mb-5" data-translate="data_analytics">Data Analytics</h3>
+							<p data-translate="data_analytics_desc">Data Analyst with 3 years of experience in interpreting and analyzing data for driving business solutions.</p>
 						</div>
 					</a>
 				</div>
@@ -743,11 +714,11 @@
 
 	<section class="ftco-section ftco-project" id="projects-section">
 		<div class="container-fluid px-md-0">
-			<div class="row no-gutters justify-content-center pb-5">
+			<div class="row justify-content-center pb-5">
 				<div class="col-md-12 heading-section text-center ftco-animate">
 					
-					<h2 class="mb-4">My Projects</h2>
-					<p>The projects that iam a part of it</p>
+					<h2 class="mb-4" data-translate="projects_title">Projects</h2>
+					<p data-translate="project_description">View all my works here</p>
 				</div>
 			</div>
 			<div class="row no-gutters">
@@ -953,8 +924,8 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-7 ftco-animate text-center">
-					<h2>I'm <span>Available</span> for freelancing</h2>
-					<p>A data scientist with 2.5  years of experience in predictive modeling and reccomondation systems</p>
+					<h2><span data-translate="freelance_title"></span> </h2>
+					<p data-translate="freelance_description">A data scientist with 2.5 years of experience in predictive modeling and recommendation systems</p>
 					<p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5">Hire me</a></p>
 				</div>
 			</div>
@@ -963,11 +934,10 @@
 
 	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
 		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
+			<div class="row justify-content-center">
 				<div class="col-md-7 heading-section text-center ftco-animate">
 					
-					<h2 class="mb-4">Contact Me</h2>
-					<p>For any queries, hit me without any hesitation.</p>
+					<h2 class="mb-4" data-translate="contact_info">Contact Information</h2>
 				</div>
 			</div>
 
@@ -978,8 +948,8 @@
 							<span class="icon-map-signs"></span>
 						</div>
 						<div>
-							<h3 class="mb-4">Address</h3>
-							<p> Paris, France</p>
+							<h3 class="mb-4" data-translate="address">Address</h3>
+							<p data-translate="location">Paris, France</p>
 						</div>
 					</div>
 				</div>
@@ -989,7 +959,7 @@
 							<span class="icon-phone2"></span>
 						</div>
 						<div>
-							<h3 class="mb-4">Contact Number</h3>
+							<h3 class="mb-4" data-translate="contact_number">Contact Number</h3>
 							<p><a href="tel://1234567920">+33 07 80 86 43 13</a></p>
 						</div>
 					</div>
@@ -1000,7 +970,7 @@
 							<span class="icon-paper-plane"></span>
 						</div>
 						<div>
-							<h3 class="mb-4">Email Address</h3>
+							<h3 class="mb-4" data-translate="email_address">Email Address</h3>
 							<p>
 								<font size="2"><a
 										href="mailto:anandhukrishna091@gmail.com">anandhukrishna091@gmail.com</a></font>
@@ -1014,34 +984,38 @@
 							<span class="icon-globe"></span>
 						</div>
 						<div>
-							<h3 class="mb-4">Website</h3>
-							<p><a href="https://anandhukrishna1998.github.io/Anandhu-Krishna/">Click</a></p>
+							<h3 class="mb-4" data-translate="website">Website</h3>
+							<p><a href="https://anandhukrishna1998.github.io/Anandhu-Krishna/" data-translate="click">Click</a></p>
 						</div>
 					</div>
 				</div>
 			</div>
 
+			<div class="row justify-content-center">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					
+					<h3 class="mb-4" data-translate="get_in_touch">Get in Touch</h3>
+				</div>
+			</div>
 			<div class="row no-gutters block-9">
 				<div class="col-md-6 order-md-last d-flex">
 					<form action="#" class="bg-light p-4 p-md-5 contact-form">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Your Name">
+							<input type="text" class="form-control" placeholder="Your Name" data-translate="name">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Your Email">
+							<input type="text" class="form-control" placeholder="Your Email"data-translate="your_email">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Subject">
+							<input type="text" class="form-control" placeholder="Subject" data-translate="subject">
 						</div>
 						<div class="form-group">
-							<textarea name="" id="" cols="30" rows="7" class="form-control"
-								placeholder="Message"></textarea>
+							<textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message" data-translate="message"></textarea>
 						</div>
 						<div class="form-group">
-							<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+							<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5" data-translate="send_message">
 						</div>
 					</form>
-
 				</div>
 
 				<div class="col-md-6 d-flex">
@@ -1052,14 +1026,14 @@
 	</section>
 
 
+
 	<footer class="ftco-footer ftco-section">
 		<div class="container">
 			<div class="row mb-5">
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4">
 						<h2 class="ftco-heading-2">About</h2>
-						<p>A software engineer who have the requirements to travel, and living with a bucketlist to
-							execute before the timeline without getting any syntax errors.</p>
+						<p data-translate="about_footer">A software engineer who have the requirements to travel, and living with a bucketlist to execute before the timeline without getting any syntax errors.</p>
 						<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
 							<li class="ftco-animate"><a href="https://twitter.com/Anandhu96941332"><span
 										class="icon-twitter"></span></a></li>
@@ -1102,15 +1076,14 @@
 				</div>
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Have a Questions?</h2>
+						<h2 class="ftco-heading-2" data-translate="questions">Have a Questions?</h2>
 						<div class="block-23 mb-3">
 							<ul>
-								<li><span class="icon icon-map-marker"></span><span class="text"> Paris, France</span></li>
-								<li><a href="#"><span class="icon icon-phone"></span><span class="text">+33 07 80 86 43
-											13</span></a></li>
+								<li><span class="icon icon-map-marker"></span><span class="text" data-translate="location">Paris, France</span></li>
+								<li><a href="#"><span class="icon icon-phone"></span><span class="text" data-translate="phone">+33 07 80 86 43 13</span></a></li>
 								<li><a href="#"><span class="icon icon-envelope"></span><span class="text">
-											<font size="2">anandhukrishna091@gmail.com</font>
-										</span></a></li>
+									<font size="2" data-translate="email">anandhukrishna091@gmail.com</font>
+								</span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -1154,7 +1127,51 @@
 
 	<script src="js/main.js"></script>
 	<script src="script.js"></script>
+	<script src="js/darkmode.js"></script>
+	<script src="js/translations.js"></script>
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+	    // Get saved language preference or default to 'en'
+	    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+	    
+	    // Add click event listener to language switch button
+	    document.getElementById('lang-switch').addEventListener('click', function() {
+	        const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+	        const newLang = currentLang === 'en' ? 'fr' : 'en';
+	        switchLanguage(newLang);
+	    });
 
+	    function switchLanguage(lang) {
+	        // Save language preference
+	        localStorage.setItem('preferredLanguage', lang);
+	        
+	        // Update all translatable elements
+	        document.querySelectorAll('[data-translate]').forEach(element => {
+	            const key = element.getAttribute('data-translate');
+	            if (translations[lang][key]) {
+	                element.textContent = translations[lang][key];
+	            }
+	        });
+
+	        // Update button text and flag
+	        const langButton = document.getElementById('translate_button');
+	        const flagImg = document.querySelector('#lang-switch img');
+	        
+	        if (lang === 'fr') {
+	            langButton.textContent = 'EN';
+	            flagImg.src = 'images/uk.png';
+	            flagImg.alt = 'UK Flag';
+	        } else {
+	            langButton.textContent = 'FR';
+	            flagImg.src = 'images/Flag_of_France.png';
+	            flagImg.alt = 'French Flag';
+	        }
+	    }
+
+	    // Initialize with saved language
+	    switchLanguage(savedLang);
+	});
+	</script>
 
 </body>
 
