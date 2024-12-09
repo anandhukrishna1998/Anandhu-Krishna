@@ -227,15 +227,7 @@
 								<span class="date">2023-2025</span>
 								<h2>Msc computer science in data science and analysis</h2>
 								<span class="position">Epita - school of engineering and computer science</span>
-								<p data-translate="masters_description">I am currently pursuing a Master’s in Computer
-									Science with a specialization in Data Science and Analysis. This program goes beyond
-									foundational knowledge, offering advanced expertise in machine learning,
-									programming, and data engineering. With a curriculum encompassing cutting-edge
-									topics such as neural networks, cloud computing, and big data infrastructure, I have
-									developed both horizontal breadth and vertical depth in technical and analytical
-									skills. This training equips me to design innovative algorithms, optimize
-									data-driven solutions, and extract actionable insights, positioning me to thrive in
-									the rapidly evolving landscapes of technology and business.</p>
+								<p data-translate="masters_description">I am currently pursuing a Master's in Computer Science with a specialization in Data Science and Analysis. This program goes beyond foundational knowledge, offering advanced expertise in machine learning, programming, and data engineering. With a curriculum encompassing cutting-edge topics such as neural networks, cloud computing, and big data infrastructure, I have developed both horizontal breadth and vertical depth in technical and analytical skills. This training equips me to design innovative algorithms, optimize data-driven solutions, and extract actionable insights, positioning me to thrive in the rapidly evolving landscapes of technology and business.</p>
 							</div>
 						</div>
 						<div class="resume-wrap d-flex ftco-animate">
@@ -1058,7 +1050,7 @@
 			</div>
 			<div class="row no-gutters block-9">
 				<div class="col-md-6 order-md-last d-flex">
-					<form action="https://formsubmit.co/anandhukrishna091@gmail.com" method="POST" class="bg-light p-4 p-md-5 contact-form">
+					<form action="https://formsubmit.co/ajax/anandhukrishna091@gmail.com" method="POST" class="bg-light p-4 p-md-5 contact-form">
 						<div class="form-group">
 							<input type="text" name="name" class="form-control" placeholder="Your Name" data-translate="name" required>
 						</div>
@@ -1072,6 +1064,8 @@
 							<textarea name="message" cols="30" rows="7" class="form-control" placeholder="Message" data-translate="message" required></textarea>
 						</div>
 						<div class="form-group">
+							<input type="text" name="_honey" style="display:none">
+							<input type="hidden" name="_captcha" value="false">
 							<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5" data-translate="send_message">
 						</div>
 						<!-- Redirect after submission -->
@@ -1238,6 +1232,33 @@
 			// Initialize with saved language
 			switchLanguage(savedLang);
 		});
+	</script>
+
+	<script>
+	document.querySelector('.contact-form').addEventListener('submit', function(e) {
+		e.preventDefault(); // Prevent default form submission
+		
+		// Show loader
+		document.getElementById('ftco-loader').classList.add('show');
+		
+		// Get form data
+		const formData = new FormData(this);
+		
+		// Submit form using fetch
+		fetch('https://formsubmit.co/ajax/anandhukrishna091@gmail.com', {
+			method: 'POST',
+			body: formData
+		})
+		.then(response => {
+			// Hide loader and redirect
+			document.getElementById('ftco-loader').classList.remove('show');
+			window.location.href = 'thank-you.html';
+		})
+		.catch(error => {
+			document.getElementById('ftco-loader').classList.remove('show');
+			alert('There was an error submitting the form. Please try again.');
+		});
+	});
 	</script>
 
 </body>
