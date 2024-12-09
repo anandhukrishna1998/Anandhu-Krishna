@@ -123,7 +123,7 @@ const translations = {
         your_email:"Your Email",
         // Adding paragraph translations
         academic_life: "They were splendid four years of my academic life where I experienced the most challenging and memorable times.",
-        about_footer: "A software engineer who have the requirements to travel, and living with a bucketlist to execute before the timeline without getting any syntax errors.",
+        about_footer: "A data Scientist fueled by a passion for travel, coding, and adventure. On a mission to check off a bucket list with precision—executing dreams before the deadline, all while keeping life free of syntax errors.",
         data_rotate: ["Python Developer.", "Data Scientist.", "Travel Enthusiast."],
         capgemini_description: "Working as a Software Engineer in Data Science team at Capgemini, focusing on predictive modeling and data analysis.",
         education_description: "Completed Bachelor's degree in Computer Science with focus on machine learning and data structures.",
@@ -339,7 +339,7 @@ const translations = {
         your_email:"Votre Email",
         // Adding paragraph translations
         academic_life: "Ce furent quatre années splendides de ma vie académique où j'ai vécu les moments les plus stimulants et mémorables.",
-        about_footer: "Un ingénieur logiciel qui a les exigences pour voyager, et qui vit avec une liste de choses à faire avant la timeline sans obtenir d'erreurs de syntaxe.",
+        about_footer: "Data scientist passionné par le voyage, le code et l'aventure. En mission pour réaliser une bucket list avec précision—atteignant chaque objectif avant la date limite, tout en gardant la vie exempte d'erreurs de syntaxe.",
         data_rotate: ["Développeur Python.", "Data Scientist.", "Passionné de voyages."],
         capgemini_description: "Travaille comme ingénieur logiciel dans l'équipe Data Science chez Capgemini, en se concentrant sur la modélisation prédictive et l'analyse de données.",
         education_description: "Diplômé en informatique avec spécialisation en apprentissage automatique et structures de données.",
