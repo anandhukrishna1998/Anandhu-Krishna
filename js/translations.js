@@ -214,6 +214,17 @@ const translations = {
         next_purchase_desc: "Achieved 62% accuracy in forecasting next-purchase dates by developing and tuning an XGBoost model, enabling proactive customer engagement strategies.",
         cross_functional_title: "Cross-Functional Collaboration:",
         cross_functional_desc: "Worked closely with global telecom clients and internal teams to align analytics solutions with business needs.",
+        ai_ml_engineer_title: "AI/ML Engineer Intern",
+        ai_ml_engineer_location: "Paris, France",
+        discovery_phase_title: "Discovery phase – Parsing & benchmarking:",
+        discovery_phase_desc: "Benchmarked 25+ parsers with custom ground truth & automated scoring; boosted table extraction accuracy (NID 0.72 → 0.98, TEDS-S 0.97). Designed a reproducible evaluation pipeline with automated metrics (NID, TEDS-S, TEDS) and clear benchmarks for model comparison.",
+        production_phase_title: "Production phase – Clean architecture:",
+        production_phase_desc: "Refactored the prototype into Clean Architecture (Domain / Application / Infrastructure), making modules independently testable and future-proof. Replaced flat outputs with a graph model in Kuzu to represent clauses/limits/exclusions as nodes/edges—enabling semantic queries and explainable reasoning.",
+        llms: "LLMs",
+        graph_databases: "Graph Databases",
+        clean_architecture: "Clean Architecture",
+        insurance_project_title: "Automated Modeling of Insurance Contracts using LLMs and Knowledge Graphs",
+        insurance_project_desc: "Developed a novel solution for automated modeling of insurance contracts by leveraging Large Language Models (LLMs) to parse unstructured contract data and build a comprehensive knowledge graph. This enables efficient semantic querying and reasoning for complex insurance clauses, significantly reducing manual effort and improving accuracy."
     },
     fr: {
         about: "À propos",
@@ -430,5 +441,16 @@ const translations = {
         next_purchase_desc: "Obtention d'une précision de 62% dans la prévision des dates d'achat suivantes grâce au développement et à l'optimisation d'un modèle XGBoost, permettant des stratégies d'engagement client proactives.",
         cross_functional_title: "Collaboration Interfonctionnelle :",
         cross_functional_desc: "Travail étroit avec les clients télécoms internationaux et les équipes internes pour aligner les solutions analytiques avec les besoins commerciaux",
+        ai_ml_engineer_title: "Stagiaire Ingénieur AI/ML",
+        ai_ml_engineer_location: "Paris, France",
+        discovery_phase_title: "Phase de découverte – Analyse et benchmarking:",
+        discovery_phase_desc: "Benchmarking de plus de 25 parseurs avec vérité terrain personnalisée et notation automatisée ; amélioration de la précision de l'extraction de tableaux (NID 0.72 → 0.98, TEDS-S 0.97). Conception d'un pipeline d'évaluation reproductible avec métriques automatisées (NID, TEDS-S, TEDS) et benchmarks clairs pour la comparaison des modèles.",
+        production_phase_title: "Phase de production – Architecture propre:",
+        production_phase_desc: "Refactorisation du prototype en architecture propre (Domaine / Application / Infrastructure), rendant les modules testables indépendamment et pérennes. Remplacement des sorties plates par un modèle graphique dans Kuzu pour représenter les clauses/limites/exclusions comme des nœuds/arêtes—permettant des requêtes sémantiques et un raisonnement explicable.",
+        llms: "LLMs",
+        graph_databases: "Bases de données graphiques",
+        clean_architecture: "Architecture propre",
+        insurance_project_title: "Modélisation automatisée des contrats d\'assurance à l\'aide de LLM et de graphes de connaissances",
+        insurance_project_desc: "Développement d\'une solution innovante pour la modélisation automatisée des contrats d\'assurance en exploitant les grands modèles linguistiques (LLM) pour analyser les données contractuelles non structurées et construire un graphe de connaissances complet. Cela permet une interrogation sémantique et un raisonnement efficaces pour les clauses d\'assurance complexes, réduisant considérablement l\'effort manuel et améliorant la précision."
     }
 }; 
