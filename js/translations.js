@@ -175,7 +175,6 @@ const translations = {
         skill_graph_items: "Neo4j, Kuzu",
         skill_methodology_title: "Methodology",
         skill_methodology_items: "Agile / Scrum",
-        references: "References from all previous employers available upon request.",
 
         photoshop: "Photoshop",
         general_secretary: "General Secretary",
@@ -451,7 +450,6 @@ const translations = {
         skill_graph_items: "Neo4j, Kuzu",
         skill_methodology_title: "Méthodologie",
         skill_methodology_items: "Agile / Scrum",
-        references: "Références de tous les employeurs précédents disponibles sur demande.",
 
         photoshop: "Photoshop",
         general_secretary: "Secrétaire Général",
