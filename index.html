@@ -90,7 +90,7 @@
 						<h1>Anandhu Krishna</h1>
 						<h2><span data-translate="iam">I'm a</span>
 							<span class="txt-rotate" data-period="2000"
-								data-rotate='["AI Engineer .", "Python Developer.", "Travel Enthusiast ." ]'></span>
+								data-rotate='["AI Engineer.", "Data Scientist.", "Python Developer.", "Travel Enthusiast."]'></span>
 						</h2>
 					</div>
 				</div>
@@ -183,9 +183,11 @@
 								<p data-translate="hubicus_location">Paris, France</p>
 								<p><strong data-translate="hubicus_integration_title">AI services integration & quality monitoring:</strong> <span data-translate="hubicus_integration_desc">Integrated multiple AI services into the existing quality monitoring SaaS tool, delivering evaluation and analysis for all client interaction channels: chat, email, and audio call.</span></p>
 								<p><strong data-translate="hubicus_llm_arch_title">LLM-agnostic architecture:</strong> <span data-translate="hubicus_llm_arch_desc">Migrated the application to an LLM-agnostic architecture for flexibility and vendor independence.</span></p>
-								<p><strong data-translate="hubicus_gdpr_title">GDPR / AI Act compliance:</strong> <span data-translate="hubicus_gdpr_desc">Implemented compliance with PII redaction, secure data processing, and audit logging for LLM operations.</span></p>
+								<p><strong data-translate="hubicus_gdpr_title">GDPR / EU AI Act & responsible AI:</strong> <span data-translate="hubicus_gdpr_desc">Ensured compliance with GDPR and the EU AI Act through data protection measures, access controls, and responsible AI practices, including PII redaction, secure data processing, and audit logging for LLM operations.</span></p>
 								<p><strong data-translate="hubicus_benchmark_title">Benchmarking framework:</strong> <span data-translate="hubicus_benchmark_desc">Developed and integrated a benchmarking framework to analyze and evaluate the quality of AI outputs.</span></p>
 								<p><strong data-translate="hubicus_rca_title">Root cause analysis:</strong> <span data-translate="hubicus_rca_desc">Developed a root cause analysis model for client interactions to identify and explain quality issues.</span></p>
+								<p><strong data-translate="hubicus_security_title">LLM security & input guardrails:</strong> <span data-translate="hubicus_security_desc">Strengthened system security by implementing prompt injection detection and input guardrails for LLM-based services.</span></p>
+								<p><strong data-translate="hubicus_mcp_rag_title">MCP server & RAG knowledge agent:</strong> <span data-translate="hubicus_mcp_rag_desc">Developed an MCP server exposing all platform APIs and built a RAG-based agent for internal knowledge retrieval and operational efficiency.</span></p>
 							</div>
 						</div>
 						<div class="resume-wrap d-flex ftco-animate">
@@ -197,10 +199,13 @@
 								<h2 data-translate="ai_ml_engineer_title">AI/ML Engineer Intern</h2>
 								<span class="position">AXA Group Operations</span>
 								<p data-translate="ai_ml_engineer_location">Paris, France</p>
-								<p><strong data-translate="discovery_phase_title">Discovery phase – Parsing & benchmarking:</strong> <span
-										data-translate="discovery_phase_desc">Benchmarked 25+ parsers with custom ground truth & automated scoring; boosted table extraction accuracy (NID 0.72 → 0.98, TEDS-S 0.97). Designed a reproducible evaluation pipeline with automated metrics (NID, TEDS-S, TEDS) and clear benchmarks for model comparison.</span></p>
-								<p><strong data-translate="production_phase_title">Production phase – Clean architecture:</strong> <span
-										data-translate="production_phase_desc">Refactored the prototype into Clean Architecture (Domain / Application / Infrastructure), making modules independently testable and future-proof. Replaced flat outputs with a graph model in Kuzu to represent clauses/limits/exclusions as nodes/edges—enabling semantic queries and explainable reasoning.</span></p>
+								<p><strong data-translate="axa_computable_title">Computable Contracts platform entry:</strong> <span data-translate="axa_computable_desc">Developed a production-ready module for automatic parsing and modeling of complex insurance contracts, forming the entry point for AXA's AI-powered Computable Contracts platform.</span></p>
+								<p><strong data-translate="axa_parsers_title">Parser benchmarking & GPT-4o:</strong> <span data-translate="axa_parsers_desc">Benchmarked and evaluated over 25 document parsers, leading to the adoption of a state-of-the-art multimodal LLM approach (GPT-4o) for robust handling of unstructured legal documents and nested tables.</span></p>
+								<p><strong data-translate="axa_clean_arch_title">Clean Architecture & scalability:</strong> <span data-translate="axa_clean_arch_desc">Refactored the workflow into a modular codebase using Clean Architecture, enabling maintainable, testable, and scalable development for future enterprise deployment.</span></p>
+								<p><strong data-translate="axa_graph_title">Graph databases & contract intelligence:</strong> <span data-translate="axa_graph_desc">Used graph databases (Kuzu, Neo4j) to map relationships in contracts, making it easier to run smart searches and analysis.</span></p>
+								<p><strong data-translate="axa_eval_title">Evaluation pipeline & reproducibility:</strong> <span data-translate="axa_eval_desc">Engineered a comprehensive evaluation pipeline and custom metrics (NID Score, TEDS Score); documented all research and experiments in a GitHub wiki to ensure reproducibility and support cross-team learning.</span></p>
+								<p><strong data-translate="axa_ops_title">Containers, observability & CI/CD:</strong> <span data-translate="axa_ops_desc">Containerized all project components for reliable deployment and introduced observability with Langfuse to optimize LLM prompt engineering, supported by automated CI/CD pipelines and team-based code reviews.</span></p>
+								<p><strong data-translate="axa_agile_title">Agile delivery & knowledge transfer:</strong> <span data-translate="axa_agile_desc">Collaborated daily in an agile team environment, delivered regular demos, and contributed to rigorous documentation and knowledge transfer practices for project continuity.</span></p>
 							</div>
 						</div>
 						<div class="resume-wrap d-flex ftco-animate">
@@ -224,9 +229,7 @@
 										to identify and merge similar product packs, optimizing offerings and supporting
 										new pack introductions.</span></p>
 								<p><strong data-translate="next_purchase_title">Next Purchase Date Model:</strong> <span
-										data-translate="next_purchase_desc">Achieved 62% accuracy in forecasting
-										next-purchase dates by developing and tuning an XGBoost model, enabling
-										proactive customer engagement strategies.</span></p>
+										data-translate="next_purchase_desc">Built a time series forecasting pipeline to predict next-purchase dates, engineering temporal features (recency, frequency, monetary) and tuning an XGBoost model achieving 62% accuracy and enabling proactive customer engagement.</span></p>
 								<p><strong data-translate="cross_functional_title">Cross-Functional
 										Collaboration:</strong> <span data-translate="cross_functional_desc">Worked
 										closely with global telecom clients and internal teams to align analytics
@@ -1220,6 +1223,12 @@
 			function switchLanguage(lang) {
 				// Save language preference
 				localStorage.setItem('preferredLanguage', lang);
+
+				// Hero rotating titles (read by TxtRotate on window.onload)
+				const rotateEl = document.querySelector('.txt-rotate');
+				if (rotateEl && translations[lang] && translations[lang].data_rotate) {
+					rotateEl.setAttribute('data-rotate', JSON.stringify(translations[lang].data_rotate));
+				}
 
 				// Update all translatable elements
 				document.querySelectorAll('[data-translate]').forEach(element => {
