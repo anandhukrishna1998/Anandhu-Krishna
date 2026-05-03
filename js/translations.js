@@ -158,7 +158,7 @@ const translations = {
         
         // Skills group translations
         skill_ml_title: "Machine & Deep Learning",
-        skill_ml_items: "LLMs, NLP, Prompt Engineering, TensorFlow, Transformers, Scikit-learn, Hugging Face, Ollama",
+        skill_ml_items: "LLMs, Gemini, Mistral, NLP, Prompt Engineering, TensorFlow, Transformers, Scikit-learn, Hugging Face, Ollama",
         skill_mlops_title: "MLOps & Software Development",
         skill_mlops_items: "Docker, Git, FastAPI, Flask, Streamlit, Airflow, MLOps, CI/CD, Langfuse, Poetry",
         skill_data_title: "Data Processing",
@@ -166,7 +166,7 @@ const translations = {
         skill_lang_title: "Programming Languages",
         skill_lang_items: "Python, SQL",
         skill_cloud_title: "Cloud & Development Environments",
-        skill_cloud_items: "GCP, Linux, Firestore, Jupyter Notebooks",
+        skill_cloud_items: "GCP, Vertex AI, BigQuery, Linux, Firestore, Jupyter Notebooks",
         skill_viz_title: "Data Visualization",
         skill_viz_items: "Matplotlib, Seaborn",
         skill_messaging_title: "Messaging & Streaming",
@@ -179,6 +179,7 @@ const translations = {
         photoshop: "Photoshop",
         general_secretary: "General Secretary",
         secretary_description: "Served as General Secretary of Computer Science Association",
+        masters_degree_title: "MSc Computer Science — Data Science and Analysis (Bac +5)",
         masters_description: "I have completed a Master's in Computer Science with a specialization in Data Science and Analysis. The program went beyond foundational knowledge, offering advanced expertise in machine learning, programming, and data engineering. With a curriculum encompassing cutting-edge topics such as neural networks, cloud computing, and big data infrastructure, I developed both horizontal breadth and vertical depth in technical and analytical skills. This training has equipped me to design innovative algorithms, optimize data-driven solutions, and extract actionable insights, positioning me to thrive in the rapidly evolving landscapes of technology and business.",
         bachelors_description: "Completed Bachelor's degree in Computer Science with focus on machine learning and data structures. Gained strong foundation in programming concepts and software development methodologies.",
         higher_secondary_description: "One of the best two years in my entire academic life where I identified myself and developed a strong interest in computer science and mathematics.",
@@ -433,7 +434,7 @@ const translations = {
         
         // Skills group translations
         skill_ml_title: "Apprentissage automatique & Deep Learning",
-        skill_ml_items: "LLMs, NLP, Prompt Engineering, TensorFlow, Transformers, Scikit-learn, Hugging Face, Ollama",
+        skill_ml_items: "LLMs, Gemini, Mistral, NLP, Prompt Engineering, TensorFlow, Transformers, Scikit-learn, Hugging Face, Ollama",
         skill_mlops_title: "MLOps & Développement logiciel",
         skill_mlops_items: "Docker, Git, FastAPI, Flask, Streamlit, Airflow, MLOps, CI/CD, Langfuse, Poetry",
         skill_data_title: "Traitement de données",
@@ -441,7 +442,7 @@ const translations = {
         skill_lang_title: "Langages de programmation",
         skill_lang_items: "Python, SQL",
         skill_cloud_title: "Cloud et environnements de développement",
-        skill_cloud_items: "GCP, Linux, Firestore, Jupyter Notebooks",
+        skill_cloud_items: "GCP, Vertex AI, BigQuery, Linux, Firestore, Jupyter Notebooks",
         skill_viz_title: "Visualisation de données",
         skill_viz_items: "Matplotlib, Seaborn",
         skill_messaging_title: "Messagerie et streaming",
@@ -457,6 +458,7 @@ const translations = {
         skill_percent_50: "50%",
         skill_percent_60: "60%",
         skill_percent_80: "80%",
+        masters_degree_title: "Master d'informatique — Science des données et analyse (Bac +5)",
         masters_description: "J'ai obtenu un Master en Informatique avec une spécialisation en Science des Données et Analyse. Le programme allait au-delà des connaissances fondamentales, offrant une expertise avancée en apprentissage automatique, programmation et ingénierie des données. Avec un cursus couvrant des sujets de pointe tels que les réseaux de neurones, le cloud computing et l'infrastructure big data, j'ai développé à la fois une largeur horizontale et une profondeur verticale dans les compétences techniques et analytiques. Cette formation m'a permis de concevoir des algorithmes innovants, d'optimiser des solutions basées sur les données et d'extraire des insights actionnables, me positionnant pour prospérer dans les paysages en rapide évolution de la technologie et des affaires.",
         bachelors_description: "Diplômé en Informatique avec spécialisation en apprentissage automatique et structures de données. Acquis une solide base en concepts de programmation et méthodologies de développement logiciel.",
         higher_secondary_description: "Deux des meilleures années de ma vie académique où je me suis découvert et développé un fort intérêt pour l'informatique et les mathématiques.",
