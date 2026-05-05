@@ -273,8 +273,7 @@ const translations = {
         hubicus_security_title: "LLM security & input guardrails:",
         hubicus_security_desc: "Strengthened system security by implementing prompt injection detection and input guardrails for LLM-based services.",
         hubicus_mcp_rag_title: "MCP server & RAG knowledge agent:",
-        hubicus_mcp_rag_desc: "Developed an MCP server exposing all platform APIs and built a RAG-based agent for internal knowledge retrieval and operational efficiency.",
-        visitor_count: "Visitors"
+        hubicus_mcp_rag_desc: "Developed an MCP server exposing all platform APIs and built a RAG-based agent for internal knowledge retrieval and operational efficiency."
     },
     fr: {
         about: "À propos",
@@ -553,7 +552,6 @@ const translations = {
         hubicus_security_title: "Sécurité LLM et garde-fous en entrée :",
         hubicus_security_desc: "Renforcement de la sécurité du système par la mise en œuvre d'une détection d'injections de prompts et de garde-fous en entrée pour les services basés sur les LLM.",
         hubicus_mcp_rag_title: "Serveur MCP et agent RAG de connaissances :",
-        hubicus_mcp_rag_desc: "Développement d'un serveur MCP exposant l'ensemble des APIs de la plateforme et conception d'un agent basé sur le RAG pour la récupération de connaissances internes et l'efficacité opérationnelle.",
-        visitor_count: "Visiteurs"
+        hubicus_mcp_rag_desc: "Développement d'un serveur MCP exposant l'ensemble des APIs de la plateforme et conception d'un agent basé sur le RAG pour la récupération de connaissances internes et l'efficacité opérationnelle."
     }
 }; 

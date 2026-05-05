@@ -1045,9 +1045,6 @@
 						<script>document.write(new Date().getFullYear());</script> All rights reserved
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
-					<p class="mb-0">
-						<span data-translate="visitor_count">Visitors</span>: <span id="visitor-count">--</span>
-					</p>
 				</div>
 			</div>
 		</div>
@@ -1156,29 +1153,6 @@
 		});
 	});
 	</script>
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			const visitorCountElement = document.getElementById('visitor-count');
-			if (!visitorCountElement) {
-				return;
-			}
-
-			fetch('https://api.countapi.xyz/hit/anandhu-krishna-portfolio/homepage')
-				.then(response => {
-					if (!response.ok) {
-						throw new Error('Failed to fetch visitor count');
-					}
-					return response.json();
-				})
-				.then(data => {
-					visitorCountElement.textContent = data && typeof data.value === 'number' ? data.value.toLocaleString() : '--';
-				})
-				.catch(() => {
-					visitorCountElement.textContent = '--';
-				});
-		});
-	</script>
-
 </body>
 
 </html>
