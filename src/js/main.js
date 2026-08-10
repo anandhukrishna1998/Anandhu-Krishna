@@ -464,11 +464,11 @@ function switchLanguage(lang) {
     
     if (newLang === 'fr') {
         langButton.textContent = 'EN';
-        flagImg.src = 'images/uk.png';
+        flagImg.src = '../assets/images/uk.png';
         flagImg.alt = 'UK Flag';
     } else {
         langButton.textContent = 'FR';
-        flagImg.src = 'images/Flag_of_France.png';
+        flagImg.src = '../assets/images/Flag_of_France.png';
         flagImg.alt = 'French Flag';
     }
 }
