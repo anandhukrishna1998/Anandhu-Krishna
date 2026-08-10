@@ -1,13 +1,13 @@
- AOS.init({
- 	duration: 800,
- 	easing: 'slide'
- });
+AOS.init({
+  duration: 800,
+  easing: 'slide'
+});
 
-(function($) {
+(function ($) {
 
-	"use strict";
+  "use strict";
 
-	$(window).stellar({
+  $(window).stellar({
     responsive: true,
     parallaxBackgrounds: true,
     parallaxElements: true,
@@ -17,238 +17,238 @@
   });
 
 
-	var fullHeight = function() {
+  var fullHeight = function () {
 
-		$('.js-fullheight').css('height', $(window).height());
-		$(window).resize(function(){
-			$('.js-fullheight').css('height', $(window).height());
-		});
+    $('.js-fullheight').css('height', $(window).height());
+    $(window).resize(function () {
+      $('.js-fullheight').css('height', $(window).height());
+    });
 
-	};
-	fullHeight();
+  };
+  fullHeight();
 
-	// loader
-	var loader = function() {
-		setTimeout(function() { 
-			if($('#ftco-loader').length > 0) {
-				$('#ftco-loader').removeClass('show');
-			}
-		}, 1);
-	};
-	loader();
+  // loader
+  var loader = function () {
+    setTimeout(function () {
+      if ($('#ftco-loader').length > 0) {
+        $('#ftco-loader').removeClass('show');
+      }
+    }, 1);
+  };
+  loader();
 
-	// Scrollax
-   $.Scrollax();
-
-
-
-   // Burger Menu
-	var burgerMenu = function() {
-
-		$('body').on('click', '.js-fh5co-nav-toggle', function(event){
-
-			event.preventDefault();
-
-			if ( $('#ftco-nav').is(':visible') ) {
-				$(this).removeClass('active');
-			} else {
-				$(this).addClass('active');	
-			}
-
-			
-			
-		});
-
-	};
-	burgerMenu();
+  // Scrollax
+  $.Scrollax();
 
 
-	var onePageClick = function() {
+
+  // Burger Menu
+  var burgerMenu = function () {
+
+    $('body').on('click', '.js-fh5co-nav-toggle', function (event) {
+
+      event.preventDefault();
+
+      if ($('#ftco-nav').is(':visible')) {
+        $(this).removeClass('active');
+      } else {
+        $(this).addClass('active');
+      }
 
 
-		$(document).on('click', '#ftco-nav a[href^="#"]', function (event) {
-	    event.preventDefault();
 
-	    var href = $.attr(this, 'href');
+    });
 
-	    $('html, body').animate({
-	        scrollTop: $($.attr(this, 'href')).offset().top - 70
-	    }, 500, function() {
-	    	// window.location.hash = href;
-	    });
-		});
-
-	};
-
-	onePageClick();
-	
-
-	var carousel = function() {
-		$('.home-slider').owlCarousel({
-	    loop:true,
-	    autoplay: true,
-	    margin:0,
-	    animateOut: 'fadeOut',
-	    animateIn: 'fadeIn',
-	    nav:false,
-	    autoplayHoverPause: false,
-	    items: 1,
-	    navText : ["<span class='ion-md-arrow-back'></span>","<span class='ion-chevron-right'></span>"],
-	    responsive:{
-	      0:{
-	        items:1
-	      },
-	      600:{
-	        items:1
-	      },
-	      1000:{
-	        items:1
-	      }
-	    }
-		});
-	};
-	carousel();
-
-	$('nav .dropdown').hover(function(){
-		var $this = $(this);
-		// 	 timer;
-		// clearTimeout(timer);
-		$this.addClass('show');
-		$this.find('> a').attr('aria-expanded', true);
-		// $this.find('.dropdown-menu').addClass('animated-fast fadeInUp show');
-		$this.find('.dropdown-menu').addClass('show');
-	}, function(){
-		var $this = $(this);
-			// timer;
-		// timer = setTimeout(function(){
-			$this.removeClass('show');
-			$this.find('> a').attr('aria-expanded', false);
-			// $this.find('.dropdown-menu').removeClass('animated-fast fadeInUp show');
-			$this.find('.dropdown-menu').removeClass('show');
-		// }, 100);
-	});
+  };
+  burgerMenu();
 
 
-	$('#dropdown04').on('show.bs.dropdown', function () {
-	  console.log('show');
-	});
-
-	// scroll
-	var scrollWindow = function() {
-		$(window).scroll(function(){
-			var $w = $(this),
-					st = $w.scrollTop(),
-					navbar = $('.ftco_navbar'),
-					sd = $('.js-scroll-wrap');
-
-			if (st > 150) {
-				if ( !navbar.hasClass('scrolled') ) {
-					navbar.addClass('scrolled');	
-				}
-			} 
-			if (st < 150) {
-				if ( navbar.hasClass('scrolled') ) {
-					navbar.removeClass('scrolled sleep');
-				}
-			} 
-			if ( st > 350 ) {
-				if ( !navbar.hasClass('awake') ) {
-					navbar.addClass('awake');	
-				}
-				
-				if(sd.length > 0) {
-					sd.addClass('sleep');
-				}
-			}
-			if ( st < 350 ) {
-				if ( navbar.hasClass('awake') ) {
-					navbar.removeClass('awake');
-					navbar.addClass('sleep');
-				}
-				if(sd.length > 0) {
-					sd.removeClass('sleep');
-				}
-			}
-		});
-	};
-	scrollWindow();
-
-	
-
-	var counter = function() {
-		
-		$('#section-counter, .hero-wrap, .ftco-counter, .ftco-about').waypoint( function( direction ) {
-
-			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-
-				var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
-				$('.number').each(function(){
-					var $this = $(this),
-						num = $this.data('number');
-						console.log(num);
-					$this.animateNumber(
-					  {
-					    number: num,
-					    numberStep: comma_separator_number_step
-					  }, 7000
-					);
-				});
-				
-			}
-
-		} , { offset: '95%' } );
-
-	}
-	counter();
+  var onePageClick = function () {
 
 
-	var contentWayPoint = function() {
-		var i = 0;
-		$('.ftco-animate').waypoint( function( direction ) {
+    $(document).on('click', '#ftco-nav a[href^="#"]', function (event) {
+      event.preventDefault();
 
-			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-				
-				i++;
+      var href = $.attr(this, 'href');
 
-				$(this.element).addClass('item-animate');
-				setTimeout(function(){
+      $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top - 70
+      }, 500, function () {
+        // window.location.hash = href;
+      });
+    });
 
-					$('body .ftco-animate.item-animate').each(function(k){
-						var el = $(this);
-						setTimeout( function () {
-							var effect = el.data('animate-effect');
-							if ( effect === 'fadeIn') {
-								el.addClass('fadeIn ftco-animated');
-							} else if ( effect === 'fadeInLeft') {
-								el.addClass('fadeInLeft ftco-animated');
-							} else if ( effect === 'fadeInRight') {
-								el.addClass('fadeInRight ftco-animated');
-							} else {
-								el.addClass('fadeInUp ftco-animated');
-							}
-							el.removeClass('item-animate');
-						},  k * 50, 'easeInOutExpo' );
-					});
-					
-				}, 100);
-				
-			}
+  };
 
-		} , { offset: '95%' } );
-	};
-	contentWayPoint();
+  onePageClick();
 
-	// magnific popup
-	$('.image-popup').magnificPopup({
+
+  var carousel = function () {
+    $('.home-slider').owlCarousel({
+      loop: true,
+      autoplay: true,
+      margin: 0,
+      animateOut: 'fadeOut',
+      animateIn: 'fadeIn',
+      nav: false,
+      autoplayHoverPause: false,
+      items: 1,
+      navText: ["<span class='ion-md-arrow-back'></span>", "<span class='ion-chevron-right'></span>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    });
+  };
+  carousel();
+
+  $('nav .dropdown').hover(function () {
+    var $this = $(this);
+    // 	 timer;
+    // clearTimeout(timer);
+    $this.addClass('show');
+    $this.find('> a').attr('aria-expanded', true);
+    // $this.find('.dropdown-menu').addClass('animated-fast fadeInUp show');
+    $this.find('.dropdown-menu').addClass('show');
+  }, function () {
+    var $this = $(this);
+    // timer;
+    // timer = setTimeout(function(){
+    $this.removeClass('show');
+    $this.find('> a').attr('aria-expanded', false);
+    // $this.find('.dropdown-menu').removeClass('animated-fast fadeInUp show');
+    $this.find('.dropdown-menu').removeClass('show');
+    // }, 100);
+  });
+
+
+  $('#dropdown04').on('show.bs.dropdown', function () {
+    console.log('show');
+  });
+
+  // scroll
+  var scrollWindow = function () {
+    $(window).scroll(function () {
+      var $w = $(this),
+        st = $w.scrollTop(),
+        navbar = $('.ftco_navbar'),
+        sd = $('.js-scroll-wrap');
+
+      if (st > 150) {
+        if (!navbar.hasClass('scrolled')) {
+          navbar.addClass('scrolled');
+        }
+      }
+      if (st < 150) {
+        if (navbar.hasClass('scrolled')) {
+          navbar.removeClass('scrolled sleep');
+        }
+      }
+      if (st > 350) {
+        if (!navbar.hasClass('awake')) {
+          navbar.addClass('awake');
+        }
+
+        if (sd.length > 0) {
+          sd.addClass('sleep');
+        }
+      }
+      if (st < 350) {
+        if (navbar.hasClass('awake')) {
+          navbar.removeClass('awake');
+          navbar.addClass('sleep');
+        }
+        if (sd.length > 0) {
+          sd.removeClass('sleep');
+        }
+      }
+    });
+  };
+  scrollWindow();
+
+
+
+  var counter = function () {
+
+    $('#section-counter, .hero-wrap, .ftco-counter, .ftco-about').waypoint(function (direction) {
+
+      if (direction === 'down' && !$(this.element).hasClass('ftco-animated')) {
+
+        var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
+        $('.number').each(function () {
+          var $this = $(this),
+            num = $this.data('number');
+          console.log(num);
+          $this.animateNumber(
+            {
+              number: num,
+              numberStep: comma_separator_number_step
+            }, 7000
+          );
+        });
+
+      }
+
+    }, { offset: '95%' });
+
+  }
+  counter();
+
+
+  var contentWayPoint = function () {
+    var i = 0;
+    $('.ftco-animate').waypoint(function (direction) {
+
+      if (direction === 'down' && !$(this.element).hasClass('ftco-animated')) {
+
+        i++;
+
+        $(this.element).addClass('item-animate');
+        setTimeout(function () {
+
+          $('body .ftco-animate.item-animate').each(function (k) {
+            var el = $(this);
+            setTimeout(function () {
+              var effect = el.data('animate-effect');
+              if (effect === 'fadeIn') {
+                el.addClass('fadeIn ftco-animated');
+              } else if (effect === 'fadeInLeft') {
+                el.addClass('fadeInLeft ftco-animated');
+              } else if (effect === 'fadeInRight') {
+                el.addClass('fadeInRight ftco-animated');
+              } else {
+                el.addClass('fadeInUp ftco-animated');
+              }
+              el.removeClass('item-animate');
+            }, k * 50, 'easeInOutExpo');
+          });
+
+        }, 100);
+
+      }
+
+    }, { offset: '95%' });
+  };
+  contentWayPoint();
+
+  // magnific popup
+  $('.image-popup').magnificPopup({
     type: 'image',
     closeOnContentClick: true,
     closeBtnInside: false,
     fixedContentPos: true,
     mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
-     gallery: {
+    gallery: {
       enabled: true,
       navigateByImgClick: true,
-      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+      preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
     },
     image: {
       verticalFit: true
@@ -270,81 +270,81 @@
   });
 
 
-  var goHere = function() {
+  var goHere = function () {
 
-		$('.mouse-icon').on('click', function(event){
-			
-			event.preventDefault();
+    $('.mouse-icon').on('click', function (event) {
 
-			$('html,body').animate({
-				scrollTop: $('.goto-here').offset().top
-			}, 500, 'easeInOutExpo');
-			
-			return false;
-		});
-	};
-	goHere();
+      event.preventDefault();
 
-	// $("#myScrollspy").scrollspy({ offset: -75 });
+      $('html,body').animate({
+        scrollTop: $('.goto-here').offset().top
+      }, 500, 'easeInOutExpo');
+
+      return false;
+    });
+  };
+  goHere();
+
+  // $("#myScrollspy").scrollspy({ offset: -75 });
 
 
 
-var TxtRotate = function(el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
-
-TxtRotate.prototype.tick = function() {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
-
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
-
-  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-  var that = this;
-  var delta = 300 - Math.random() * 100;
-
-  if (this.isDeleting) { delta /= 2; }
-
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
+  var TxtRotate = function (el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
     this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-  }
+  };
 
-  setTimeout(function() {
-    that.tick();
-  }, delta);
-};
+  TxtRotate.prototype.tick = function () {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
 
-window.onload = function() {
-  var elements = document.getElementsByClassName('txt-rotate');
-  for (var i=0; i<elements.length; i++) {
-    var toRotate = elements[i].getAttribute('data-rotate');
-    var period = elements[i].getAttribute('data-period');
-    if (toRotate) {
-      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
-  }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-  document.body.appendChild(css);
-};
+
+    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+    var that = this;
+    var delta = 300 - Math.random() * 100;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(function () {
+      that.tick();
+    }, delta);
+  };
+
+  window.onload = function () {
+    var elements = document.getElementsByClassName('txt-rotate');
+    for (var i = 0; i < elements.length; i++) {
+      var toRotate = elements[i].getAttribute('data-rotate');
+      var period = elements[i].getAttribute('data-period');
+      if (toRotate) {
+        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+      }
+    }
+    // INJECT CSS
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+    document.body.appendChild(css);
+  };
 
 
 })(jQuery);
@@ -359,63 +359,63 @@ window.onload = function() {
 // $('.page').css('height', $( window ).height());
 
 // scrollspy section
-(function($){
+(function ($) {
   //variable that will hold the href attr of the links in the menu
   var sections = [];
   //variable that stores the id of the section
   var id = false;
   //variable for the selection of the anchors in the navbar
   var $navbara = $('#navi a');
-  
-  $navbara.click(function(e){
+
+  $navbara.click(function (e) {
     //prevent the page from refreshing
     e.preventDefault();
     //set the top offset animation and speed
     $('html, body').animate({
       scrollTop: $($(this).attr('href')).offset().top - 180
-},500);
+    }, 500);
     hash($(this).attr('href'));
   });
-  
-  
-  
+
+
+
   //select all the anchors in the navbar one after another
-  $navbara.each(function(){
-   // and adds them in the sections variable
+  $navbara.each(function () {
+    // and adds them in the sections variable
     sections.push($($(this).attr('href')));
-    
+
   })
-  $(window).scroll(function(e){
+  $(window).scroll(function (e) {
     // scrollTop retains the value of the scroll top with the reference at the middle of the page
-    var scrollTop = $(this).scrollTop() + ($(window).height()/2);
+    var scrollTop = $(this).scrollTop() + ($(window).height() / 2);
     //cycle through the values in sections array
     for (var i in sections) {
       var section = sections[i];
       //if scrollTop variable is bigger than the top offset of a section in the sections array then 
-      if (scrollTop > section.offset().top){
+      if (scrollTop > section.offset().top) {
         var scrolled_id = section.attr('id');
       }
     }
     if (scrolled_id !== id) {
       id = scrolled_id;
       $($navbara).removeClass('current');
-      $('#navi a[href="#' + id + '"]').addClass('current'); 
+      $('#navi a[href="#' + id + '"]').addClass('current');
     }
   })
 })(jQuery);
 
-hash = function(h){
-  if (history.pushState){
+hash = function (h) {
+  if (history.pushState) {
     history.pushState(null, null, h);
-  }else{
+  } else {
     location.hash = h;
   }
 }
 
 
-$(function() {
+$(function () {
 
-  $(".progress").each(function() {
+  $(".progress").each(function () {
 
     var value = $(this).attr('data-value');
     var left = $(this).find('.progress-left .progress-bar');
@@ -441,35 +441,76 @@ $(function() {
 });
 
 function switchLanguage(lang) {
-    // Get current language
-    const currentLang = localStorage.getItem('preferredLanguage') || 'en';
-    
-    // Toggle between languages
-    const newLang = currentLang === 'en' ? 'fr' : 'en';
-    
-    // Save language preference
-    localStorage.setItem('preferredLanguage', newLang);
-    
-    // Update all translatable elements
-    document.querySelectorAll('[data-translate]').forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (translations[newLang][key]) {
-            element.textContent = translations[newLang][key];
-        }
-    });
+  // Get current language
+  const currentLang = localStorage.getItem('preferredLanguage') || 'en';
 
-    // Update button text and flag
-    const langButton = document.getElementById('translate_button');
-    const flagImg = document.querySelector('#lang-switch img');
-    
-    if (newLang === 'fr') {
-        langButton.textContent = 'EN';
-        flagImg.src = '../assets/images/uk.png';
-        flagImg.alt = 'UK Flag';
-    } else {
-        langButton.textContent = 'FR';
-        flagImg.src = '../assets/images/Flag_of_France.png';
-        flagImg.alt = 'French Flag';
+  // Toggle between languages
+  const newLang = currentLang === 'en' ? 'fr' : 'en';
+
+  // Save language preference
+  localStorage.setItem('preferredLanguage', newLang);
+
+  // Update all translatable elements
+  document.querySelectorAll('[data-translate]').forEach(element => {
+    const key = element.getAttribute('data-translate');
+    if (translations[newLang][key]) {
+      element.textContent = translations[newLang][key];
     }
+  });
+
+  // Update button text and flag
+  const langButton = document.getElementById('translate_button');
+  const flagImg = document.querySelector('#lang-switch img');
+
+  if (newLang === 'fr') {
+    langButton.textContent = 'EN';
+    flagImg.src = '../assets/images/uk.png';
+    flagImg.alt = 'UK Flag';
+  } else {
+    langButton.textContent = 'FR';
+    flagImg.src = '../assets/images/Flag_of_France.png';
+    flagImg.alt = 'French Flag';
+  }
 }
+
+$(document).ready(function () {
+  // Add simple 3 cursor trailing effect
+  const cursor1 = $('<div class="cursor-effect cursor-1"></div>');
+  const cursor2 = $('<div class="cursor-effect cursor-2"></div>');
+  const cursor3 = $('<div class="cursor-effect cursor-3"></div>');
+
+  $('body').append(cursor1, cursor2, cursor3);
+
+  let mouseX = $(window).width() / 2;
+  let mouseY = $(window).height() / 2;
+
+  let cursor1X = mouseX, cursor1Y = mouseY;
+  let cursor2X = mouseX, cursor2Y = mouseY;
+  let cursor3X = mouseX, cursor3Y = mouseY;
+
+  $(document).on('mousemove', function (e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animateCursors() {
+    // Smoothly approach the mouse
+    cursor1X += (mouseX - cursor1X) * 0.3;
+    cursor1Y += (mouseY - cursor1Y) * 0.3;
+
+    cursor2X += (cursor1X - cursor2X) * 0.2;
+    cursor2Y += (cursor1Y - cursor2Y) * 0.2;
+
+    cursor3X += (cursor2X - cursor3X) * 0.2;
+    cursor3Y += (cursor2Y - cursor3Y) * 0.2;
+
+    cursor1.css({ transform: `translate(${cursor1X}px, ${cursor1Y}px)` });
+    cursor2.css({ transform: `translate(${cursor2X}px, ${cursor2Y}px)` });
+    cursor3.css({ transform: `translate(${cursor3X}px, ${cursor3Y}px)` });
+
+    requestAnimationFrame(animateCursors);
+  }
+
+  animateCursors();
+});
 

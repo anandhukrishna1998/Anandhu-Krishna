@@ -1,4 +1,7 @@
 /* Light mode styles */
+html, body {
+    overflow-x: hidden;
+}
 body {
     background-color: #ffffff;
     color: #000000;
@@ -92,6 +95,7 @@ body.dark-mode ul.about-info li span:not(:first-child) {
 /* Heading styles for dark mode */
 body.dark-mode h1,
 body.dark-mode h2,
+body.dark-mode h3,
 body.dark-mode .heading-section h1,
 body.dark-mode .heading-section h2,
 body.dark-mode .position {
@@ -100,7 +104,8 @@ body.dark-mode .position {
 
 /* Make headings pure white in dark mode */
 body.dark-mode h1,
-body.dark-mode h2 {
+body.dark-mode h2,
+body.dark-mode h3 {
     color: #ffffff !important;  /* Pure white */
 }
 
@@ -375,4 +380,48 @@ body.dark-mode .contact-form textarea::placeholder {
 
 body.dark-mode .ftco-section .heading-section h2.mb-4 {
     color: #6b9fff !important;
+}
+
+/* Custom Cursor Effect */
+.cursor-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.cursor-1 {
+    background-color: #3e64ff;
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    margin-left: -5px;
+}
+
+.cursor-2 {
+    background-color: rgba(62, 100, 255, 0.6);
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+.cursor-3 {
+    background-color: rgba(62, 100, 255, 0.3);
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    margin-left: -15px;
+}
+
+body.dark-mode .cursor-1 {
+    background-color: #6b9fff;
+}
+body.dark-mode .cursor-2 {
+    background-color: rgba(107, 159, 255, 0.6);
+}
+body.dark-mode .cursor-3 {
+    background-color: rgba(107, 159, 255, 0.3);
 }
