@@ -1,1160 +1,712 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<title>Anandhu Krishna</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="fonts/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="fonts/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="fonts/favicon-16x16.png">
-	<link rel="manifest" href="fonts/site.webmanifest">
+  <meta charset="utf-8">
+  <title>Anandhu Krishna — AI Engineer & Spatial Intelligence</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Portfolio of Anandhu Krishna — AI Engineer & Data Scientist specializing in LLMs, Agentic Architectures, Knowledge Graphs, and High-Performance ML Systems in Paris, France.">
+  <meta name="theme-color" content="#06070a">
 
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="fonts/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="fonts/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="fonts/favicon-16x16.png">
 
-	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-	<link rel="stylesheet" href="css/animate.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3K41TT4G4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-W3K41TT4G4');
+  </script>
 
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
-
-	<link rel="stylesheet" href="css/aos.css">
-
-	<link rel="stylesheet" href="css/ionicons.min.css">
-
-	<link rel="stylesheet" href="css/flaticon.css">
-	<link rel="stylesheet" href="css/icomoon.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-W3K41TT4G4"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-		gtag('config', 'G-W3K41TT4G4');
-	</script>
+  <!-- Avant-Garde Spatial Design System -->
+  <link rel="stylesheet" href="css/spatial.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<body>
+  <!-- Spatial Ambient Chromatic Viewport -->
+  <div class="spatial-ambient-viewport" aria-hidden="true">
+    <div class="aurora-mesh"></div>
+    <div class="spatial-grid-overlay"></div>
+    <canvas id="particles-canvas"></canvas>
+  </div>
 
+  <!-- Spatial Floating Navigation HUD -->
+  <header class="spatial-hud">
+    <nav class="hud-island">
+      <a href="#hero" class="hud-logo magnetic-target" data-cursor-label="HOME">
+        <span class="hud-logo-glyph"></span>
+        <span>ANANDHU</span>
+      </a>
 
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-		<div class="container">
-			<a class="navbar-brand" href="index.html"><span>A</span>nandhu</a>
+      <ul class="hud-nav-links">
+        <li><a href="#about" class="hud-link magnetic-target" data-translate="nav_about">About</a></li>
+        <li><a href="#experience" class="hud-link magnetic-target" data-translate="nav_experience">Experience</a></li>
+        <li><a href="#projects" class="hud-link magnetic-target" data-translate="nav_projects">Projects</a></li>
+        <li><a href="#skills" class="hud-link magnetic-target" data-translate="nav_skills">Skills</a></li>
+        <li><a href="#contact" class="hud-link magnetic-target" data-translate="nav_contact">Contact</a></li>
+      </ul>
 
+      <div class="hud-controls">
+        <button id="dark-mode-toggle" class="hud-btn magnetic-target" aria-label="Toggle Ambiance" data-cursor-label="THEME">☀️</button>
+        <button id="sound-toggle" class="hud-btn magnetic-target" aria-label="Toggle Sound" data-cursor-label="AUDIO">🔇</button>
+        <button id="lang-switch" class="hud-btn lang-btn magnetic-target" aria-label="Switch Language" data-cursor-label="LANG">FR</button>
+      </div>
+    </nav>
+  </header>
 
-			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
+  <!-- Main Spatial Scene with Z-Axis Depth Planes -->
+  <main class="spatial-scene">
 
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav nav ml-auto">
-					<li class="nav-item"><a href="#home-section" class="nav-link"><span
-								data-translate="home">Home</span></a></li>
-					<li class="nav-item"><a href="#about-section" class="nav-link"><span
-								data-translate="about">About</span></a></li>
-					<li class="nav-item"><a href="#resume-section" class="nav-link"><span
-								data-translate="resume">Resume</span></a></li>
-					<li class="nav-item"><a href="#services-section" class="nav-link"><span
-								data-translate="services">Services</span></a></li>
-					<li class="nav-item"><a href="#projects-section" class="nav-link"><span
-								data-translate="projects">Projects</span></a></li>
-					<li class="nav-item"><a href="#contact-section" class="nav-link"><span
-								data-translate="contact">Contact</span></a></li>
-					<li class="nav-item">
-						<button id="dark-mode-toggle" aria-label="Toggle Dark Mode">
-							<i class="material-icons">light_mode</i>
-						</button>
-					</li>
-					<li class="nav-item" style="margin-right: -15px; margin-top: 9px;">
-						<button id="lang-switch" class="nav-link"
-							style="display: inline-block; background: none; border: none; padding: 0; margin: 0; outline: none; box-shadow: none;">
-							<span id="translate_button" style="display: inline-block; margin-left: 15px;">FR</span>
-							<img src="images/Flag_of_France.png" alt="French Flag"
-								style="width: 20px; height: 13px; display: inline-block; vertical-align: middle; margin-left: 8px; margin-top: -1px;">
-						</button>
-					</li>
+    <!-- HERO SECTION: Fluid Neo-Brutalism & Kinetic Typography -->
+    <section id="hero" class="spatial-section hero-stage">
+      <div class="hero-meta-bar" data-depth="0.15">
+        <div class="meta-status-chip">
+          <span class="meta-pulse"></span>
+          <span data-translate="hero_status">PARIS // 48.8566° N, 2.3522° E</span>
+        </div>
+      </div>
 
+      <!-- Kinetic Fluid Title -->
+      <div class="kinetic-title-wrapper" data-depth="0.4">
+        <h1 class="kinetic-title">
+          <span class="kinetic-row accent">ANANDHU</span>
+          <span class="kinetic-row chroma">KRISHNA</span>
+        </h1>
+      </div>
 
+      <!-- Spatial Depth Orbit Badges -->
+      <div class="orbit-badge badge-1" data-depth="0.8">
+        <i class="fa-solid fa-microchip"></i>
+        <span>vLLM &bull; llama.cpp &bull; GCP</span>
+      </div>
+      <div class="orbit-badge badge-2" data-depth="0.6">
+        <i class="fa-solid fa-diagram-project"></i>
+        <span data-translate="hero_badge_rag">Agentic RAG &bull; Neo4j</span>
+      </div>
 
+      <div class="hero-tagline-block" data-depth="0.25">
+        <p data-translate="hero_tagline">
+          <strong>AI Engineer &amp; Data Scientist</strong> architecting intelligent systems at the intersection of 
+          <em>Large Language Models</em>, <em>autonomous agentic workflows</em>, and <em>scalable machine learning</em>. 
+          Transforming complex research prototypes into high-performance, enterprise-grade production.
+        </p>
+      </div>
 
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<section class="hero-wrap js-fullheight">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
-				<div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
-					<div class="text text-center">
-						<span class="subheading" data-translate="hey">Hey! I am</span>
-						<h1>Anandhu Krishna</h1>
-						<h2><span data-translate="iam">I'm a</span>
-							<span class="txt-rotate" data-period="2000"
-								data-rotate='["AI Engineer.", "Data Scientist.", "Python Developer.", "Travel Enthusiast."]'></span>
-						</h2>
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-		<div class="mouse">
-			<a href="#" class="mouse-icon">
-				<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
-			</a>
-		</div>
-	</section>
+      <div class="hero-action-cluster" data-depth="0.3">
+        <a href="#experience" class="btn-spatial-primary magnetic-target" data-cursor-label="EXPLORE" data-translate="hero_explore">
+          <span>Explore Works</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="https://drive.google.com/file/d/1BaO4R_H0K6MxnnrzueMbCl30-3omoC8e/view?usp=sharing" target="_blank" rel="noopener" class="btn-spatial-ghost magnetic-target" data-cursor-label="PDF">
+          <i class="fa-solid fa-file-arrow-down"></i>
+          <span data-translate="hero_cv">Curriculum Vitae</span>
+        </a>
+      </div>
+    </section>
 
-	<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
-		<div class="container">
-			<div class="row d-flex no-gutters">
-				<div class="col-md-6 col-lg-6 d-flex">
-					<div class="img-about img d-flex align-items-stretch">
-						<div class="overlay"></div>
-						<div class="img d-flex align-self-stretch align-items-center"
-							style="background-image:url(images/about.jpg);">
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-6 pl-md-5 py-5">
-					<div class="row justify-content-start pb-3">
-						<div class="col-md-12 heading-section ftco-animate">
+    <!-- ABOUT SECTION: Asymmetric Spatial Neural Profile -->
+    <section id="about" class="spatial-section">
+      <div class="section-meta-eyebrow" data-depth="0.1">
+        <span class="eyebrow-line"></span>
+        <span data-translate="eyebrow_about">01 // Neural Profile</span>
+      </div>
+      <h2 class="section-spatial-heading" data-depth="0.2" data-translate="about_heading">
+        Curating Knowledge.<br>Zero Syntax Errors.
+      </h2>
 
-
-							<h2 class="mb-4" data-translate="about_me">About Me</h2>
-							<p data-translate="about_description">A data scientist on a mission to explore the world and
-								tick off a carefully curated bucket list—executing goals without hitting any syntax
-								errors.</p>
-							<ul class="about-info mt-4 px-md-0 px-2">
-								<li class="d-flex"><span data-translate="name_label">Name:</span> <span>Anandhu
-										Krishna</span></li>
-								<li class="d-flex"><span data-translate="address_label">Address:</span> <span
-										data-translate="location">Paris, France</span></li>
-								<li class="d-flex"><span data-translate="email_label">Email:</span> <span
-										data-translate="email">anandhukrishna091@gmail.com</span></li>
-								<li class="d-flex"><span data-translate="phone_label">Phone:</span> <span
-										data-translate="phone">+33-07 80 86 43 13</span></li>
-							</ul>
-						</div>
-					</div>
-					<div class="counter-wrap ftco-animate d-flex mt-md-3">
-						<div class="text">
-							<p class="mb-4">
-								<span class="number" data-number="8">8</span>
-								<span data-translate="project_count">Project complete</span>
-							</p>
-							<p><a href="https://drive.google.com/file/d/1BaO4R_H0K6MxnnrzueMbCl30-3omoC8e/view?usp=sharing"
-									target="_blank" class="btn btn-primary py-3 px-3"
-									data-translate="download_en_cv">Download English CV</a></p>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="ftco-section ftco-no-pb goto-here" id="resume-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<nav id="navi">
-						<ul>
-							<li><a href="#page-5"><span data-translate="work_experience">Work Experience</span></a></li>
-							<li><a href="#page-1"><span data-translate="education">Education</span></a></li>
-							<li><a href="#page-2"><span data-translate="certification">Certification</span></a></li>
-							<li><a href="#page-3"><span data-translate="skills">Skills</span></a></li>
-							<li><a href="#page-4"><span data-translate="awards">Awards</span></a></li>
-							<li><a href="#page-6"><span data-translate="languages_section">Languages</span></a></li>
-						</ul>
-					</nav>
-				</div>
-				<div class="col-md-9">
-					<div id="page-5" class="page five">
-						<h2 class="heading" data-translate="professional_exp">Professional Experience</h2>
-
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date" data-translate="hubicus_period">11/2025-04/2026</span>
-								<h2 data-translate="hubicus_ai_engineer_title">AI Engineer Intern</h2>
-								<span class="position" data-translate="hubicus_company">Hubicus (IPSOS, Customer Insights)</span>
-								<p data-translate="hubicus_location">Paris, France</p>
-								<p><strong data-translate="hubicus_integration_title">AI services integration & quality monitoring:</strong> <span data-translate="hubicus_integration_desc">Integrated multiple AI services into the existing quality monitoring SaaS tool, delivering evaluation and analysis for all client interaction channels: chat, email, and audio call.</span></p>
-								<p><strong data-translate="hubicus_llm_arch_title">LLM-agnostic architecture:</strong> <span data-translate="hubicus_llm_arch_desc">Migrated the application to an LLM-agnostic architecture for flexibility and vendor independence.</span></p>
-								<p><strong data-translate="hubicus_gdpr_title">GDPR / EU AI Act & responsible AI:</strong> <span data-translate="hubicus_gdpr_desc">Ensured compliance with GDPR and the EU AI Act through data protection measures, access controls, and responsible AI practices, including PII redaction, secure data processing, and audit logging for LLM operations.</span></p>
-								<p><strong data-translate="hubicus_benchmark_title">Benchmarking framework:</strong> <span data-translate="hubicus_benchmark_desc">Developed and integrated a benchmarking framework to analyze and evaluate the quality of AI outputs.</span></p>
-								<p><strong data-translate="hubicus_rca_title">Root cause analysis:</strong> <span data-translate="hubicus_rca_desc">Developed a root cause analysis model for client interactions to identify and explain quality issues.</span></p>
-								<p><strong data-translate="hubicus_security_title">LLM security & input guardrails:</strong> <span data-translate="hubicus_security_desc">Strengthened system security by implementing prompt injection detection and input guardrails for LLM-based services.</span></p>
-								<p><strong data-translate="hubicus_mcp_rag_title">MCP server & RAG knowledge agent:</strong> <span data-translate="hubicus_mcp_rag_desc">Developed an MCP server exposing all platform APIs and built a RAG-based agent for internal knowledge retrieval and operational efficiency.</span></p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">03/2025-09/2025</span>
-								<h2 data-translate="ai_ml_engineer_title">AI/ML Engineer Intern</h2>
-								<span class="position">AXA Group Operations</span>
-								<p data-translate="ai_ml_engineer_location">Paris, France</p>
-								<p><strong data-translate="axa_computable_title">Computable Contracts platform entry:</strong> <span data-translate="axa_computable_desc">Developed a production-ready module for automatic parsing and modeling of complex insurance contracts, forming the entry point for AXA's AI-powered Computable Contracts platform.</span></p>
-								<p><strong data-translate="axa_parsers_title">Parser benchmarking & GPT-4o:</strong> <span data-translate="axa_parsers_desc">Benchmarked and evaluated over 25 document parsers, leading to the adoption of a state-of-the-art multimodal LLM approach (GPT-4o) for robust handling of unstructured legal documents and nested tables.</span></p>
-								<p><strong data-translate="axa_clean_arch_title">Clean Architecture & scalability:</strong> <span data-translate="axa_clean_arch_desc">Refactored the workflow into a modular codebase using Clean Architecture, enabling maintainable, testable, and scalable development for future enterprise deployment.</span></p>
-								<p><strong data-translate="axa_graph_title">Graph databases & contract intelligence:</strong> <span data-translate="axa_graph_desc">Used graph databases (Kuzu, Neo4j) to map relationships in contracts, making it easier to run smart searches and analysis.</span></p>
-								<p><strong data-translate="axa_eval_title">Evaluation pipeline & reproducibility:</strong> <span data-translate="axa_eval_desc">Engineered a comprehensive evaluation pipeline and custom metrics (NID Score, TEDS Score); documented all research and experiments in a GitHub wiki to ensure reproducibility and support cross-team learning.</span></p>
-								<p><strong data-translate="axa_ops_title">Containers, observability & CI/CD:</strong> <span data-translate="axa_ops_desc">Containerized all project components for reliable deployment and introduced observability with Langfuse to optimize LLM prompt engineering, supported by automated CI/CD pipelines and team-based code reviews.</span></p>
-								<p><strong data-translate="axa_agile_title">Agile delivery & knowledge transfer:</strong> <span data-translate="axa_agile_desc">Collaborated daily in an agile team environment, delivered regular demos, and contributed to rigorous documentation and knowledge transfer practices for project continuity.</span></p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">02/2021-08/2023</span>
-								<h2 data-translate="data_scientist">Data Scientist</h2>
-								<span class="position">6D Technologies</span>
-								<p><strong data-translate="churn_model_title">Churn Model:</strong> <span
-										data-translate="churn_model_desc">Reduced customer turnover by 15% by leveraging
-										telecom data and predictive modeling to identify at-risk customers and enhance
-										retention strategies.</span></p>
-								<p><strong data-translate="upsell_model_title">Upsell/Cross-Sell Model:</strong> <span
-										data-translate="upsell_model_desc">Boosted customer engagement by 25% and
-										increased average order value by 10% through a market basket analysis-based
-										recommendation system for telecom operators.</span></p>
-								<p><strong data-translate="recommendation_techniques_title">Recommendation Techniques:</strong> <span
-										data-translate="recommendation_techniques_desc">Applied Matrix Factorization, Association Rule Mining, Market Basket Analysis, Apriori, and FP-Growth to uncover buying patterns and improve telecom upsell/cross-sell recommendations.</span></p>
-								<p><strong data-translate="pack_similarity_title">Pack Similarity Model:</strong> <span
-										data-translate="pack_similarity_desc">Built and deployed a pack similarity model
-										to identify and merge similar product packs, optimizing offerings and supporting
-										new pack introductions.</span></p>
-								<p><strong data-translate="next_purchase_title">Next Purchase Date Model:</strong> <span
-										data-translate="next_purchase_desc">Built a time series forecasting pipeline to predict next-purchase dates, engineering temporal features (recency, frequency, monetary) and tuning an XGBoost model achieving 62% accuracy and enabling proactive customer engagement.</span></p>
-								<p><strong data-translate="cross_functional_title">Cross-Functional
-										Collaboration:</strong> <span data-translate="cross_functional_desc">Worked
-										closely with global telecom clients and internal teams to align analytics
-										solutions with business needs.</span></p>
-								<p data-translate="linux_exp">Hands-on experience in Linux machines.</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">11/2020 – 02/2021 </span>
-								<h2>Software engineer intern</h2>
-								<span class="position">6D Technologies</span>
-							</div>
-						</div>
-						
-
-
-					</div>
-					<div id="page-1" class="page one">
-						<h2 class="heading">Education</h2>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2023-2025</span>
-								<h2 data-translate="masters_degree_title">MSc Computer Science — Data Science and Analysis (Bac +5)</h2>
-								<span class="position">Epita - school of engineering and computer science</span>
-								<p data-translate="masters_description">I have completed a Master's in Computer Science with a specialization in Data Science and Analysis. The program went beyond foundational knowledge, offering advanced expertise in machine learning, programming, and data engineering. With a curriculum encompassing cutting-edge topics such as neural networks, cloud computing, and big data infrastructure, I developed both horizontal breadth and vertical depth in technical and analytical skills. This training has equipped me to design innovative algorithms, optimize data-driven solutions, and extract actionable insights, positioning me to thrive in the rapidly evolving landscapes of technology and business.</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2016-2020</span>
-								<h2>Bachelor of Technology in Information technology</h2>
-								<span class="position">Viswajyothi College of Engineering and Technology</span>
-								<p data-translate="academic_life">They were splendid four years of my academic life
-									where I experienced the most challenging and memorable times.</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2014-2016</span>
-								<h2 data-translate="higher_secondary">Higher secondary in Computer Science</h2>
-								<span class="position" data-translate="school_name">St. Augustine's Higher Secondary
-									School</span>
-								<p data-translate="school_description">One of the best two years in my entire academic
-									life where I identified myself.</p>
-							</div>
-						</div>
-
-
-					</div>
-
-					<div id="page-2" class="page two">
-						<h2 class="heading" data-translate="certifications_heading">Certifications</h2>
-
-						<!-- Google Analytics Certification -->
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2021</span>
-								<h2 data-translate="google_analytics_title">Google Data Analytics Specialization</h2>
-								<span class="position" data-translate="coursera_position">Coursera</span>
-								<p data-translate="google_analytics_desc">Having completed the Google Data Analytics
-									Professional Certificate, I've gained proficiency in spreadsheets, SQL, and data
-									processing techniques. This has empowered me to effectively prepare, process,
-									analyze, and share data for informed decision-making.</p>
-							</div>
-						</div>
-
-
-
-						<!-- AWS Certification -->
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2020</span>
-								<h2 data-translate="aws_title">AWS Cloud Practitioner</h2>
-								<span class="position" data-translate="aws_position">Amazon Web Services</span>
-								<p data-translate="aws_desc">Gained foundational understanding of AWS Cloud concepts,
-									services, security, architecture, pricing, and support.</p>
-							</div>
-						</div>
-
-						<!-- Azure Certification -->
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2020</span>
-								<h2 data-translate="azure_title">Microsoft Azure Fundamentals</h2>
-								<span class="position" data-translate="microsoft_position">Microsoft</span>
-								<p data-translate="azure_desc">Acquired knowledge of cloud concepts, Azure services,
-									Azure workloads, security, privacy, pricing, and support.</p>
-							</div>
-						</div>
-					</div>
-
-					<div id="page-3" class="page three">
-						<h2 class="heading" data-translate="skills">Skills</h2>
-						<div class="row">
-							<div class="col-md-6 animate-box">
-								<div class="resume-wrap ftco-animate">
-									<h3 data-translate="skill_ml_title">Machine & Deep Learning</h3>
-									<p data-translate="skill_ml_items">LLMs, Gemini, Mistral, NLP, Prompt Engineering, TensorFlow, Transformers, Scikit-learn, Hugging Face, Ollama</p>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="resume-wrap ftco-animate">
-									<h3 data-translate="skill_mlops_title">MLOps & Software Development</h3>
-									<p data-translate="skill_mlops_items">Docker, Git, FastAPI, Flask, Streamlit, Airflow, MLOps, CI/CD, Langfuse, Poetry</p>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="resume-wrap ftco-animate">
-									<h3 data-translate="skill_data_title">Data Processing</h3>
-									<p data-translate="skill_data_items">Pandas, NumPy, SciPy, Dask, Vaex</p>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="resume-wrap ftco-animate">
-									<h3 data-translate="skill_lang_title">Programming Languages</h3>
-									<p data-translate="skill_lang_items">Python, SQL</p>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="resume-wrap ftco-animate">
-									<h3 data-translate="skill_cloud_title">Cloud & Development Environments</h3>
-									<p data-translate="skill_cloud_items">GCP, Vertex AI, BigQuery, Linux, Firestore, Jupyter Notebooks</p>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="resume-wrap ftco-animate">
-									<h3 data-translate="skill_viz_title">Data Visualization</h3>
-									<p data-translate="skill_viz_items">Matplotlib, Seaborn</p>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="resume-wrap ftco-animate">
-									<h3 data-translate="skill_messaging_title">Messaging & Streaming</h3>
-									<p data-translate="skill_messaging_items">RabbitMQ</p>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="resume-wrap ftco-animate">
-									<h3 data-translate="skill_graph_title">Graph Databases & Modeling</h3>
-									<p data-translate="skill_graph_items">Neo4j, Kuzu</p>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="resume-wrap ftco-animate">
-									<h3 data-translate="skill_methodology_title">Methodology</h3>
-									<p data-translate="skill_methodology_items">Agile / Scrum</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div id="page-4" class="page four">
-						<h2 class="heading" data-translate="awards">Awards</h2>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2018-2019</span>
-								<h2 data-translate="general_secretary">General Secretary</h2>
-								<span class="position">Viswajyothi College of Engineering and Technology</span>
-								<p data-translate="secretary_description">Served as General Secretary of Computer
-									Science Association</p>
-							</div>
-						</div>
-						<!--    <div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">2014-2015</span>
-		    					<h2>Top 5 LeaderShip Exellence Winner</h2>
-		    					<span class="position">Cambridge University</span>
-		    					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-		    				</div>
-	    				</div>
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">2014-2015</span>
-		    					<h2>Top 4 Web Tester</h2>
-		    					<span class="position">Cambridge University</span>
-		    					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-		    				</div>
-	    				</div>
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">2014-2015</span>
-		    					<h2>Art &amp; Creative Director</h2>
-		    					<span class="position">Cambridge University</span>
-		    					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-		    				</div>
-	    				</div> -->
-					</div>
-
-					<div id="page-6" class="page six">
-						<h2 class="heading" data-translate="languages_title">Languages</h2>
-						<div class="row progress-circle mb-5">
-							<div class="col-lg-4 mb-4">
-								<div class="bg-white rounded-lg shadow p-4">
-									<h2 class="h5 font-weight-bold text-center mb-4" data-translate="english">English
-									</h2>
-
-									<!-- Progress bar 1 -->
-									<div class="progress mx-auto" data-value='80'>
-										<span class="progress-left">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<span class="progress-right">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<div
-											class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-											<div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
-										</div>
-									</div>
-									<!-- END -->
-
-
-								</div>
-							</div>
-
-							<div class="col-lg-4 mb-4">
-								<div class="bg-white rounded-lg shadow p-4">
-									<h2 class="h5 font-weight-bold text-center mb-4" data-translate="french">French</h2>
-
-									<!-- Progress bar 1 -->
-									<div class="progress mx-auto" data-value='50'>
-										<span class="progress-left">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<span class="progress-right">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<div
-											class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-											<div class="h2 font-weight-bold">50<sup class="small">%</sup></div>
-										</div>
-									</div>
-									<!-- END -->
-
-
-								</div>
-							</div>
-
-							<div class="col-lg-4 mb-4">
-								<div class="bg-white rounded-lg shadow p-4">
-									<h2 class="h5 font-weight-bold text-center mb-4">Malayalam</h2>
-
-									<!-- Progress bar 1 -->
-									<div class="progress mx-auto" data-value='95'>
-										<span class="progress-left">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<span class="progress-right">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<div
-											class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-											<div class="h2 font-weight-bold">95<sup class="small">%</sup></div>
-										</div>
-									</div>
-									<!-- END -->
-
-
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 animate-box">
-								<div class="progress-wrap ftco-animate">
-									<h3 data-translate="hindi">Hindi</h3>
-									<div class="progress">
-										<div class="progress-bar color-1" role="progressbar" aria-valuenow="40"
-											aria-valuemin="0" aria-valuemax="100" style="width:40%">
-											<span>40%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="progress-wrap ftco-animate">
-									<h3 data-translate="tamil">Tamil</h3>
-									<div class="progress">
-										<div class="progress-bar color-2" role="progressbar" aria-valuenow="50"
-											aria-valuemin="0" aria-valuemax="100" style="width:40%">
-											<span>50%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-
-
-
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="ftco-section" id="services-section">
-		<div class="container-fluid px-md-5">
-			<div class="row justify-content-center py-5 mt-5">
-				<div class="col-md-12 heading-section text-center ftco-animate">
-
-					<h2 class="mb-4" data-translate="services_heading">Services</h2>
-					<p data-translate="services_subtitle">My Services</p>
-				</div>
-			</div>
-			<div class="row">
-				<!-- <div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-analysis"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Web Design</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-flasks"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Phtography</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-ideas"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Web Developer</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-							</div>
-						</a>
-					</div> -->
-
-				<div class="col-md-4 text-center d-flex ftco-animate">
-					<a href="#" class="services-1 shadow">
-						<span class="icon">
-							<i class="flaticon-ux-design"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-5" data-translate="software_dev_title">Software Developing</h3>
-							<p data-translate="software_dev_desc">Designing and developing python applications.</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 text-center d-flex ftco-animate">
-					<a href="#" class="services-1 shadow">
-						<span class="icon">
-							<i class="flaticon-innovation"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-5" data-translate="service_llm_title">LLM &amp; agentic application development</h3>
-							<p data-translate="service_llm_desc">Building LLM-powered and agentic systems—tool use, orchestration, and production-ready AI application workflows.</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 text-center d-flex ftco-animate">
-					<a href="#" class="services-1 shadow">
-						<span class="icon">
-							<i class="flaticon-analysis"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-5" data-translate="service_rd_title">R&amp;D services</h3>
-							<p data-translate="service_rd_desc">Research and development support: prototyping, experimentation, evaluation, and turning ideas into reliable ML and AI solutions.</p>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<section class="ftco-section ftco-project" id="projects-section">
-		<div class="container-fluid px-md-0">
-			<div class="row justify-content-center pb-5">
-				<div class="col-md-12 heading-section text-center ftco-animate">
-
-					<h2 class="mb-4" data-translate="projects_title">Projects</h2>
-					<p data-translate="project_description">View all my works here</p>
-				</div>
-			</div>
-			<div class="row no-gutters">
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/insurance_contract.png);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="https://github.com/anandhukrishna1998/insurance_contracts_llm" data-translate="insurance_project_title">Automated Modeling of Insurance Contracts using LLMs and Knowledge Graphs</a></h3>
-							<span>LLMs, Knowledge Graph</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/hous_price.jpg);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="https://github.com/anandhukrishna1998/dsp-anandhu-krishna.git">House price
-									prediction Using Machine Learning</a></h3>
-							<span>Machine learning</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/data-science.png);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="#"> Recommendation System for telecom operators</a></h3>
-							<span>Machine learning</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/rag_chat.jpg);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="https://github.com/anandhukrishna1998/Llm_Projects/tree/main/chatbot">RAG based
-									chatbot</a></h3>
-							<span>LLMs, Deep Learning, Natural Language Processing</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/car_price1.png);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="https://github.com/anandhukrishna1998/car_price_prediction">Car price
-									Prediction</a></h3>
-							<span>Machine learning</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/llm.jpg);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="https://github.com/xenablgn/DSA7-AL-Final">Enhancing Zero-Shot Capabilities of
-									Large Language Models in NLP</a></h3>
-							<span>LLMs, Deep Learning, Finetuning, Zero-Shot</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4"></div>
-				<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-					style="background-image: url(images/visa.png);">
-					<div class="overlay"></div>
-					<div class="text text-center p-4">
-						<h3><a href="https://github.com/anandhukrishna1998/visa_classfication_model">End to End
-								Visa classification Model</a></h3>
-						<span>Machine learning</span>
-					</div>
-				</div>
-			</div>
-			<!--		<div class="col-md-4">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/work-4.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-	    					<span>Web Design</span>
-	    				</div>
-    				</div>
-    			</div>
-    			<div class="col-md-4">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/work-5.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-	    					<span>Web Design</span>
-	    				</div>
-    				</div>
-    			</div>
-    			<div class="col-md-4">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/work-6.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-	    					<span>Web Design</span>
-	    				</div>
-    				</div>
-    			</div> -->
-		</div>
-		</div>
-	</section>
-
-	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-		<div class="container-fluid px-md-5">
-			<div class="row d-md-flex align-items-center">
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" data-number="1">1</strong>
-							<span>Awards</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" data-number="7">7</strong>
-							<span>Complete Projects</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" data-number="0">0</strong>
-							<span>Happy Customers</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" data-number="0">0</strong>
-							<span>Cups of coffee</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!--
-    <section class="ftco-section" id="blog-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Blog</h1>
-            <h2 class="mb-4">Our Blog</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+      <div class="spatial-about-cluster">
+        <!-- Spatial Portrait with Layered Z-Depth -->
+        <div class="about-visual-spatial" data-depth="0.35">
+          <div class="glass-monolith about-portrait-card">
+            <img src="images/about.jpg" alt="Anandhu Krishna" loading="lazy">
+            <div class="portrait-spatial-overlay"></div>
+            <div class="portrait-hud-tag">
+              <div>
+                <div class="title">Anandhu Krishna</div>
+                <div class="loc" data-translate="about_location">Paris, France</div>
+              </div>
+              <div class="meta-status-chip">
+                <span class="meta-pulse"></span>
+                <span data-translate="about_active">Active</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                <div class="d-flex align-items-center mb-3 meta">
-	                <p class="mb-0">
-	                	<span class="mr-2">Sept. 12, 2019</span>
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-	                </p>
-                </div>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
+
+        <!-- Narrative & Specifications -->
+        <div class="about-narrative" data-depth="0.2">
+          <p class="narrative-lead" data-translate="about_lead">
+            An AI engineer on a mission to explore the world and tick off a carefully curated bucket list executing goals without hitting any syntax errors.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.7;" data-translate="about_secondary">
+            Master's graduate from <strong>EPITA Paris</strong> in Computer Science (Data Science &amp; Analysis), with hands-on experience designing and operating production AI systems at <strong>Hubicus (IPSOS)</strong>, <strong>AXA Group Operations</strong>, and <strong>6D Technologies</strong>.
+          </p>
+
+          <div class="about-specs-grid">
+            <div class="spec-tile">
+              <div class="spec-label" data-translate="spec_location_lbl">Location</div>
+              <div class="spec-val" data-translate="spec_location_val">Paris, France</div>
             </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                <div class="d-flex align-items-center mb-3 meta">
-	                <p class="mb-0">
-	                	<span class="mr-2">Sept. 12, 2019</span>
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-	                </p>
-                </div>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
+            <div class="spec-tile">
+              <div class="spec-label" data-translate="spec_specialization_lbl">Specialization</div>
+              <div class="spec-val" data-translate="spec_specialization_val">LLMs &amp; Agentic AI</div>
             </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry">
-              <a href="single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                <div class="d-flex align-items-center mb-3 meta">
-	                <p class="mb-0">
-	                	<span class="mr-2">Sept. 12, 2019</span>
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-	                </p>
-                </div>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
+            <div class="spec-tile">
+              <div class="spec-label" data-translate="spec_degree_lbl">Master's Degree</div>
+              <div class="spec-val" data-translate="spec_degree_val">EPITA Paris (Bac +5)</div>
+            </div>
+            <div class="spec-tile">
+              <div class="spec-label" data-translate="spec_languages_lbl">Languages</div>
+              <div class="spec-val" data-translate="spec_languages_val">English &bull; French &bull; Malayalam</div>
             </div>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
-	<section class="ftco-section ftco-hireme img" style="background-image: url(images/bg_1.jpg)">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2><span data-translate="freelance_title"></span> </h2>
-					<p data-translate="freelance_description">An AI engineer with 3 years of experience in predictive modeling, recommendation systems, LLMs, agentic AI, and knowledge graphs. Open to all kinds of challenges—learning is inevitable.</p>
-					<p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5">Hire me</a></p>
-				</div>
-			</div>
-		</div>
-	</section>
+    <!-- CAREER & RESEARCH TIMELINE: Fluid Neo-Brutalism -->
+    <section id="experience" class="spatial-section">
+      <div class="section-meta-eyebrow" data-depth="0.1">
+        <span class="eyebrow-line"></span>
+        <span data-translate="eyebrow_experience">02 // Trajectory &amp; Research</span>
+      </div>
+      <h2 class="section-spatial-heading" data-depth="0.2" data-translate="experience_heading">
+        Engineering Trajectory
+      </h2>
 
-	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-7 heading-section text-center ftco-animate">
+      <div class="spatial-timeline">
+        <!-- Hubicus (Current AI Engineer Role) -->
+        <div class="glass-monolith timeline-monolith-node" data-depth="0.2">
+          <div class="timeline-node-watermark"><img src="images/ipsos_logo.png" alt="" loading="lazy"></div>
+          <div class="timeline-header">
+            <div class="timeline-role-identity">
+              <div class="company-photo-badge" data-cursor-label="IPSOS BVA">
+                <div class="photo-badge-glow ipsos-glow"></div>
+                <img src="images/ipsos_bva_badge.svg" alt="Ipsos BVA Logo" class="company-photo-img" loading="lazy">
+                <div class="photo-badge-sheen"></div>
+              </div>
+              <div>
+                <h3 class="timeline-role-title" data-translate="role_hubicus_curr_title">AI Engineer</h3>
+                <div class="timeline-company" data-translate="role_hubicus_curr_company">Hubicus (Ipsos BVA) &bull; Paris, France</div>
+              </div>
+            </div>
+            <span class="timeline-date-chip current">
+              <span class="meta-pulse"></span>
+              <span data-translate="role_hubicus_curr_date">06/2026 — Present</span>
+            </span>
+          </div>
+          <div class="timeline-details">
+            <div class="timeline-bullet">
+              <span class="timeline-bullet-icon"></span>
+              <span data-translate="role_hubicus_curr_b1"><strong>Local Model Deployment &amp; Serving:</strong> Architecting sovereign on-premise and private cloud inference engines using <strong>vLLM</strong> and <strong>llama.cpp</strong> with AWQ and GGUF quantization for ultra-low latency and maximum token throughput.</span>
+            </div>
+            <div class="timeline-bullet">
+              <span class="timeline-bullet-icon"></span>
+              <span data-translate="role_hubicus_curr_b2"><strong>GCP Model Garden &amp; Vertex AI:</strong> Deploying, fine-tuning, and benchmarking foundational open-weight models via Google Cloud Platform Model Garden to power high-scale enterprise workflows.</span>
+            </div>
+            <div class="timeline-bullet">
+              <span class="timeline-bullet-icon"></span>
+              <span data-translate="role_hubicus_curr_b3"><strong>Inference Optimization &amp; Latency Reduction:</strong> Implementing continuous batching, PagedAttention, KV cache management, and speculative decoding to slash compute costs and deliver sub-second TTFT SLAs.</span>
+            </div>
+            <div class="timeline-bullet">
+              <span class="timeline-bullet-icon"></span>
+              <span data-translate="role_hubicus_curr_b4"><strong>Production Sovereign AI Workflows:</strong> Delivering enterprise-grade LLM runtimes integrated into customer intelligence products with zero data leakage, audit logging, and EU AI Act compliance.</span>
+            </div>
+          </div>
+        </div>
 
-					<h2 class="mb-4" data-translate="contact_info">Contact Information</h2>
-				</div>
-			</div>
+        <!-- Hubicus (Internship) -->
+        <div class="glass-monolith timeline-monolith-node" data-depth="0.2">
+          <div class="timeline-node-watermark"><img src="images/ipsos_logo.png" alt="" loading="lazy"></div>
+          <div class="timeline-header">
+            <div class="timeline-role-identity">
+              <div class="company-photo-badge" data-cursor-label="IPSOS BVA">
+                <div class="photo-badge-glow ipsos-glow"></div>
+                <img src="images/ipsos_bva_badge.svg" alt="Ipsos BVA Logo" class="company-photo-img" loading="lazy">
+                <div class="photo-badge-sheen"></div>
+              </div>
+              <div>
+                <h3 class="timeline-role-title" data-translate="role_hubicus_intern_title">AI Engineer Intern</h3>
+                <div class="timeline-company" data-translate="role_hubicus_intern_company">Hubicus (Ipsos BVA, Customer Insights) &bull; Paris, France</div>
+              </div>
+            </div>
+            <span class="timeline-date-chip" data-translate="role_hubicus_intern_date">11/2025 — 04/2026</span>
+          </div>
+          <div class="timeline-details">
+            <div class="timeline-bullet">
+              <span class="timeline-bullet-icon"></span>
+              <span data-translate="role_hubicus_intern_b1"><strong>AI Services Integration:</strong> Integrated multimodal AI evaluations across customer channels (chat, email, audio) into the flagship quality monitoring SaaS platform.</span>
+            </div>
+            <div class="timeline-bullet">
+              <span class="timeline-bullet-icon"></span>
+              <span data-translate="role_hubicus_intern_b2"><strong>LLM-Agnostic Architecture:</strong> Decoupled vendor locks to allow dynamic model routing across Mistral, OpenAI, and Gemini models.</span>
+            </div>
+            <div class="timeline-bullet">
+              <span class="timeline-bullet-icon"></span>
+              <span data-translate="role_hubicus_intern_b3"><strong>EU AI Act &amp; Security:</strong> Implemented PII redaction pipelines, audit telemetry, and prompt-injection guardrails complying with the European AI Act.</span>
+            </div>
+            <div class="timeline-bullet">
+              <span class="timeline-bullet-icon"></span>
+              <span data-translate="role_hubicus_intern_b4"><strong>MCP Server &amp; RAG Agent:</strong> Developed a Model Context Protocol server exposing platform APIs and an internal knowledge retrieval agent.</span>
+            </div>
+          </div>
+        </div>
 
-			<div class="row d-flex contact-info mb-5 justify-content-center">
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-map-signs"></span>
-						</div>
-						<div>
-							<h3 class="mb-4" data-translate="address">Address</h3>
-							<p data-translate="location">Paris, France</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-phone2"></span>
-						</div>
-						<div>
-							<h3 class="mb-4" data-translate="contact_number">Contact Number</h3>
-							<p><a href="tel://1234567920">+33 07 80 86 43 13</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-paper-plane"></span>
-						</div>
-						<div>
-							<h3 class="mb-4" data-translate="email_address">Email Address</h3>
-							<p>
-								<font size="2"><a
-										href="mailto:anandhukrishna091@gmail.com">anandhukrishna091@gmail.com</a></font>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
+        <!-- AXA -->
+        <div class="glass-monolith timeline-monolith-node" data-depth="0.2">
+          <div class="timeline-node-watermark"><img src="images/axa_badge.svg" alt="" loading="lazy"></div>
+          <div class="timeline-header">
+            <div class="timeline-role-identity">
+              <div class="company-photo-badge" data-cursor-label="AXA">
+                <div class="photo-badge-glow axa-glow"></div>
+                <img src="images/axa_badge.svg" alt="AXA Logo" class="company-photo-img" loading="lazy">
+                <div class="photo-badge-sheen"></div>
+              </div>
+              <div>
+                <h3 class="timeline-role-title" data-translate="role_axa_title">AI/ML Engineer Intern</h3>
+                <div class="timeline-company" data-translate="role_axa_company">AXA Group Operations &bull; Paris, France</div>
+              </div>
+            </div>
+            <span class="timeline-date-chip" data-translate="role_axa_date">03/2025 — 09/2025</span>
+          </div>
+          <div class="timeline-details">
+            <div class="timeline-bullet">
+              <span class="timeline-bullet-icon"></span>
+              <span data-translate="role_axa_b1"><strong>Computable Contracts Engine:</strong> Built the core ingestion entry point parsing intricate insurance contracts into structured semantic graphs.</span>
+            </div>
+            <div class="timeline-bullet">
+              <span class="timeline-bullet-icon"></span>
+              <span data-translate="role_axa_b2"><strong>25+ Parser Benchmark &amp; GPT-4o:</strong> Benchmarked over 25 document parsing architectures; adopted multimodal GPT-4o with custom scoring (NID, TEDS).</span>
+            </div>
+            <div class="timeline-bullet">
+              <span class="timeline-bullet-icon"></span>
+              <span data-translate="role_axa_b3"><strong>Graph Intelligence:</strong> Modeled contractual obligations and entities using Kuzu and Neo4j graph databases for high-speed multi-hop queries.</span>
+            </div>
+            <div class="timeline-bullet">
+              <span class="timeline-bullet-icon"></span>
+              <span data-translate="role_axa_b4"><strong>Production Observability:</strong> Introduced Langfuse for tracing LLM execution, token economics, and latency in Dockerized CI/CD workflows.</span>
+            </div>
+          </div>
+        </div>
 
-			<div class="row justify-content-center">
-				<div class="col-md-7 heading-section text-center ftco-animate">
+        <!-- 6D Technologies -->
+        <div class="glass-monolith timeline-monolith-node" data-depth="0.2">
+          <div class="timeline-header">
+            <div class="timeline-role-identity">
+              <div class="company-photo-badge" data-cursor-label="6D TECH">
+                <div class="photo-badge-glow tech-glow"></div>
+                <span class="company-photo-img monogram-text" style="color: #a78bfa; display: flex; align-items: center; justify-content: center;">6D</span>
+                <div class="photo-badge-sheen"></div>
+              </div>
+              <div>
+                <h3 class="timeline-role-title" data-translate="role_6d_title">Data Scientist</h3>
+                <div class="timeline-company" data-translate="role_6d_company">6D Technologies &bull; Bangalore, India</div>
+              </div>
+            </div>
+            <span class="timeline-date-chip" data-translate="role_6d_date">02/2021 — 08/2023</span>
+          </div>
+          <div class="timeline-details">
+            <div class="timeline-bullet">
+              <span class="timeline-bullet-icon"></span>
+              <span data-translate="role_6d_b1"><strong>Customer Churn Reduction:</strong> Engineered predictive retention pipeline reducing customer turnover by 15% for international telecom carriers.</span>
+            </div>
+            <div class="timeline-bullet">
+              <span class="timeline-bullet-icon"></span>
+              <span data-translate="role_6d_b2"><strong>Upsell &amp; Cross-Sell Systems:</strong> Raised customer engagement by 25% through market-basket analysis (Apriori, FP-Growth, Matrix Factorization).</span>
+            </div>
+            <div class="timeline-bullet">
+              <span class="timeline-bullet-icon"></span>
+              <span data-translate="role_6d_b3"><strong>Forecasting &amp; Similarity:</strong> Built XGBoost time-series pipeline predicting next-purchase intervals with 62% accuracy across millions of records.</span>
+            </div>
+          </div>
+        </div>
 
-					<h3 class="mb-4" data-translate="get_in_touch">Get in Touch</h3>
-				</div>
-			</div>
-			<div class="row no-gutters block-9">
-				<div class="col-md-6 order-md-last d-flex">
-					<form action="https://formsubmit.co/ajax/anandhukrishna091@gmail.com" method="POST" class="bg-light p-4 p-md-5 contact-form">
-						<div class="form-group">
-							<input type="text" name="name" class="form-control" placeholder="Your Name" data-translate="name" required>
-						</div>
-						<div class="form-group">
-							<input type="email" name="email" class="form-control" placeholder="Your Email" data-translate="your_email" required>
-						</div>
-						<div class="form-group">
-							<input type="text" name="subject" class="form-control" placeholder="Subject" data-translate="subject" required>
-						</div>
-						<div class="form-group">
-							<textarea name="message" cols="30" rows="7" class="form-control" placeholder="Message" data-translate="message" required></textarea>
-						</div>
-						<div class="form-group">
-							<input type="text" name="_honey" style="display:none">
-							<input type="hidden" name="_captcha" value="false">
-							<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5" data-translate="send_message">
-						</div>
-						<!-- Redirect after submission -->
-						<input type="hidden" name="_next" value="https://anandhukrishna1998.github.io/Anandhu-Krishna/thank-you.html">
-						<!-- Prevent spam -->
-						<input type="hidden" name="_captcha" value="true">
-					</form>
-				</div>
+        <!-- Education -->
+        <div class="glass-monolith timeline-monolith-node" data-depth="0.2">
+          <div class="timeline-header">
+            <div class="timeline-role-identity">
+              <div class="company-photo-badge" data-cursor-label="EPITA">
+                <div class="photo-badge-glow edu-glow"></div>
+                <span class="company-photo-img monogram-text" style="color: #fbbf24; display: flex; align-items: center; justify-content: center; font-size: 0.95rem;">EPITA</span>
+                <div class="photo-badge-sheen"></div>
+              </div>
+              <div>
+                <h3 class="timeline-role-title" data-translate="edu_degree">MSc Computer Science — Data Science &amp; Analysis</h3>
+                <div class="timeline-company" data-translate="edu_school">EPITA - School of Engineering and Computer Science &bull; Paris, France (Bac +5)</div>
+              </div>
+            </div>
+            <span class="timeline-date-chip" data-translate="edu_date">2023 — 2025</span>
+          </div>
+          <p style="color: var(--text-secondary); line-height: 1.6;" data-translate="edu_desc">
+            Deep theoretical and applied curriculum encompassing neural network architectures, distributed data engineering, cloud platforms, and statistical modeling.
+          </p>
+        </div>
+      </div>
+    </section>
 
-				<div class="col-md-6 d-flex">
-					<div class="img" style="background-image: url(images/Anandhu_krishna_photo_skydive.jpg);"></div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <!-- PROJECTS EXHIBITION: Spatial Dimensional Showcase -->
+    <section id="projects" class="spatial-section">
+      <div class="section-meta-eyebrow" data-depth="0.1">
+        <span class="eyebrow-line"></span>
+        <span data-translate="eyebrow_projects">03 // Spatial Exhibition</span>
+      </div>
+      <h2 class="section-spatial-heading" data-depth="0.2" data-translate="projects_heading">
+        Selected Engineering &amp; Research
+      </h2>
 
+      <div class="projects-exhibition-container">
 
+        <!-- Project 1: AXA Computable Contracts -->
+        <article class="glass-monolith project-monolith magnetic-target" data-depth="0.25" data-ambient="axa" data-cursor-label="INSPECT">
+          <div class="project-preview-wrap">
+            <img src="images/project_contracts_graph.jpg" alt="Automated Modeling of Insurance Contracts & Knowledge Graphs" loading="lazy">
+            <div class="preview-vignette"></div>
+            <div class="preview-glimmer"></div>
+            <div class="project-category-stamp" data-translate="proj_1_cat">AXA Group Operations &bull; Enterprise AI</div>
+          </div>
+          <div class="project-info-wrap">
+            <span class="project-index-num">PROJECT // 01</span>
+            <h3 class="project-title">
+              <a href="https://github.com/anandhukrishna1998/insurance_contracts_llm" target="_blank" rel="noopener" data-translate="proj_1_title">
+                Computable Contracts via Multimodal LLMs &amp; Graphs
+              </a>
+            </h3>
+            <p class="project-description" data-translate="proj_1_desc">
+              Production-ready entry module for AXA's Computable Contracts platform. Evaluated 25+ document parsers and engineered a GPT-4o multimodal parsing pipeline with Neo4j/Kuzu graph database integration, Clean Architecture, and Langfuse observability.
+            </p>
+            <div class="project-stack-tags">
+              <span class="stack-tag">GPT-4o</span>
+              <span class="stack-tag">Neo4j</span>
+              <span class="stack-tag">Kuzu Graph</span>
+              <span class="stack-tag">Clean Architecture</span>
+              <span class="stack-tag">Langfuse</span>
+              <span class="stack-tag">Docker</span>
+            </div>
+            <a href="https://github.com/anandhukrishna1998/insurance_contracts_llm" target="_blank" rel="noopener" class="project-action-link" data-translate="proj_1_btn">
+              <span>View Repository</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </article>
 
-	<footer class="ftco-footer ftco-section">
-		<div class="container">
-			<div class="row mb-5">
-				<div class="col-md">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">About</h2>
-						<p data-translate="about_footer">An AI engineer fueled by a passion for travel, coding, and adventure. On a mission to check off a bucket list with precision—executing dreams before the deadline, all while keeping life free of syntax errors.</p>
-						<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-							<li class="ftco-animate"><a href="https://twitter.com/Anandhu96941332"><span
-										class="icon-twitter"></span></a></li>
-							<li class="ftco-animate"><a href="https://github.com/anandhukrishna1998"><span
-										class="icon-github"></span></a></li>
-							<li class="ftco-animate"><a href="https://www.instagram.com/anandhu_krishna/"><span
-										class="icon-instagram"></span></a></li>
-							<li class="ftco-animate"><a
-									href="https://www.linkedin.com/in/anandhu-krishna-84ba28b6/"><span
-										class="icon-linkedin"></span></a></li>
-							<li class="ftco-animate"><a href="https://medium.com/@anandhukrishna091"><span
-										class="icon-medium"></span></a></li>
-							</ul>
-					</div>
-				</div>
-				<div class="col-md">
-					<div class="ftco-footer-widget mb-4 ml-md-4">
-						<h2 class="ftco-heading-2" data-translate="links">Links</h2>
-						<ul class="list-unstyled">
-							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span><span data-translate="home">Home</span></a></li>
-							<li><a href="#about-section"><span class="icon-long-arrow-right mr-2"></span><span data-translate="about">About</span></a></li>
-							<li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span><span data-translate="services">Services</span></a>
-							</li>
-							<li><a href="#projects-section"><span class="icon-long-arrow-right mr-2"></span><span data-translate="projects">Projects</span></a>
-							</li>
-							<li><a href="#contact-section"><span class="icon-long-arrow-right mr-2"></span><span data-translate="contact">Contact</span></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2" data-translate="footer_services">Services</h2>
-						<ul class="list-unstyled">
-							<li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span><span data-translate="software_development">Software Development</span></a></li>
-							<li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span><span data-translate="ai_consultant">AI Consultant</span></a></li>
-							<li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span><span data-translate="design_ai_solutions">Design AI Solutions</span></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2" data-translate="questions">Have a Questions?</h2>
-						<div class="block-23 mb-3">
-							<ul>
-								<li><span class="icon icon-map-marker"></span><span class="text"
-										data-translate="location">Paris, France</span></li>
-								<li><a href="#"><span class="icon icon-phone"></span><span class="text"
-											data-translate="phone">+33 07 80 86 43 13</span></a></li>
-								<li><a href="mailto:anandhukrishna091@gmail.com"><span class="icon icon-envelope"></span><span class="text">
-											<font size="2" data-translate="email">anandhukrishna091@gmail.com</font>
-										</span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 text-center">
+        <!-- Project 2: Agentic RAG & MCP Knowledge System -->
+        <article class="glass-monolith project-monolith reverse magnetic-target" data-depth="0.25" data-ambient="hubicus" data-cursor-label="INSPECT">
+          <div class="project-preview-wrap">
+            <img src="images/project_rag_mcp.jpg" alt="Agentic RAG & Model Context Protocol System" loading="lazy">
+            <div class="preview-vignette"></div>
+            <div class="preview-glimmer"></div>
+            <div class="project-category-stamp" data-translate="proj_2_cat">Hubicus &bull; Autonomous Agents</div>
+          </div>
+          <div class="project-info-wrap">
+            <span class="project-index-num">PROJECT // 02</span>
+            <h3 class="project-title">
+              <a href="https://github.com/anandhukrishna1998/Llm_Projects/tree/main/chatbot" target="_blank" rel="noopener" data-translate="proj_2_title">
+                MCP Server &amp; RAG Knowledge Agent
+              </a>
+            </h3>
+            <p class="project-description" data-translate="proj_2_desc">
+              Engineered an enterprise Model Context Protocol (MCP) server exposing SaaS platform endpoints and built an autonomous RAG-driven knowledge retrieval agent. Features prompt injection guardrails, PII redaction, and EU AI Act compliance.
+            </p>
+            <div class="project-stack-tags">
+              <span class="stack-tag">MCP Protocol</span>
+              <span class="stack-tag">RAG</span>
+              <span class="stack-tag">FastAPI</span>
+              <span class="stack-tag">Vector DB</span>
+              <span class="stack-tag">EU AI Act</span>
+              <span class="stack-tag">Guardrails</span>
+            </div>
+            <a href="https://github.com/anandhukrishna1998/Llm_Projects/tree/main/chatbot" target="_blank" rel="noopener" class="project-action-link" data-translate="proj_2_btn">
+              <span>View Repository</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </article>
 
-					<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;
-						<script>document.write(new Date().getFullYear());</script> All rights reserved
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer>
+        <!-- Project 3: Zero-Shot NLP & LLM Fine-Tuning -->
+        <article class="glass-monolith project-monolith magnetic-target" data-depth="0.25" data-ambient="nlp" data-cursor-label="INSPECT">
+          <div class="project-preview-wrap">
+            <img src="images/project_zeroshot_nlp.jpg" alt="Zero-Shot LLMs & Attention Representation Research" loading="lazy">
+            <div class="preview-vignette"></div>
+            <div class="preview-glimmer"></div>
+            <div class="project-category-stamp" data-translate="proj_3_cat">Research &bull; Deep Learning</div>
+          </div>
+          <div class="project-info-wrap">
+            <span class="project-index-num">PROJECT // 03</span>
+            <h3 class="project-title">
+              <a href="https://github.com/xenablgn/DSA7-AL-Final" target="_blank" rel="noopener" data-translate="proj_3_title">
+                Enhancing Zero-Shot Capabilities in Large Language Models
+              </a>
+            </h3>
+            <p class="project-description" data-translate="proj_3_desc">
+              In-depth research and experimental evaluation analyzing prompt heuristics, parameter-efficient fine-tuning (PEFT), and attention representations to maximize zero-shot generalization across domain-specific NLP benchmarks.
+            </p>
+            <div class="project-stack-tags">
+              <span class="stack-tag">Transformers</span>
+              <span class="stack-tag">PyTorch</span>
+              <span class="stack-tag">Zero-Shot</span>
+              <span class="stack-tag">Hugging Face</span>
+              <span class="stack-tag">Fine-Tuning</span>
+            </div>
+            <a href="https://github.com/xenablgn/DSA7-AL-Final" target="_blank" rel="noopener" class="project-action-link" data-translate="proj_3_btn">
+              <span>View Research Repo</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </article>
 
+        <!-- Project 4: Telecom Recommendation & Predictive Modeling -->
+        <article class="glass-monolith project-monolith reverse magnetic-target" data-depth="0.25" data-ambient="telecom" data-cursor-label="INSPECT">
+          <div class="project-preview-wrap">
+            <img src="images/project_telecom_ai.jpg" alt="Telecom Predictive Churn & Recommendation Engine" loading="lazy">
+            <div class="preview-vignette"></div>
+            <div class="preview-glimmer"></div>
+            <div class="project-category-stamp" data-translate="proj_4_cat">6D Technologies &bull; Big Data</div>
+          </div>
+          <div class="project-info-wrap">
+            <span class="project-index-num">PROJECT // 04</span>
+            <h3 class="project-title">
+              <a href="#contact" data-translate="proj_4_title">
+                Predictive Churn &amp; Upsell Recommendation Engine
+              </a>
+            </h3>
+            <p class="project-description" data-translate="proj_4_desc">
+              Architected telecom machine learning pipeline cutting churn by 15% and boosting engagement by 25%. Employed Matrix Factorization, FP-Growth, Apriori market-basket analysis, and XGBoost temporal purchase forecasting.
+            </p>
+            <div class="project-stack-tags">
+              <span class="stack-tag">XGBoost</span>
+              <span class="stack-tag">Matrix Factorization</span>
+              <span class="stack-tag">FP-Growth</span>
+              <span class="stack-tag">Time Series</span>
+              <span class="stack-tag">Big Data</span>
+            </div>
+            <a href="#contact" class="project-action-link" data-translate="proj_4_btn">
+              <span>Case Study Details</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
 
+      </div>
+    </section>
 
-	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-				stroke="#F96D00" />
-		</svg></div>
+    <!-- SKILLS CONSTELLATION: Interconnected Node Clusters -->
+    <section id="skills" class="spatial-section">
+      <div class="section-meta-eyebrow" data-depth="0.1">
+        <span class="eyebrow-line"></span>
+        <span data-translate="eyebrow_skills">04 // Neural Constellation</span>
+      </div>
+      <h2 class="section-spatial-heading" data-depth="0.2" data-translate="skills_heading">
+        Technical Capabilities
+      </h2>
 
+      <div class="skills-constellation-grid">
+        <div class="glass-monolith constellation-cluster" data-depth="0.2">
+          <div class="cluster-title">
+            <span class="cluster-icon-glyph">&lt;AI&gt;</span>
+            <span data-translate="skill_cluster_ai">LLMs &amp; Deep Learning</span>
+          </div>
+          <div class="cluster-tokens">
+            <span class="skill-token">LLMs</span>
+            <span class="skill-token">vLLM</span>
+            <span class="skill-token">llama.cpp</span>
+            <span class="skill-token">Gemini</span>
+            <span class="skill-token">Mistral</span>
+            <span class="skill-token">GPT-4o</span>
+            <span class="skill-token">Prompt Engineering</span>
+            <span class="skill-token">MCP Protocol</span>
+            <span class="skill-token">Hugging Face</span>
+            <span class="skill-token">Transformers</span>
+            <span class="skill-token">PyTorch</span>
+            <span class="skill-token">Langfuse</span>
+            <span class="skill-token">RAG</span>
+          </div>
+        </div>
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/scrollax.min.js"></script>
+        <div class="glass-monolith constellation-cluster" data-depth="0.2">
+          <div class="cluster-title">
+            <span class="cluster-icon-glyph">&lt;OPS&gt;</span>
+            <span data-translate="skill_cluster_ops">MLOps &amp; Engineering</span>
+          </div>
+          <div class="cluster-tokens">
+            <span class="skill-token">Local Model Deployment</span>
+            <span class="skill-token">Docker</span>
+            <span class="skill-token">FastAPI</span>
+            <span class="skill-token">Git</span>
+            <span class="skill-token">CI/CD</span>
+            <span class="skill-token">Airflow</span>
+            <span class="skill-token">Streamlit</span>
+            <span class="skill-token">Clean Architecture</span>
+            <span class="skill-token">Poetry</span>
+            <span class="skill-token">Linux</span>
+            <span class="skill-token">RabbitMQ</span>
+          </div>
+        </div>
 
-	<script src="js/main.js"></script>
-	<script src="script.js"></script>
-	<script src="js/darkmode.js"></script>
-	<script src="js/translations.js"></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			// Get saved language preference or default to 'en'
-			const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+        <div class="glass-monolith constellation-cluster" data-depth="0.2">
+          <div class="cluster-title">
+            <span class="cluster-icon-glyph">&lt;GRAPH&gt;</span>
+            <span data-translate="skill_cluster_graph">Graph Databases &amp; Data</span>
+          </div>
+          <div class="cluster-tokens">
+            <span class="skill-token">Neo4j</span>
+            <span class="skill-token">Kuzu</span>
+            <span class="skill-token">Pandas</span>
+            <span class="skill-token">NumPy</span>
+            <span class="skill-token">SciPy</span>
+            <span class="skill-token">Dask</span>
+            <span class="skill-token">SQL</span>
+            <span class="skill-token">BigQuery</span>
+          </div>
+        </div>
 
-			// Add click event listener to language switch button
-			document.getElementById('lang-switch').addEventListener('click', function () {
-				const currentLang = localStorage.getItem('preferredLanguage') || 'en';
-				const newLang = currentLang === 'en' ? 'fr' : 'en';
-				switchLanguage(newLang);
-			});
+        <div class="glass-monolith constellation-cluster" data-depth="0.2">
+          <div class="cluster-title">
+            <span class="cluster-icon-glyph">&lt;CLOUD&gt;</span>
+            <span data-translate="skill_cluster_cloud">Cloud &amp; Infrastructure</span>
+          </div>
+          <div class="cluster-tokens">
+            <span class="skill-token">GCP Model Garden</span>
+            <span class="skill-token">Vertex AI</span>
+            <span class="skill-token">Google Cloud (GCP)</span>
+            <span class="skill-token">AWS Cloud Practitioner</span>
+            <span class="skill-token">Microsoft Azure (AZ-900)</span>
+            <span class="skill-token">Firestore</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-			function switchLanguage(lang) {
-				// Save language preference
-				localStorage.setItem('preferredLanguage', lang);
+    <!-- CONTACT TERMINAL: Avant-Garde Uplink Console -->
+    <section id="contact" class="spatial-section">
+      <div class="section-meta-eyebrow" data-depth="0.1">
+        <span class="eyebrow-line"></span>
+        <span data-translate="eyebrow_contact">05 // Direct Uplink</span>
+      </div>
+      <h2 class="section-spatial-heading" data-depth="0.2" data-translate="contact_heading">
+        Initiate Transmission
+      </h2>
 
-				// Hero rotating titles (read by TxtRotate on window.onload)
-				const rotateEl = document.querySelector('.txt-rotate');
-				if (rotateEl && translations[lang] && translations[lang].data_rotate) {
-					rotateEl.setAttribute('data-rotate', JSON.stringify(translations[lang].data_rotate));
-				}
+      <div class="spatial-terminal-grid">
+        <!-- Direct Coordinates -->
+        <div class="glass-monolith terminal-contact-card" data-depth="0.2">
+          <div>
+            <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 12px; color: var(--text-primary);" data-translate="contact_subheading">Let's Build Intelligent Realities.</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;" data-translate="contact_subtext">
+              Open to high-impact AI Engineering opportunities, agentic architecture research, and technical consultancy in Paris and globally.
+            </p>
 
-				// Update all translatable elements
-				document.querySelectorAll('[data-translate]').forEach(element => {
-					const key = element.getAttribute('data-translate');
-					if (translations[lang][key]) {
-						element.textContent = translations[lang][key];
-					}
-				});
+            <div class="contact-quick-links">
+              <a href="mailto:anandhukrishna091@gmail.com" class="contact-channel magnetic-target" data-cursor-label="MAIL">
+                <i class="fa-solid fa-envelope channel-icon"></i>
+                <span class="channel-text">anandhukrishna091@gmail.com</span>
+              </a>
+              <a href="tel:+330780864313" class="contact-channel magnetic-target" data-cursor-label="CALL">
+                <i class="fa-solid fa-phone channel-icon"></i>
+                <span class="channel-text">+33 07 80 86 43 13</span>
+              </a>
+              <div class="contact-channel">
+                <i class="fa-solid fa-location-dot channel-icon"></i>
+                <span class="channel-text" data-translate="about_location">Paris, France</span>
+              </div>
+            </div>
+          </div>
 
-				// Update button text and flag
-				const langButton = document.getElementById('translate_button');
-				const flagImg = document.querySelector('#lang-switch img');
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-tertiary);">
+            [ENCRYPTION: TLS 1.3] &bull; [LATENCY: ~12ms]
+          </div>
+        </div>
 
-				if (lang === 'fr') {
-					langButton.textContent = 'EN';
-					flagImg.src = 'images/uk.png';
-					flagImg.alt = 'UK Flag';
-				} else {
-					langButton.textContent = 'FR';
-					flagImg.src = 'images/Flag_of_France.png';
-					flagImg.alt = 'French Flag';
-				}
-			}
+        <!-- Terminal Contact Form -->
+        <div class="glass-monolith terminal-form-card" data-depth="0.25">
+          <form action="https://formsubmit.co/ajax/anandhukrishna091@gmail.com" method="POST" id="spatial-contact-form">
+            <div class="form-group-spatial">
+              <label class="form-label-spatial" for="contact-name" data-translate="form_sender_lbl">Sender Identifier</label>
+              <input type="text" id="contact-name" name="name" class="input-spatial" placeholder="Your Name or Organization" data-translate-placeholder="form_sender_ph" required>
+            </div>
+            <div class="form-group-spatial">
+              <label class="form-label-spatial" for="contact-email" data-translate="form_email_lbl">Return Vector (Email)</label>
+              <input type="email" id="contact-email" name="email" class="input-spatial" placeholder="name@domain.com" data-translate-placeholder="form_email_ph" required>
+            </div>
+            <div class="form-group-spatial">
+              <label class="form-label-spatial" for="contact-subject" data-translate="form_subject_lbl">Transmission Subject</label>
+              <input type="text" id="contact-subject" name="subject" class="input-spatial" placeholder="Project / AI Consultation / Role" data-translate-placeholder="form_subject_ph" required>
+            </div>
+            <div class="form-group-spatial">
+              <label class="form-label-spatial" for="contact-message" data-translate="form_msg_lbl">Payload Message</label>
+              <textarea id="contact-message" name="message" class="input-spatial" rows="5" placeholder="Detail your parameters, timeline, or challenge..." data-translate-placeholder="form_msg_ph" required></textarea>
+            </div>
 
-			// Initialize with saved language
-			switchLanguage(savedLang);
-		});
-	</script>
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_captcha" value="false">
 
-	<script>
-	document.querySelector('.contact-form').addEventListener('submit', function(e) {
-		e.preventDefault(); // Prevent default form submission
-		
-		// Show loader
-		document.getElementById('ftco-loader').classList.add('show');
-		
-		// Get form data
-		const formData = new FormData(this);
-		
-		// Submit form using fetch
-		fetch('https://formsubmit.co/ajax/anandhukrishna091@gmail.com', {
-			method: 'POST',
-			body: formData
-		})
-		.then(response => {
-			// Hide loader and redirect
-			document.getElementById('ftco-loader').classList.remove('show');
-			window.location.href = 'thank-you.html';
-		})
-		.catch(error => {
-			document.getElementById('ftco-loader').classList.remove('show');
-			alert('There was an error submitting the form. Please try again.');
-		});
-	});
-	</script>
+            <button type="submit" id="submit-btn" class="btn-spatial-primary magnetic-target" style="width: 100%; justify-content: center;" data-cursor-label="SEND" data-translate="form_submit_btn">
+              <span>Transmit Message</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+            <div id="form-feedback" style="display:none; margin-top: 16px; font-family: var(--font-mono); font-size: 0.85rem; text-align: center;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Avant-Garde Spatial Footer -->
+  <footer class="spatial-footer">
+    <div>
+      <span>&copy; <span id="year">2026</span> Anandhu Krishna. <span data-translate="footer_rights">All rights reserved.</span></span>
+    </div>
+    <ul class="footer-social-stream">
+      <li><a href="https://github.com/anandhukrishna1998" target="_blank" rel="noopener" class="footer-social-link magnetic-target" data-cursor-label="GITHUB"><i class="fa-brands fa-github"></i> GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/anandhu-krishna-84ba28b6/" target="_blank" rel="noopener" class="footer-social-link magnetic-target" data-cursor-label="LINKEDIN"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+      <li><a href="https://twitter.com/Anandhu96941332" target="_blank" rel="noopener" class="footer-social-link magnetic-target" data-cursor-label="X"><i class="fa-brands fa-x-twitter"></i> Twitter</a></li>
+      <li><a href="https://medium.com/@anandhukrishna091" target="_blank" rel="noopener" class="footer-social-link magnetic-target" data-cursor-label="MEDIUM"><i class="fa-brands fa-medium"></i> Medium</a></li>
+    </ul>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/spatial.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Form submission handler
+    const form = document.getElementById('spatial-contact-form');
+    const feedback = document.getElementById('form-feedback');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Transmitting...</span>';
+        
+        fetch('https://formsubmit.co/ajax/anandhukrishna091@gmail.com', {
+          method: 'POST',
+          body: new FormData(this)
+        })
+        .then(res => res.json())
+        .then(() => {
+          feedback.style.display = 'block';
+          feedback.style.color = '#34d399';
+          feedback.textContent = '✓ Transmission verified and received. I will respond promptly.';
+          form.reset();
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>Transmit Message</span> <i class="fa-solid fa-paper-plane"></i>';
+        })
+        .catch(() => {
+          feedback.style.display = 'block';
+          feedback.style.color = '#f87171';
+          feedback.textContent = 'Transmission error. Please email directly at anandhukrishna091@gmail.com.';
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>Retry Transmission</span>';
+        });
+      });
+    }
+  </script>
 </body>
-
 </html>

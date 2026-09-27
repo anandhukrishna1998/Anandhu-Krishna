@@ -1,0 +1,20 @@
+# ── Agent & IDE config ──
+.agents/
+.gemini/
+.cursor/
+.vscode/
+
+# ── OS junk ──
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Build / tooling ──
+node_modules/
+prepros-6.config
+*.log
+
+# ── Backups & scratch ──
+*.backup.*
+*.bak
+index.txt
