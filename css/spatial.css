@@ -1315,7 +1315,7 @@ select {
 .svg-well svg {
   width: 100%;
   height: auto;
-  max-height: 235px;
+  max-height: 256px;
   margin-inline: auto;
   display: block;
 }
@@ -1355,7 +1355,7 @@ select {
 .svg-well .svg-title {
   fill: var(--text);
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   transition: fill var(--duration-medium) var(--ease-smooth-out);
 }
@@ -1363,7 +1363,7 @@ select {
 .svg-well .svg-sub {
   fill: var(--muted);
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
   transition: fill var(--duration-medium) var(--ease-smooth-out);
 }
@@ -1371,7 +1371,7 @@ select {
 .svg-well .svg-accent-text {
   fill: var(--accent-ink);
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   transition: fill var(--duration-medium) var(--ease-smooth-out);
 }
