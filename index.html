@@ -387,27 +387,27 @@
                 </div>
 
                 <div class="svg-well">
-                  <svg role="img" aria-label="PDF/OCR -> GPT-4o -> Neo4j &amp; Kuzu Graph Schema" viewBox="0 0 600 164">
-                    <rect x="12" y="42" width="126" height="80" rx="10" class="svg-surface"></rect>
-                    <text x="75" y="75" text-anchor="middle" class="svg-title">PDF / DOCX</text>
-                    <text x="75" y="96" text-anchor="middle" class="svg-sub">25+ OCR / AST</text>
+                  <svg role="img" aria-label="PDF/OCR -> GPT-4o -> Neo4j &amp; Kuzu Graph Schema" viewBox="0 0 420 208">
+                    <rect x="12" y="10" width="176" height="66" rx="10" class="svg-surface"></rect>
+                    <text x="100" y="36" text-anchor="middle" class="svg-title">PDF / DOCX</text>
+                    <text x="100" y="56" text-anchor="middle" class="svg-sub">25+ OCR / AST</text>
 
-                    <path class="svg-edge" d="M 138 82 H 168"></path>
-                    <path class="svg-edge" stroke-linecap="round" stroke-linejoin="round" d="M 162 77 L 168 82 L 162 87"></path>
+                    <path class="svg-edge" d="M 188 43 H 229"></path>
+                    <path class="svg-edge" stroke-linecap="round" stroke-linejoin="round" d="M 223 38 L 229 43 L 223 48"></path>
 
-                    <rect x="170" y="42" width="122" height="80" rx="10" class="svg-surface"></rect>
-                    <text x="231" y="75" text-anchor="middle" class="svg-title">GPT-4o</text>
-                    <text x="231" y="96" text-anchor="middle" class="svg-sub">NID · TEDS</text>
+                    <rect x="232" y="10" width="176" height="66" rx="10" class="svg-surface"></rect>
+                    <text x="320" y="36" text-anchor="middle" class="svg-title">GPT-4o</text>
+                    <text x="320" y="56" text-anchor="middle" class="svg-sub">NID · TEDS</text>
 
-                    <path class="svg-edge-accent" d="M 292 82 H 330"></path>
-                    <path class="svg-edge-accent" stroke-linecap="round" stroke-linejoin="round" d="M 324 77 L 330 82 L 324 87"></path>
+                    <path class="svg-edge-accent" d="M 320 76 V 86 H 210 V 95"></path>
+                    <path class="svg-edge-accent" stroke-linecap="round" stroke-linejoin="round" d="M 205 90 L 210 95 L 215 90"></path>
 
-                    <rect x="332" y="18" width="256" height="128" rx="10" class="svg-surface-active"></rect>
-                    <text x="460" y="46" text-anchor="middle" class="svg-title">Neo4j · Kuzu</text>
-                    <text x="460" y="66" text-anchor="middle" class="svg-sub">(:Clause)-[:REL]-&gt;(:Node)</text>
-                    <line x1="348" y1="82" x2="572" y2="82" class="svg-edge"></line>
-                    <text id="clause-svg-node" x="460" y="108" text-anchor="middle" class="svg-accent-text" data-translate="demo_clause_svg_liability">CAP -&gt; EUR 2.5M · TIER_A</text>
-                    <text x="460" y="129" text-anchor="middle" class="svg-sub">Langfuse · Docker CI/CD</text>
+                    <rect x="12" y="98" width="396" height="102" rx="10" class="svg-surface-active"></rect>
+                    <text x="210" y="121" text-anchor="middle" class="svg-title">Neo4j · Kuzu Graph</text>
+                    <text x="210" y="140" text-anchor="middle" class="svg-sub">(:Clause)-[:REL]-&gt;(:Node)</text>
+                    <line x1="28" y1="150" x2="392" y2="150" class="svg-edge"></line>
+                    <text id="clause-svg-node" x="210" y="169" text-anchor="middle" class="svg-accent-text" data-translate="demo_clause_svg_liability">CAP -&gt; EUR 2.5M · TIER_A</text>
+                    <text x="210" y="189" text-anchor="middle" class="svg-sub">Langfuse · Docker CI/CD</text>
                   </svg>
                 </div>
 
@@ -415,11 +415,11 @@
                 <div class="micro-tray">
                   <span class="spec-label" id="clause-explorer-label" data-translate="demo_clause_title">Clause → Graph Node Explorer</span>
                   <div class="tab-bar" role="tablist" aria-labelledby="clause-explorer-label">
-                    <button type="button" id="tab-clause-liability" class="tab-btn" role="tab" data-clause-tab="liability" aria-selected="true" aria-controls="clause-readout" data-translate="demo_clause_tab_liability">Liability Clause</button>
-                    <button type="button" id="tab-clause-deductible" class="tab-btn" role="tab" data-clause-tab="deductible" aria-selected="false" aria-controls="clause-readout" data-translate="demo_clause_tab_deductible">Deductible</button>
-                    <button type="button" id="tab-clause-exclusions" class="tab-btn" role="tab" data-clause-tab="exclusions" aria-selected="false" aria-controls="clause-readout" data-translate="demo_clause_tab_exclusions">Exclusions</button>
+                    <button type="button" id="tab-clause-liability" class="tab-btn" role="tab" tabindex="0" data-clause-tab="liability" aria-selected="true" aria-controls="clause-readout" data-translate="demo_clause_tab_liability">Liability Clause</button>
+                    <button type="button" id="tab-clause-deductible" class="tab-btn" role="tab" tabindex="-1" data-clause-tab="deductible" aria-selected="false" aria-controls="clause-readout" data-translate="demo_clause_tab_deductible">Deductible</button>
+                    <button type="button" id="tab-clause-exclusions" class="tab-btn" role="tab" tabindex="-1" data-clause-tab="exclusions" aria-selected="false" aria-controls="clause-readout" data-translate="demo_clause_tab_exclusions">Exclusions</button>
                   </div>
-                  <pre class="code-readout" id="clause-readout" role="tabpanel" aria-live="polite" aria-labelledby="tab-clause-liability" data-active-clause="liability" data-translate="demo_clause_out_liability">MATCH (:Clause {id: "CL-104", type: "LIABILITY"})-[:CAPS]-&gt;(:Limit {amount: "EUR 2,500,000", scope: "AGGREGATE"}) // NID: 0.94</pre>
+                  <pre class="code-readout" id="clause-readout" role="tabpanel" tabindex="0" aria-live="polite" aria-labelledby="tab-clause-liability" data-active-clause="liability" data-translate="demo_clause_out_liability">MATCH (:Clause {id: "CL-104", type: "LIABILITY"})-[:CAPS]-&gt;(:Limit {amount: "EUR 2,500,000", scope: "AGGREGATE"}) // NID: 0.94</pre>
                 </div>
               </div>
 
@@ -458,29 +458,29 @@
                 </div>
 
                 <div class="svg-well">
-                  <svg role="img" aria-label="FastMCP -> Qdrant Vector DB -> Cited RAG Output" viewBox="0 0 600 164">
-                    <rect x="12" y="28" width="164" height="96" rx="10" class="svg-surface"></rect>
-                    <text x="94" y="62" text-anchor="middle" class="svg-title">FastMCP</text>
-                    <text x="94" y="82" text-anchor="middle" class="svg-sub">FastAPI · Tools</text>
-                    <text x="94" y="102" text-anchor="middle" class="svg-accent-text">PII · EU AI Act</text>
+                  <svg role="img" aria-label="FastMCP -> Qdrant Vector DB -> Cited RAG Output" viewBox="0 0 420 208">
+                    <rect x="12" y="10" width="176" height="84" rx="10" class="svg-surface"></rect>
+                    <text x="100" y="34" text-anchor="middle" class="svg-title">FastMCP</text>
+                    <text x="100" y="56" text-anchor="middle" class="svg-sub">FastAPI · Tools</text>
+                    <text x="100" y="76" text-anchor="middle" class="svg-accent-text">PII · EU AI Act</text>
 
-                    <path class="svg-edge-accent" d="M 176 76 H 215"></path>
-                    <path class="svg-edge-accent" stroke-linecap="round" stroke-linejoin="round" d="M 209 71 L 215 76 L 209 81"></path>
+                    <path class="svg-edge-accent" d="M 188 52 H 229"></path>
+                    <path class="svg-edge-accent" stroke-linecap="round" stroke-linejoin="round" d="M 223 47 L 229 52 L 223 57"></path>
 
-                    <rect x="218" y="28" width="164" height="96" rx="10" class="svg-surface-active"></rect>
-                    <text x="300" y="62" text-anchor="middle" class="svg-title">Qdrant + RAG</text>
-                    <text x="300" y="82" text-anchor="middle" class="svg-sub">Top-K · Rerank</text>
-                    <text x="300" y="102" text-anchor="middle" class="svg-accent-text">Mistral · Gemini</text>
+                    <rect x="232" y="10" width="176" height="84" rx="10" class="svg-surface-active"></rect>
+                    <text x="320" y="34" text-anchor="middle" class="svg-title">Qdrant + RAG</text>
+                    <text x="320" y="56" text-anchor="middle" class="svg-sub">Top-K · Rerank</text>
+                    <text x="320" y="76" text-anchor="middle" class="svg-accent-text">Mistral · Gemini</text>
 
-                    <path class="svg-edge-accent" d="M 382 76 H 421"></path>
-                    <path class="svg-edge-accent" stroke-linecap="round" stroke-linejoin="round" d="M 415 71 L 421 76 L 415 81"></path>
+                    <path class="svg-edge-accent" d="M 320 94 V 127"></path>
+                    <path class="svg-edge-accent" stroke-linecap="round" stroke-linejoin="round" d="M 315 121 L 320 127 L 325 121"></path>
 
-                    <rect x="424" y="28" width="164" height="96" rx="10" class="svg-surface"></rect>
-                    <text x="506" y="62" text-anchor="middle" class="svg-title">JSON · Citations</text>
-                    <text x="506" y="82" text-anchor="middle" class="svg-sub">Trace ID · SLA</text>
-                    <text x="506" y="102" text-anchor="middle" class="svg-sub">RBAC · TLS 1.3</text>
+                    <rect x="100" y="130" width="308" height="68" rx="10" class="svg-surface"></rect>
+                    <text x="254" y="158" text-anchor="middle" class="svg-title">JSON · Citations</text>
+                    <text x="254" y="180" text-anchor="middle" class="svg-sub">Trace ID · SLA · RBAC · TLS 1.3</text>
 
-                    <path class="svg-edge" stroke-dasharray="4 4" d="M 94 124 V 146 H 506 V 124"></path>
+                    <path class="svg-edge" stroke-dasharray="4 4" d="M 100 164 H 52 V 97"></path>
+                    <path class="svg-edge" stroke-linecap="round" stroke-linejoin="round" d="M 47 103 L 52 97 L 57 103"></path>
                   </svg>
                 </div>
 
@@ -535,28 +535,27 @@
                 </div>
 
                 <div class="svg-well">
-                  <svg role="img" aria-label="Prompt AST -> PEFT &amp; LoRA Attention Routing -> Zero-Shot Eval" viewBox="0 0 600 164">
-                    <rect x="12" y="34" width="168" height="96" rx="10" class="svg-surface"></rect>
-                    <text x="96" y="68" text-anchor="middle" class="svg-title">Prompt AST</text>
-                    <text x="96" y="88" text-anchor="middle" class="svg-sub">In-Context k = 0</text>
-                    <text x="96" y="108" text-anchor="middle" class="svg-sub">NLP Corpus</text>
+                  <svg role="img" aria-label="Prompt AST -> PEFT &amp; LoRA Attention Routing -> Zero-Shot Eval" viewBox="0 0 420 208">
+                    <rect x="12" y="10" width="176" height="84" rx="10" class="svg-surface"></rect>
+                    <text x="100" y="34" text-anchor="middle" class="svg-title">Prompt AST</text>
+                    <text x="100" y="56" text-anchor="middle" class="svg-sub">In-Context k = 0</text>
+                    <text x="100" y="76" text-anchor="middle" class="svg-sub">NLP Corpus</text>
 
-                    <path class="svg-edge" d="M 180 82 H 215"></path>
-                    <path class="svg-edge" stroke-linecap="round" stroke-linejoin="round" d="M 209 77 L 215 82 L 209 87"></path>
+                    <path class="svg-edge" d="M 188 52 H 229"></path>
+                    <path class="svg-edge" stroke-linecap="round" stroke-linejoin="round" d="M 223 47 L 229 52 L 223 57"></path>
 
-                    <rect x="218" y="24" width="168" height="116" rx="10" class="svg-surface-active"></rect>
-                    <text x="302" y="58" text-anchor="middle" class="svg-title">PEFT + LoRA</text>
-                    <text x="302" y="78" text-anchor="middle" class="svg-sub">Q · K · V Heads</text>
-                    <line x1="238" y1="92" x2="366" y2="92" class="svg-edge"></line>
-                    <text x="302" y="116" text-anchor="middle" class="svg-accent-text">PyTorch · HF</text>
+                    <rect x="232" y="10" width="176" height="84" rx="10" class="svg-surface-active"></rect>
+                    <text x="320" y="34" text-anchor="middle" class="svg-title">PEFT + LoRA</text>
+                    <text x="320" y="56" text-anchor="middle" class="svg-sub">Q · K · V Heads</text>
+                    <text x="320" y="76" text-anchor="middle" class="svg-accent-text">PyTorch · HF</text>
 
-                    <path class="svg-edge-accent" d="M 386 82 H 421"></path>
-                    <path class="svg-edge-accent" stroke-linecap="round" stroke-linejoin="round" d="M 415 77 L 421 82 L 415 87"></path>
+                    <path class="svg-edge-accent" d="M 320 94 V 106 H 210 V 119"></path>
+                    <path class="svg-edge-accent" stroke-linecap="round" stroke-linejoin="round" d="M 205 113 L 210 119 L 215 113"></path>
 
-                    <rect x="424" y="34" width="164" height="96" rx="10" class="svg-surface"></rect>
-                    <text x="506" y="68" text-anchor="middle" class="svg-title">Zero-Shot Eval</text>
-                    <text x="506" y="88" text-anchor="middle" class="svg-sub">F1 · AUROC</text>
-                    <text x="506" y="108" text-anchor="middle" class="svg-accent-text">Transformers</text>
+                    <rect x="12" y="122" width="396" height="76" rx="10" class="svg-surface"></rect>
+                    <text x="210" y="146" text-anchor="middle" class="svg-title">Zero-Shot Eval</text>
+                    <text x="210" y="166" text-anchor="middle" class="svg-sub">F1 · AUROC</text>
+                    <text x="210" y="185" text-anchor="middle" class="svg-accent-text">Transformers</text>
                   </svg>
                 </div>
               </div>
@@ -595,36 +594,36 @@
                 </div>
 
                 <div class="svg-well">
-                  <svg role="img" aria-label="Telecom CDR -> Apriori, Matrix Factorization &amp; XGBoost -> -15% Churn &amp; +25% Engagement" viewBox="0 0 600 164">
-                    <rect x="12" y="42" width="124" height="80" rx="10" class="svg-surface"></rect>
-                    <text x="74" y="75" text-anchor="middle" class="svg-title">Telecom CDR</text>
-                    <text x="74" y="96" text-anchor="middle" class="svg-sub">CDR · SQL</text>
+                  <svg role="img" aria-label="Telecom CDR -> Apriori, Matrix Factorization &amp; XGBoost -> -15% Churn &amp; +25% Engagement" viewBox="0 0 420 208">
+                    <rect x="12" y="10" width="144" height="66" rx="10" class="svg-surface"></rect>
+                    <text x="84" y="36" text-anchor="middle" class="svg-title">Telecom CDR</text>
+                    <text x="84" y="56" text-anchor="middle" class="svg-sub">CDR · SQL</text>
 
-                    <path class="svg-edge" d="M 136 68 H 158 V 44 H 180"></path>
-                    <path class="svg-edge" stroke-linecap="round" stroke-linejoin="round" d="M 174 39 L 180 44 L 174 49"></path>
+                    <path class="svg-edge" d="M 156 43 H 189"></path>
+                    <path class="svg-edge" stroke-linecap="round" stroke-linejoin="round" d="M 183 38 L 189 43 L 183 48"></path>
 
-                    <path class="svg-edge" d="M 136 96 H 158 V 120 H 180"></path>
-                    <path class="svg-edge" stroke-linecap="round" stroke-linejoin="round" d="M 174 115 L 180 120 L 174 125"></path>
+                    <rect x="192" y="10" width="216" height="66" rx="10" class="svg-surface"></rect>
+                    <text x="300" y="36" text-anchor="middle" class="svg-title">XGBoost</text>
+                    <text x="300" y="56" text-anchor="middle" class="svg-sub">Time-Series · T+1: 62%</text>
 
-                    <rect x="182" y="16" width="194" height="56" rx="10" class="svg-surface"></rect>
-                    <text x="279" y="40" text-anchor="middle" class="svg-title">Apriori · FP-Growth</text>
-                    <text x="279" y="58" text-anchor="middle" class="svg-sub">Matrix Factorization</text>
+                    <path class="svg-edge" d="M 84 76 V 111"></path>
+                    <path class="svg-edge" stroke-linecap="round" stroke-linejoin="round" d="M 79 105 L 84 111 L 89 105"></path>
 
-                    <rect x="182" y="92" width="194" height="56" rx="10" class="svg-surface"></rect>
-                    <text x="279" y="116" text-anchor="middle" class="svg-title">XGBoost Time-Series</text>
-                    <text x="279" y="134" text-anchor="middle" class="svg-accent-text">T+1: 62%</text>
+                    <rect x="12" y="114" width="214" height="84" rx="10" class="svg-surface"></rect>
+                    <text x="119" y="148" text-anchor="middle" class="svg-title">Apriori · FP-Growth</text>
+                    <text x="119" y="171" text-anchor="middle" class="svg-sub">Matrix Factorization</text>
 
-                    <path class="svg-edge-accent" d="M 376 44 H 398 V 68 H 421"></path>
-                    <path class="svg-edge-accent" stroke-linecap="round" stroke-linejoin="round" d="M 415 63 L 421 68 L 415 73"></path>
+                    <path class="svg-edge-accent" d="M 226 156 H 239"></path>
+                    <path class="svg-edge-accent" stroke-linecap="round" stroke-linejoin="round" d="M 234 151 L 240 156 L 234 161"></path>
 
-                    <path class="svg-edge-accent" d="M 376 120 H 398 V 96 H 421"></path>
-                    <path class="svg-edge-accent" stroke-linecap="round" stroke-linejoin="round" d="M 415 91 L 421 96 L 415 101"></path>
+                    <path class="svg-edge-accent" d="M 325 76 V 111"></path>
+                    <path class="svg-edge-accent" stroke-linecap="round" stroke-linejoin="round" d="M 320 105 L 325 111 L 330 105"></path>
 
-                    <rect x="424" y="24" width="164" height="116" rx="10" class="svg-surface-active"></rect>
-                    <text x="506" y="54" text-anchor="middle" class="svg-title">Production KPI</text>
-                    <line x1="442" y1="68" x2="570" y2="68" class="svg-edge"></line>
-                    <text x="506" y="94" text-anchor="middle" class="svg-accent-text">-15% Churn</text>
-                    <text x="506" y="116" text-anchor="middle" class="svg-accent-text">+25% Engagement</text>
+                    <rect x="242" y="114" width="166" height="84" rx="10" class="svg-surface-active"></rect>
+                    <text x="325" y="137" text-anchor="middle" class="svg-title">Production KPI</text>
+                    <line x1="256" y1="148" x2="394" y2="148" class="svg-edge"></line>
+                    <text x="325" y="167" text-anchor="middle" class="svg-accent-text">-15% Churn</text>
+                    <text x="325" y="187" text-anchor="middle" class="svg-accent-text">+25% Engagement</text>
                   </svg>
                 </div>
               </div>
