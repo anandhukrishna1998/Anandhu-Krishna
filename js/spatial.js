@@ -250,9 +250,17 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (mobileNavToggle && mobileDrawer) {
+    let ignoreClickEvent = null;
+    if (mobileMenuIcon) {
+      mobileMenuIcon.style.pointerEvents = 'none';
+    }
     setDrawerOpen(false, { restoreFocus: false });
 
-    mobileNavToggle.addEventListener('click', () => {
+    mobileNavToggle.addEventListener('click', (e) => {
+      ignoreClickEvent = e;
+      Promise.resolve().then(() => {
+        if (ignoreClickEvent === e) ignoreClickEvent = null;
+      });
       setDrawerOpen(!isDrawerOpen, { restoreFocus: false });
       synth.playTone(isDrawerOpen ? 820 : 720, 0.045, 'sine');
     });
@@ -273,6 +281,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('click', (e) => {
+      if (e === ignoreClickEvent) {
+        ignoreClickEvent = null;
+        return;
+      }
       if (!isDrawerOpen) return;
       if (!mobileDrawer.contains(e.target) && !mobileNavToggle.contains(e.target)) {
         setDrawerOpen(false, { restoreFocus: false });
