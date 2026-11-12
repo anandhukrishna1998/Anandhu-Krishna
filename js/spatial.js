@@ -166,17 +166,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const applyTheme = (theme) => {
+  const applyTheme = (theme, { persist = true } = {}) => {
     currentTheme = theme === 'dark' ? 'dark' : 'light';
     document.documentElement.dataset.theme = currentTheme;
     if (metaThemeColor) {
       metaThemeColor.setAttribute('content', currentTheme === 'dark' ? '#121316' : '#ECEEF2');
     }
-    safeSetStorage('spatial_theme', currentTheme);
+    if (persist) {
+      safeSetStorage('spatial_theme', currentTheme);
+    }
     syncThemeUI();
   };
 
-  applyTheme(currentTheme);
+  applyTheme(currentTheme, { persist: false });
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
@@ -233,8 +235,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     syncDrawerToggleUI();
 
-    if (wasOpen && !isDrawerOpen && restoreFocus && typeof mobileNavToggle.focus === 'function') {
-      mobileNavToggle.focus();
+    if (wasOpen && !isDrawerOpen && restoreFocus) {
+      if (mobileNavToggle.offsetParent !== null && typeof mobileNavToggle.focus === 'function') {
+        mobileNavToggle.focus();
+      } else {
+        const visibleTarget =
+          Array.from(document.querySelectorAll('.nav-link')).find((el) => el.offsetParent !== null) ||
+          document.querySelector('.nav-brand');
+        if (visibleTarget && typeof visibleTarget.focus === 'function') {
+          visibleTarget.focus();
+        }
+      }
     }
   };
 
@@ -302,8 +313,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     const prevFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    let textarea = null;
     try {
-      const textarea = document.createElement('textarea');
+      textarea = document.createElement('textarea');
       textarea.value = text;
       textarea.setAttribute('readonly', '');
       textarea.style.position = 'fixed';
@@ -322,16 +334,16 @@ document.addEventListener('DOMContentLoaded', () => {
       textarea.select();
       textarea.setSelectionRange(0, textarea.value.length);
       const copied = document.execCommand('copy');
-      document.body.removeChild(textarea);
-      if (prevFocused && document.contains(prevFocused) && typeof prevFocused.focus === 'function') {
-        prevFocused.focus({ preventScroll: true });
-      }
       return Boolean(copied);
     } catch (_) {
+      return false;
+    } finally {
+      if (textarea && textarea.parentNode) {
+        textarea.parentNode.removeChild(textarea);
+      }
       if (prevFocused && document.contains(prevFocused) && typeof prevFocused.focus === 'function') {
         prevFocused.focus({ preventScroll: true });
       }
-      return false;
     }
   };
 
@@ -387,6 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
     copyStates.set(btn, {
       status: 'idle',
       timerId: null,
+      requestId: 0,
       labelSpan,
       defaultKey,
       initialTranslateAria,
@@ -396,6 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', async () => {
       const state = copyStates.get(btn);
       if (!state) return;
+      const reqId = ++state.requestId;
       if (state.timerId !== null) {
         window.clearTimeout(state.timerId);
         state.timerId = null;
@@ -403,11 +417,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const email = btn.dataset.copyEmail || 'anandhukrishna091@gmail.com';
       const ok = await copyTextToClipboard(email);
+      if (reqId !== state.requestId) return;
 
       state.status = ok ? 'copied' : 'failed';
       syncCopyButtonUI(btn);
       synth.playTone(ok ? 820 : 540, 0.055, 'sine');
 
+      if (state.timerId !== null) {
+        window.clearTimeout(state.timerId);
+      }
       state.timerId = window.setTimeout(() => {
         state.status = 'idle';
         state.timerId = null;
@@ -549,6 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let lastDialogTrigger = null;
   let dialogCloseTimer = null;
+  let pointerDownOnBackdrop = false;
 
   const isDialogOpen = () =>
     Boolean(caseDialog && (caseDialog.open || caseDialog.hasAttribute('open')));
@@ -559,11 +578,17 @@ document.addEventListener('DOMContentLoaded', () => {
       window.clearTimeout(dialogCloseTimer);
       dialogCloseTimer = null;
     }
+    pointerDownOnBackdrop = false;
     caseDialog.classList.remove('is-closing');
     if (isDialogOpen()) return;
 
+    const active = document.activeElement;
     lastDialogTrigger =
-      document.activeElement instanceof HTMLElement ? document.activeElement : openModalBtn;
+      active instanceof HTMLElement &&
+      active !== document.body &&
+      active !== document.documentElement
+        ? active
+        : openModalBtn;
 
     if (typeof caseDialog.showModal === 'function') {
       caseDialog.showModal();
@@ -633,8 +658,14 @@ document.addEventListener('DOMContentLoaded', () => {
       closeDialogFooterBtn.addEventListener('click', () => closeDialog());
     }
 
+    caseDialog.addEventListener('pointerdown', (e) => {
+      pointerDownOnBackdrop = e.target === caseDialog;
+    });
+
     caseDialog.addEventListener('click', (e) => {
-      if (e.target === caseDialog) {
+      const shouldClose = pointerDownOnBackdrop && e.target === caseDialog;
+      pointerDownOnBackdrop = false;
+      if (shouldClose) {
         closeDialog();
       }
     });
@@ -767,6 +798,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (isSubmitting) return;
+      setFormFeedback(null, null);
 
       let firstInvalidField = null;
       formFields.forEach((field) => {
@@ -845,10 +877,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
   const langSwitchBtn = document.getElementById('lang-switch');
 
-  const setLanguage = (lang, { playAudio = false } = {}) => {
+  const setLanguage = (lang, { playAudio = false, persist = true } = {}) => {
     currentLang = lang === 'fr' ? 'fr' : 'en';
     document.documentElement.lang = currentLang;
-    safeSetStorage('preferredLanguage', currentLang);
+    if (persist) {
+      safeSetStorage('preferredLanguage', currentLang);
+    }
 
     const dict = getDict(currentLang);
 
@@ -867,7 +901,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const val = dict[key];
       if (val === undefined) return;
       if (/<strong\b/i.test(val)) {
-        el.innerHTML = val;
+        const fragment = document.createDocumentFragment();
+        val.split(/(<strong>.*?<\/strong>)/gi).forEach((part) => {
+          if (!part) return;
+          const match = part.match(/^<strong>([\s\S]*?)<\/strong>$/i);
+          if (match) {
+            const strongEl = document.createElement('strong');
+            strongEl.textContent = match[1];
+            fragment.appendChild(strongEl);
+          } else {
+            fragment.appendChild(document.createTextNode(part));
+          }
+        });
+        el.replaceChildren(fragment);
       } else {
         el.textContent = val;
       }
@@ -909,7 +955,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  setLanguage(currentLang, { playAudio: false });
+  setLanguage(currentLang, { playAudio: false, persist: false });
 
   if (langSwitchBtn) {
     langSwitchBtn.addEventListener('click', () => {
@@ -955,8 +1001,24 @@ document.addEventListener('DOMContentLoaded', () => {
       return false;
     };
 
+    const visibleRatios = new Map();
+    const syncBestVisibleSection = () => {
+      if (visibleRatios.size === 0) return;
+      let bestId = null;
+      let bestRatio = -1;
+      spySections.forEach((sec) => {
+        const ratio = visibleRatios.get(sec.id);
+        if (ratio !== undefined && ratio > bestRatio) {
+          bestRatio = ratio;
+          bestId = sec.id;
+        }
+      });
+      if (bestId) {
+        setActiveNavSection(bestId);
+      }
+    };
+
     if ('IntersectionObserver' in window) {
-      const visibleRatios = new Map();
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -968,21 +1030,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
 
           if (syncBottomSection()) return;
-
-          if (visibleRatios.size > 0) {
-            let bestId = null;
-            let bestRatio = -1;
-            spySections.forEach((sec) => {
-              const ratio = visibleRatios.get(sec.id);
-              if (ratio !== undefined && ratio > bestRatio) {
-                bestRatio = ratio;
-                bestId = sec.id;
-              }
-            });
-            if (bestId) {
-              setActiveNavSection(bestId);
-            }
-          }
+          syncBestVisibleSection();
         },
         {
           rootMargin: '-20% 0px -55% 0px',
@@ -996,7 +1044,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener(
       'scroll',
       () => {
-        syncBottomSection();
+        if (!syncBottomSection()) {
+          syncBestVisibleSection();
+        }
       },
       { passive: true }
     );
