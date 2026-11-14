@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <style>
+    :root {
+      --bg: #1A1C21;
+      --fg: #FFFFFF;
+      --dot: #B34B16;
+    }
+    .squircle {
+      fill: var(--bg, #1A1C21);
+    }
+    .monogram {
+      stroke: var(--fg, #FFFFFF);
+      fill: none;
+      stroke-width: 44;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .dot {
+      fill: var(--dot, #B34B16);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #E87A3D;
+        --fg: #121316;
+        --dot: #121316;
+      }
+      .squircle { fill: #E87A3D; }
+      .monogram { stroke: #121316; }
+      .dot { fill: #121316; }
+    }
+  </style>
+  <rect class="squircle" x="32" y="32" width="448" height="448" rx="104" fill="#1A1C21" />
+  <g class="monogram" stroke="#FFFFFF" fill="none" stroke-width="44" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Geometric letter A -->
+    <path d="M 112 368 L 168 160 L 224 368" />
+    <path d="M 138 296 L 198 296" />
+    <!-- Geometric letter K -->
+    <path d="M 296 160 L 296 368" />
+    <path d="M 400 160 L 296 264 L 400 368" />
+  </g>
+  <!-- Tactile terracotta accent dot -->
+  <circle class="dot" cx="400" cy="80" r="26" fill="#B34B16" />
+</svg>
