@@ -1163,15 +1163,6 @@ select {
   display: block;
 }
 
-.org-mark--monogram {
-  background: var(--tray);
-  color: var(--text);
-  font-family: var(--font-mono);
-  font-weight: 600;
-  font-size: var(--text-mono-sm);
-  letter-spacing: -0.02em;
-}
-
 .career-title-group {
   display: flex;
   flex-direction: column;
