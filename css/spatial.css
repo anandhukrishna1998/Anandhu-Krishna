@@ -10,6 +10,7 @@ html[data-theme="light"] {
   /* Color Tokens — Light Mode (Default) */
   --bg: #ECEEF2;
   --surface: #F9FAFC;
+  --surface-badge: #FFFFFF;
   --tray: #E4E7EE;
   --border-subtle: #D4D8E0;
   --border-control: #7A8396;
@@ -85,6 +86,7 @@ body.dark-mode {
 
   --bg: #121316;
   --surface: #1A1C21;
+  --surface-badge: #FFFFFF;
   --tray: #131519;
   --border-subtle: #2B2E36;
   --border-control: #6B7280;
@@ -1143,17 +1145,14 @@ select {
   border-radius: var(--radius-inner);
   overflow: hidden;
   border: 1px solid var(--border-subtle);
-  background: #FFFFFF;
+  background: var(--surface-badge, #FFFFFF);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   padding: 4px;
   box-sizing: border-box;
-  transition:
-    background-color var(--duration-medium) var(--ease-smooth-out),
-    border-color var(--duration-medium) var(--ease-smooth-out),
-    color var(--duration-medium) var(--ease-smooth-out);
+  transition: border-color var(--duration-medium) var(--ease-smooth-out);
 }
 
 .org-mark img {
