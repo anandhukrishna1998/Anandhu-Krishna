@@ -97,25 +97,25 @@ graph TD
 - Consumes: Official assets fetched from 6dtechnologies.com, epita.fr, and existing repo assets.
 - Produces: Semantic `<img class="org-logo">` elements inside `.org-mark` across all 5 career and education entries.
 
-- [ ] **Step 1: Prepare official brand assets in `images/`**
+- [x] **Step 1: Prepare official brand assets in `images/`**
   - Verify `images/ipsos_logo.png` (official Ipsos dual-color shield & wordmark).
   - Verify `images/axa_logo.svg` (official AXA blue box and red slash).
   - Convert `images/epita_logo.webp` into transparent high-DPI `images/epita_logo.png` with clean padding.
   - Process `images/6d_technologies_logo.png` to ensure crisp transparent bounding box and balanced margins.
-- [ ] **Step 2: Update `index.html` Experience & Education markup**
+- [x] **Step 2: Update `index.html` Experience & Education markup**
   - Hubicus AI Engineer & Hubicus Intern: Replace `images/ipsos_mark.svg` with `images/ipsos_logo.png` (`alt="Hubicus — Ipsos BVA logo"`).
   - AXA Group Operations: Retain `images/axa_logo.svg` (`alt="AXA Group Operations logo"`).
   - 6D Technologies: Replace `<div class="org-mark org-mark--monogram">6D</div>` with `<div class="org-mark"><img src="images/6d_technologies_logo.png" alt="6D Technologies logo" width="48" height="48" loading="lazy" decoding="async"></div>`.
   - EPITA: Replace `<div class="org-mark org-mark--monogram">EPITA</div>` with `<div class="org-mark"><img src="images/epita_logo.png" alt="EPITA logo" width="48" height="48" loading="lazy" decoding="async"></div>`.
-- [ ] **Step 3: Refine `.org-mark` CSS in `css/spatial.css`**
+- [x] **Step 3: Refine `.org-mark` CSS in `css/spatial.css`**
   Ensure `.org-mark` provides:
   - Fixed dimensions `width: 48px; height: 48px; min-width: 48px; min-height: 48px;`.
   - Neutral bright background `#FFFFFF` with hairline border `1px solid var(--border-subtle)` and `border-radius: var(--radius-inner)`.
   - Optical padding (`padding: 6px;` or `object-fit: contain;`) so square, horizontal, and vertical marks sit comfortably without edge clipping.
   - In Dark Mode, verify `.org-mark` background maintains crisp separation and high contrast against `--surface` (`#1A1C21`).
-- [ ] **Step 4: Verify logo display and contrast**
+- [x] **Step 4: Verify logo display and contrast**
   Run headless test checking all 5 images return HTTP 200, `complete === true`, and `naturalWidth > 0`.
-- [ ] **Step 5: Commit company logo integration**
+- [x] **Step 5: Commit company logo integration**
   `git add images/ index.html css/spatial.css && git commit -m "feat(branding): integrate authentic company logos for Hubicus, AXA, 6D, and EPITA"`
 
 ---
