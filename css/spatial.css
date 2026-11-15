@@ -2100,3 +2100,320 @@ select {
     transform: none !important;
   }
 }
+
+/* ==========================================================================
+   MOTION LAYER — first-visit intro, count-up, word reveal, pinned story,
+   tile spotlight (js/motion.js). Everything degrades to the static layout.
+   ========================================================================== */
+
+/* First-visit intro cover — only exists while html.intro-pending */
+.site-intro {
+  display: none;
+}
+
+.intro-pending .site-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  pointer-events: none;
+}
+
+.site-intro-inner {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.site-intro-kicker {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-sm);
+  letter-spacing: 0.03em;
+  color: var(--accent-ink);
+}
+
+.site-intro-name {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 0.25em;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 9vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--text);
+}
+
+.site-intro-name > span {
+  display: inline-block;
+}
+
+.site-intro-line {
+  width: min(240px, 50vw);
+  height: 2px;
+  background: var(--accent);
+  transform-origin: 0 50%;
+}
+
+/* Count-up metric digits keep their width while counting */
+.count-up {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Scroll-scrubbed word reveal (About lead) */
+.reveal-word {
+  opacity: 0.18;
+}
+
+/* Pinned story ("How I ship LLM systems") */
+.story-tile {
+  display: flex;
+}
+
+.story-tile > .bento-inner {
+  flex: 1;
+}
+
+.story-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.story-kicker {
+  margin: 0;
+  max-width: 100%;
+}
+
+.story-steps {
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-6);
+}
+
+.story-step {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: var(--space-4);
+  align-items: baseline;
+  opacity: 0.3;
+  transition: opacity var(--duration-medium) var(--ease-smooth-out);
+}
+
+.story-step.is-active {
+  opacity: 1;
+}
+
+.story-num {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-sm);
+  color: var(--accent-ink);
+}
+
+.story-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3.6vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  overflow-wrap: anywhere;
+}
+
+.story-desc {
+  grid-column: 2;
+  margin: var(--space-2) 0 0;
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+.story-ring {
+  width: min(100%, 300px);
+  justify-self: center;
+}
+
+.story-ring-bg {
+  fill: none;
+  stroke: var(--tray);
+  stroke-width: 10;
+}
+
+.story-ring-fg {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  stroke-dasharray: 502.65;
+  stroke-dashoffset: 0;
+}
+
+.story-ring-num {
+  font-family: var(--font-mono);
+  font-size: 26px;
+  font-weight: 600;
+  fill: var(--text);
+}
+
+@media (max-width: 767px) {
+  .story-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .story-kicker {
+    max-width: calc(100% - 72px);
+  }
+
+  .story-ring {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    width: 56px;
+  }
+
+  .story-steps {
+    gap: var(--space-4);
+  }
+}
+
+/* Tile spotlight — mouse/trackpad only */
+@media (hover: hover) and (pointer: fine) {
+  .bento-tile {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .bento-tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(
+      320px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+      color-mix(in srgb, var(--accent) 13%, transparent),
+      transparent 70%
+    );
+    transition: opacity var(--duration-fast) var(--ease-smooth-out);
+  }
+
+  .bento-tile:hover::after {
+    opacity: 1;
+  }
+
+  .bento-tile:hover {
+    border-color: color-mix(in srgb, var(--accent) 35%, var(--border-subtle));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-intro,
+  .intro-pending .site-intro {
+    display: none;
+  }
+
+  .reveal-word,
+  .story-step {
+    opacity: 1;
+  }
+
+  .bento-tile::after {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   WIDE SCREENS — wider grid on large monitors + full-bleed section bands.
+   Content stays centred; paragraphs keep their 58–62ch measure.
+   ========================================================================== */
+
+:root,
+html[data-theme="light"] {
+  --band-cool: #DCE0E8;  /* a step deeper than --tray so the band reads */
+  --band-warm: #F2E3D8;  /* accent-tinted */
+}
+
+html[data-theme="dark"],
+html.dark-mode {
+  --band-cool: #0C0D10;  /* deeper than --bg so the band reads */
+  --band-warm: #1D1916;  /* graphite, lightly warmed toward the accent */
+}
+
+/* Large monitors: cards fill the screen with a small margin (48px at 1920, 64px at 2560),
+   up to 2400px on ultra-wide displays where the bands cover the rest. */
+@media (min-width: 1600px) {
+  :root,
+  html[data-theme] {
+    --container-max: 2400px;
+    --container-pad: clamp(32px, 2.5vw, 64px);
+  }
+
+  /* Keep the hero inside the first screen: the portrait gets a height cap
+     instead of growing with its wider column (photo is cropped, not stretched). */
+  .portrait-frame {
+    aspect-ratio: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+    height: clamp(420px, calc(100svh - var(--nav-offset) - 160px), 760px);
+  }
+}
+
+/* Full-bleed band: the background runs edge to edge (html clips the overflow),
+   the section's content stays in the centred column. */
+.band {
+  position: relative;
+  isolation: isolate;
+}
+
+.band::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset-block: calc(-1 * var(--space-8));
+  inset-inline: calc(50% - 50vw);
+  background: var(--band-bg);
+  border-block: 1px solid var(--border-subtle);
+  pointer-events: none;
+  transition: background-color var(--duration-medium) var(--ease-smooth-out);
+}
+
+/* Hero band runs up behind the floating nav to the top of the page */
+.band-hero {
+  --band-bg: var(--band-cool);
+}
+
+.band-hero::before {
+  inset-block-start: -600px;
+  border-block-start: 0;
+}
+
+/* Pinned "How I ship" story: warm tone marks the how-I-work moment */
+.band-story {
+  --band-bg: var(--band-warm);
+}
+
+/* Footer band runs to the bottom of the page */
+.band-footer {
+  --band-bg: var(--surface);
+}
+
+.band-footer::before {
+  inset-block: 0 -400px;
+  border-block-end: 0;
+}

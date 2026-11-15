@@ -11,7 +11,7 @@ A crisp, architectural bento system modeled after anodized precision instruments
 
 - **Density:** Balanced (`5 / 10`) — breathable white space inside asymmetric tiles (`8/4`, `6/3/3`, `7/5`).
 - **Variance:** Offset Asymmetric (`7 / 10`) — mixes hero feature trays, narrow telemetry cards, interactive micro-demo panels, and two-column career strips; 3-equal bento boxes are forbidden.
-- **Motion:** Measured & Tactile (`4 / 10`) — deterministic CSS transitions matching `transitions-polish` tokens, hardware-accelerated (`transform`, `opacity`), plus optional synthesized subtle audio cues (`SpatialSynth`) gated by user toggle.
+- **Motion:** Measured & Tactile (`5 / 10`) — deterministic CSS transitions matching `transitions-polish` tokens, hardware-accelerated (`transform`, `opacity`), plus optional synthesized subtle audio cues (`SpatialSynth`) gated by user toggle. A small GSAP + ScrollTrigger motion layer (`js/motion.js`, see §5 *Motion Layer*) adds five signature moments; nothing else animates on scroll.
 
 ---
 
@@ -107,7 +107,7 @@ Three distinct functional font voices loaded from Google Fonts with `font-displa
 ## 5. Components & Interaction States
 
 - **Floating Pill Navigation (`header.nav-pill`):** Centered max-width `1240px` shell with wordmark (`Anandhu Krishna`), 5 anchor links (`About`, `Experience`, `Projects`, `Skills`, `Contact`), `EN/FR` switcher (`#lang-switch`), Theme toggle (`#dark-mode-toggle`), and Web Audio toggle (`#sound-toggle`). Below `768px`, links collapse into an accessible toggleable drawer (`aria-expanded`, `Escape` dismiss, `44px+` touch targets).
-- **Double-Bezel Bento Tile (`.bento-tile`):** Outer shell (`padding: 8px`, `--surface`, `--border-subtle`, `--rim`) enclosing an inner container (`--radius-inner`, `padding: 24px` / `32px`, `border: 1px solid var(--border-subtle)`). Only CSS border-color / subtle elevation change on `@media (hover: hover) and (pointer: fine)` — **no 3D JavaScript tilt**.
+- **Double-Bezel Bento Tile (`.bento-tile`):** Outer shell (`padding: 8px`, `--surface`, `--border-subtle`, `--rim`) enclosing an inner container (`--radius-inner`, `padding: 24px` / `32px`, `border: 1px solid var(--border-subtle)`). On `@media (hover: hover) and (pointer: fine)` only: accent-tinted border plus a soft cursor-following spotlight (`::after` radial gradient, accent at 13%, `--spot-x/--spot-y`) — **no 3D JavaScript tilt**.
 - **Buttons:**
   - **Primary (`.btn-primary`):** Solid `--accent` background, `--btn-fg` bold text, min-height `44px`, press scale `0.97`. One clear primary CTA per zone.
   - **Secondary (`.btn-secondary`):** `--tray` fill, `1px solid var(--border-subtle)`, `--text` color, min-height `44px`.
@@ -118,11 +118,20 @@ Three distinct functional font voices loaded from Google Fonts with `font-displa
 - **Case Study Brief Modal (`Project 4` + Detail Trigger):** Accessible native `<dialog>` (or `role="dialog" aria-modal="true"`) displaying problem, pipeline SVG schematic, metrics (`-15% churn`, `+25% engagement`, `62% forecast accuracy`), and direct `#contact` jump; traps focus, closes via `Escape` / backdrop / close button, and restores focus to trigger.
 - **Inline Form & Validation (`#spatial-contact-form`):** Stacked label above `16px` input (`--border-control`), validation on blur & submit (`aria-invalid="true"`, linked `aria-describedby` error hint), loading spinner + disabled double-submit lock while posting to `formsubmit.co`, offline check (`navigator.onLine`), and localized feedback banner (`#form-feedback`).
 
+- **Motion Layer (`js/motion.js`, GSAP 3.12.5 + ScrollTrigger from cdnjs, `defer`):**
+  - *First-visit intro:* `--bg` cover, name rises, accent hairline draws, cover lifts and hero tiles settle (~1.3s). Once per browser session (`sessionStorage.akr_intro_seen`); skipped for deep links (`#hash`) and reduced motion. Gated before first paint by `html.intro-pending` with a 4s failsafe.
+  - *Hero count-up:* `-15%` / `+25%` count from 0 once on screen (after the intro). Final value in an `.sr-only` span; animated digits are `aria-hidden`.
+  - *About word reveal:* `.narrative-lead` words scrub from 18% to full opacity with scroll; re-split after EN/FR switches.
+  - *Pinned story ("How I ship LLM systems"):* Serve / Retrieve / Verify card pins under the nav for 160% of a viewport with a progress ring. Pins only when the card fits the viewport (min-height 560px); otherwise all steps show statically.
+  - *Tile spotlight:* see Double-Bezel Bento Tile.
+  - **Reduced motion / no JS:** all five fall back to the static layout (full text, final numbers, all steps visible, no cover).
+
 ---
 
 ## 6. Layout & Responsive Grid
 
-- **Container:** `max-width: 1240px`, `margin: 0 auto`, inline padding `clamp(16px, 4vw, 40px)`.
+- **Container:** `--container-max` = `1240px`, `margin: 0 auto`, inline padding `clamp(16px, 4vw, 40px)`. At `>= 1600px` the grid fills the screen: `--container-max: 2400px`, padding `clamp(32px, 2.5vw, 64px)` (48px at 1920, 64px at 2560), and the hero portrait switches from `3:4` to a viewport-capped height (`clamp(420px, 100svh - nav - 160px, 760px)`, cropped with `object-fit: cover`) so the hero stays within the first screen. Paragraphs keep their `58–62ch` measure at every width.
+- **Full-bleed bands (`.band`):** a section's background runs edge to edge (`::before`, `inset-inline: calc(50% - 50vw)`, clipped by `html { overflow-x: clip }`) while its content stays in the container. Hero = `--band-cool` (runs up behind the nav), "How I ship" story = `--band-warm`, footer = `--surface`. Band tokens: light `#DCE0E8` / `#F2E3D8`, dark `#0C0D10` / `#1D1916`. Use bands sparingly; no more than three per page.
 - **Desktop Grid Composition (`>= 1024px`):**
   - Hero Row 1: `8fr / 4fr` (Headline + CTAs / Optimized Portrait `images/about.jpg`)
   - Hero/About Summary Row 2: `6fr / 3fr / 3fr` (Inference Runtime / 6D Impact Metric / Paris Coordinates & Links)

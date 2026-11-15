@@ -41,11 +41,33 @@
     })();
   </script>
 
+  <!-- First-visit intro gate (before first paint; skipped on repeat visits, deep links, reduced motion) -->
+  <script>
+    (function () {
+      try {
+        if (sessionStorage.getItem('akr_intro_seen') || location.hash ||
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var root = document.documentElement;
+        root.classList.add('intro-pending');
+        // Failsafe: never leave the cover up if the motion script fails to load
+        window.__introFailsafe = setTimeout(function () { root.classList.remove('intro-pending'); }, 4000);
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Tactile Craft Bento Design System -->
   <link rel="stylesheet" href="css/spatial.css">
 </head>
 
 <body>
+  <!-- First-visit intro cover (decorative; shown only while html.intro-pending) -->
+  <div class="site-intro" aria-hidden="true">
+    <div class="site-intro-inner">
+      <span class="site-intro-kicker">AI Engineer &amp; Data Scientist · Paris</span>
+      <span class="site-intro-name"><span>Anandhu</span> <span>Krishna</span></span>
+      <span class="site-intro-line"></span>
+    </div>
+  </div>
   <a href="#main-content" class="skip-link" data-translate="skip_to_content">Skip to main content</a>
 
   <header class="site-header">
@@ -99,7 +121,7 @@
   <main id="main-content" class="page-main">
 
     <!-- HERO SECTION (8/4 + 6/3/3 Bento Opening) -->
-    <section id="hero" class="bento-section" aria-labelledby="hero-title">
+    <section id="hero" class="bento-section band band-hero" aria-labelledby="hero-title">
       <div class="bento-r1">
         <article class="bento-tile tile-hero">
           <div class="bento-inner">
@@ -238,6 +260,39 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW I SHIP (Pinned three-step story) -->
+    <section class="bento-section story-section band band-story" aria-labelledby="story-heading">
+      <div class="bento-tile story-tile">
+        <div class="bento-inner story-grid">
+          <div class="story-copy">
+            <h2 id="story-heading" class="hero-kicker story-kicker" data-translate="story_kicker">How I ship LLM systems</h2>
+            <ol class="story-steps">
+              <li class="story-step is-active">
+                <span class="story-num tabular-nums" aria-hidden="true">01</span>
+                <h3 class="story-title" data-translate="story_s1_title">Serve</h3>
+                <p class="story-desc" data-translate="story_s1_desc">Quantized vLLM and llama.cpp runtimes on-premise, with AWQ/GGUF, PagedAttention and speculative decoding.</p>
+              </li>
+              <li class="story-step is-active">
+                <span class="story-num tabular-nums" aria-hidden="true">02</span>
+                <h3 class="story-title" data-translate="story_s2_title">Retrieve</h3>
+                <p class="story-desc" data-translate="story_s2_desc">Verifiable RAG and MCP agents over graph-backed knowledge, so every answer traces to a source.</p>
+              </li>
+              <li class="story-step is-active">
+                <span class="story-num tabular-nums" aria-hidden="true">03</span>
+                <h3 class="story-title" data-translate="story_s3_title">Verify</h3>
+                <p class="story-desc" data-translate="story_s3_desc">PII masking guardrails and EU AI Act audit pipelines before anything reaches production.</p>
+              </li>
+            </ol>
+          </div>
+          <svg class="story-ring" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+            <circle cx="100" cy="100" r="80" class="story-ring-bg"></circle>
+            <circle cx="100" cy="100" r="80" class="story-ring-fg"></circle>
+            <text x="100" y="108" text-anchor="middle" class="story-ring-num">03/03</text>
+          </svg>
         </div>
       </div>
     </section>
@@ -923,7 +978,7 @@
     </div>
   </dialog>
 
-  <footer class="site-footer">
+  <footer class="site-footer band band-footer">
     <p class="footer-copy">&copy; <span id="year">2026</span> Anandhu Krishna. <span data-translate="footer_rights">All rights reserved.</span></p>
     <ul class="footer-links">
       <li>
@@ -970,5 +1025,8 @@
   <!-- Scripts -->
   <script src="js/translations.js"></script>
   <script src="js/spatial.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/motion.js" defer></script>
 </body>
 </html>
