@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('.icon-theme') : null;
   const metaThemeColor = document.getElementById('meta-theme-color');
 
-  const storedTheme = safeGetStorage('spatial_theme');
+  const storedTheme = safeGetStorage('akr_theme');
   let currentTheme =
     storedTheme === 'dark'
       ? 'dark'
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
       metaThemeColor.setAttribute('content', currentTheme === 'dark' ? '#121316' : '#ECEEF2');
     }
     if (persist) {
-      safeSetStorage('spatial_theme', currentTheme);
+      safeSetStorage('akr_theme', currentTheme);
     }
     syncThemeUI();
   };

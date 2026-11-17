@@ -13,9 +13,10 @@
   window.gtag('js', new Date());
   window.gtag('config', 'G-W3K41TT4G4');
 
-  // Theme: light unless the visitor chose dark before (avoids a light/dark flash)
+  // Theme: light by default; dark only if chosen on this site with the toggle.
+  // Stored as 'akr_theme' (the old dark-first site used 'spatial_theme', deliberately ignored).
   var saved = null;
-  try { saved = localStorage.getItem('spatial_theme'); } catch (e) { /* storage blocked */ }
+  try { saved = localStorage.getItem('akr_theme'); } catch (e) { /* storage blocked */ }
   var theme = saved === 'dark' ? 'dark' : 'light';
   root.dataset.theme = theme;
   var meta = document.getElementById('meta-theme-color');
