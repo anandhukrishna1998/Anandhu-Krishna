@@ -5,7 +5,7 @@
   <title>Anandhu Krishna — AI Engineer & Spatial Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Portfolio of Anandhu Krishna — AI Engineer & Data Scientist specializing in LLMs, Agentic Architectures, Knowledge Graphs, and High-Performance ML Systems in Paris, France.">
-  <meta name="theme-color" content="#06070a">
+  <meta name="theme-color" content="#f5f7fb">
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="fonts/apple-touch-icon.png">
@@ -27,6 +27,11 @@
 </head>
 
 <body>
+  <script>
+    // Apply the light theme before first paint (no dark flash); dark only if chosen with the toggle
+    try { if (localStorage.getItem('akr_theme') !== 'dark') document.body.classList.add('light-mode'); }
+    catch (e) { document.body.classList.add('light-mode'); }
+  </script>
   <!-- Spatial Ambient Chromatic Viewport -->
   <div class="spatial-ambient-viewport" aria-hidden="true">
     <div class="aurora-mesh"></div>

@@ -299,7 +299,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 10. Dark / Light Mode Spatial Ambiance Toggle
   const modeBtn = document.getElementById('dark-mode-toggle');
   if (modeBtn) {
-    const savedMode = localStorage.getItem('spatial_theme') || 'dark';
+    // Light by default; stored as 'akr_theme' so old 'spatial_theme' = dark choices are ignored
+    let savedMode = 'light';
+    try { savedMode = localStorage.getItem('akr_theme') || 'light'; } catch (e) { /* storage blocked */ }
     if (savedMode === 'light') {
       document.body.classList.add('light-mode');
       modeBtn.innerHTML = '🌙';
@@ -310,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modeBtn.addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
       const isLight = document.body.classList.contains('light-mode');
-      localStorage.setItem('spatial_theme', isLight ? 'light' : 'dark');
+      try { localStorage.setItem('akr_theme', isLight ? 'light' : 'dark'); } catch (e) { /* storage blocked */ }
       modeBtn.innerHTML = isLight ? '🌙' : '☀️';
       synth.playTone(isLight ? 980 : 540, 0.06);
     });
