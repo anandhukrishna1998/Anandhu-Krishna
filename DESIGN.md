@@ -37,7 +37,7 @@ All UI elements, interactive micro-demos, SVG architecture diagrams, and status 
 | Status Success | `--status-success` | `#156E3F` | Verified contact transmission, copy confirmation (`6.03:1`) |
 | Status Error | `--status-error` | `#B91C1C` | Inline validation messages, network failure (`6.20:1`) |
 
-### Dark Mode (`[data-theme="dark"]` & `.dark-mode` backward compat)
+### Dark Mode (`html[data-theme="dark"]`)
 | Role | Token | Value | Functional Usage |
 | :--- | :--- | :--- | :--- |
 | Canvas Background | `--bg` | `#121316` | Matte anodized graphite ground, `theme-color` meta sync |
@@ -116,7 +116,17 @@ Three distinct functional font voices loaded from Google Fonts with `font-displa
   - *Computable Contracts Explorer:* Semantic `role="tablist"` tabs (`Liability Clause`, `Deductible`, `Exclusions`) updating the inline dual-theme SVG node map and structured JSON summary readout. Keyboard Arrow Left/Right + Click supported.
   - *MCP Server & RAG Guardrail Switch:* Accessible `role="switch"` button toggling `PII Masking` (`ON` / `OFF`) inside a realistic query/retrieval log well, translated across `EN` and `FR`.
 - **Case Study Brief Modal (`Project 4` + Detail Trigger):** Accessible native `<dialog>` (or `role="dialog" aria-modal="true"`) displaying problem, pipeline SVG schematic, metrics (`-15% churn`, `+25% engagement`, `62% forecast accuracy`), and direct `#contact` jump; traps focus, closes via `Escape` / backdrop / close button, and restores focus to trigger.
-- **Inline Form & Validation (`#spatial-contact-form`):** Stacked label above `16px` input (`--border-control`), validation on blur & submit (`aria-invalid="true"`, linked `aria-describedby` error hint), loading spinner + disabled double-submit lock while posting to `formsubmit.co`, offline check (`navigator.onLine`), and localized feedback banner (`#form-feedback`).
+- **Inline Form & Validation (`#spatial-contact-form`):** Stacked label above `16px` input (`--border-control`), validation on blur & submit (`aria-invalid="true"`, linked `aria-describedby` error hint), loading spinner + disabled double-submit lock while posting to `formsubmit.co`, offline check (`navigator.onLine`), and localized feedback banner (`#form-feedback`). Fields carry `maxlength` (name 100, email 254, subject 150, message 5000) and a hidden `_honey` spam trap.
+
+---
+
+## 5b. Security Baseline (static site on GitHub Pages)
+
+- **No inline scripts or styles.** Everything that must run before first paint (GA bootstrap, theme, intro gate) lives in `js/boot.js`, loaded synchronously in `<head>`. Never add `<script>…</script>`, `onclick=`, or `style="…"` in HTML: the CSP blocks them.
+- **Content-Security-Policy** is a `<meta http-equiv>` in `index.html` (Pages can't send headers). Allowed origins: `self`, `cdnjs.cloudflare.com` (GSAP), `*.googletagmanager.com` / `*.google-analytics.com` / `*.analytics.google.com` (GA4), `fonts.googleapis.com` / `fonts.gstatic.com`, and `formsubmit.co` (form). Adding a new third-party resource means adding its origin to the matching directive.
+- **Subresource Integrity:** CDN scripts are pinned to an exact version with `integrity` (cdnjs-published SHA-512) and `crossorigin="anonymous"`. Changing the version means updating the hash.
+- **Links:** every `target="_blank"` link has `rel="noopener noreferrer"`.
+- **DOM writes:** only fixed SVG icon constants go through `innerHTML`; translated copy is set with `textContent` (plus the `<strong>`-only parser). Never pipe user input or server responses into HTML.
 
 - **Motion Layer (`js/motion.js`, GSAP 3.12.5 + ScrollTrigger from cdnjs, `defer`):**
   - *First-visit intro:* `--bg` cover, name rises, accent hairline draws, cover lifts and hero tiles settle (~1.3s). Once per browser session (`sessionStorage.akr_intro_seen`); skipped for deep links (`#hash`) and reduced motion. Gated before first paint by `html.intro-pending` with a 4s failsafe.

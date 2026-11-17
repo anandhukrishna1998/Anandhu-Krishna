@@ -1,5 +1,7 @@
 # ── Agent & IDE config ──
 .agents/
+.claude/
+.superpowers/
 .gemini/
 .cursor/
 .vscode/

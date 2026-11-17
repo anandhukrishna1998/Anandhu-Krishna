@@ -2,6 +2,8 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://*.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://formsubmit.co https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; form-action https://formsubmit.co; object-src 'none'; base-uri 'self'; frame-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Anandhu Krishna — AI Engineer &amp; Data Scientist</title>
   <meta name="description" content="Portfolio of Anandhu Krishna — AI Engineer &amp; Data Scientist specializing in quantized LLM serving (vLLM, llama.cpp), verifiable RAG, MCP workflows, and knowledge graphs in Paris, France.">
@@ -15,52 +17,23 @@
   <link rel="apple-touch-icon" sizes="180x180" href="fonts/apple-touch-icon.png">
   <link rel="manifest" href="fonts/site.webmanifest">
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Analytics, theme and intro gate: must run before first paint -->
+  <script src="js/boot.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3K41TT4G4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-W3K41TT4G4');
-  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Manrope:wght@400;500;600;700&family=Martian+Mono:wght@400;600&display=swap">
 
-  <!-- Zero-FOUC Theme Hydration (Light Default) -->
-  <script>
-    (function () {
-      var saved = 'light';
-      try { saved = localStorage.getItem('spatial_theme'); } catch (e) {}
-      var theme = saved === 'dark' ? 'dark' : 'light';
-      document.documentElement.dataset.theme = theme;
-      var meta = document.getElementById('meta-theme-color');
-      if (meta) meta.setAttribute('content', theme === 'dark' ? '#121316' : '#ECEEF2');
-    })();
-  </script>
 
-  <!-- First-visit intro gate (before first paint; skipped on repeat visits, deep links, reduced motion) -->
-  <script>
-    (function () {
-      try {
-        if (sessionStorage.getItem('akr_intro_seen') || location.hash ||
-            window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        var root = document.documentElement;
-        root.classList.add('intro-pending');
-        // Failsafe: never leave the cover up if the motion script fails to load
-        window.__introFailsafe = setTimeout(function () { root.classList.remove('intro-pending'); }, 4000);
-      } catch (e) {}
-    })();
-  </script>
 
-  <!-- Tactile Craft Bento Design System -->
+  <!-- Styles -->
   <link rel="stylesheet" href="css/spatial.css">
 </head>
 
 <body>
-  <!-- First-visit intro cover (decorative; shown only while html.intro-pending) -->
+  <!-- First-visit intro cover (decorative; visible only while html.intro-pending) -->
   <div class="site-intro" aria-hidden="true">
     <div class="site-intro-inner">
       <span class="site-intro-kicker">AI Engineer &amp; Data Scientist · Paris</span>
@@ -120,7 +93,7 @@
 
   <main id="main-content" class="page-main">
 
-    <!-- HERO SECTION (8/4 + 6/3/3 Bento Opening) -->
+    <!-- Hero -->
     <section id="hero" class="bento-section band band-hero" aria-labelledby="hero-title">
       <div class="bento-r1">
         <article class="bento-tile tile-hero">
@@ -223,7 +196,7 @@
       </div>
     </section>
 
-    <!-- ABOUT SECTION (7/5 Narrative + 2x2 Spec Wells) -->
+    <!-- About -->
     <section id="about" class="bento-section" aria-labelledby="about-heading">
       <div class="section-header">
         <h2 id="about-heading" class="section-title" data-translate="about_heading">Engineering systems from research to sovereign production.</h2>
@@ -264,7 +237,7 @@
       </div>
     </section>
 
-    <!-- HOW I SHIP (Pinned three-step story) -->
+    <!-- How I ship (pinned three-step story) -->
     <section class="bento-section story-section band band-story" aria-labelledby="story-heading">
       <div class="bento-tile story-tile">
         <div class="bento-inner story-grid">
@@ -297,7 +270,7 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE & EDUCATION SECTION -->
+    <!-- Experience & education -->
     <section id="experience" class="bento-section" aria-labelledby="experience-heading">
       <div class="section-header">
         <h2 id="experience-heading" class="section-title" data-translate="experience_heading">Experience &amp; Education</h2>
@@ -305,7 +278,7 @@
       </div>
 
       <div class="career-list">
-        <!-- Hubicus (Current AI Engineer) -->
+        <!-- Hubicus, AI Engineer -->
         <article class="bento-tile career-strip">
           <div class="bento-inner">
             <div class="career-header">
@@ -330,7 +303,7 @@
           </div>
         </article>
 
-        <!-- Hubicus (Internship) -->
+        <!-- Hubicus, internship -->
         <article class="bento-tile career-strip">
           <div class="bento-inner">
             <div class="career-header">
@@ -426,7 +399,7 @@
       </div>
     </section>
 
-    <!-- PROJECTS SECTION (7/5 + 5/7 Asymmetric Bento + Dual-Theme SVG Schematics + Micro-Demos) -->
+    <!-- Projects -->
     <section id="projects" class="bento-section" aria-labelledby="projects-heading">
       <div class="section-header">
         <h2 id="projects-heading" class="section-title" data-translate="projects_heading">Selected Engineering &amp; Research</h2>
@@ -434,9 +407,8 @@
       </div>
 
       <div class="bento-stack">
-        <!-- Row A: 7fr / 5fr -->
         <div class="bento-r3">
-          <!-- Project 1: AXA Computable Contracts -->
+          <!-- Project 1: computable contracts (AXA) -->
           <article class="bento-tile project-tile">
             <div class="bento-inner">
               <div class="project-body">
@@ -506,7 +478,7 @@
             </div>
           </article>
 
-          <!-- Project 2: Hubicus MCP Server & RAG Knowledge Agent -->
+          <!-- Project 2: MCP server & RAG agent (Hubicus) -->
           <article class="bento-tile project-tile">
             <div class="bento-inner">
               <div class="project-body">
@@ -544,7 +516,7 @@
                   </svg>
                 </div>
 
-                <!-- Interactive EU AI Act PII Masking Toggle -->
+                <!-- PII masking demo -->
                 <div class="micro-tray">
                   <div class="switch-control">
                     <span class="switch-label" id="pii-switch-label" data-translate="demo_pii_label">EU AI Act PII Masking</span>
@@ -580,9 +552,8 @@
           </article>
         </div>
 
-        <!-- Row B: 5fr / 7fr -->
         <div class="bento-r3 is-reversed">
-          <!-- Project 3: Zero-Shot LLM Research -->
+          <!-- Project 3: zero-shot LLM research -->
           <article class="bento-tile project-tile">
             <div class="bento-inner">
               <div class="project-body">
@@ -640,7 +611,7 @@
             </div>
           </article>
 
-          <!-- Project 4: 6D Technologies Predictive Churn & Upsell -->
+          <!-- Project 4: churn & upsell engine (6D Technologies) -->
           <article class="bento-tile project-tile">
             <div class="bento-inner">
               <div class="project-body">
@@ -706,7 +677,7 @@
       </div>
     </section>
 
-    <!-- SKILLS SECTION (Asymmetric 2x2 Hardware Trays — All 38 Real Tokens) -->
+    <!-- Skills -->
     <section id="skills" class="bento-section" aria-labelledby="skills-heading">
       <div class="section-header">
         <h2 id="skills-heading" class="section-title" data-translate="skills_heading">Technical Capabilities</h2>
@@ -798,7 +769,7 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION (5/7 Direct Channels + Hardened FormSubmit AJAX Form) -->
+    <!-- Contact (form posts to formsubmit.co) -->
     <section id="contact" class="bento-section" aria-labelledby="contact-heading">
       <div class="section-header">
         <h2 id="contact-heading" class="section-title" data-translate="contact_heading">Start a conversation</h2>
@@ -868,25 +839,25 @@
             <form action="https://formsubmit.co/ajax/anandhukrishna091@gmail.com" method="POST" id="spatial-contact-form" class="contact-form" novalidate>
               <div class="form-field">
                 <label class="form-label" for="contact-name" data-translate="form_sender_lbl">Name / Organization</label>
-                <input type="text" id="contact-name" name="name" class="form-input" autocomplete="name" placeholder="Your name or company" data-translate-placeholder="form_sender_ph" aria-describedby="err-contact-name" required>
+                <input type="text" id="contact-name" name="name" maxlength="100" class="form-input" autocomplete="name" placeholder="Your name or company" data-translate-placeholder="form_sender_ph" aria-describedby="err-contact-name" required>
                 <span id="err-contact-name" class="field-error" role="alert"></span>
               </div>
 
               <div class="form-field">
                 <label class="form-label" for="contact-email" data-translate="form_email_lbl">Email</label>
-                <input type="email" id="contact-email" name="email" class="form-input" autocomplete="email" inputmode="email" placeholder="name@company.com" data-translate-placeholder="form_email_ph" aria-describedby="err-contact-email" required>
+                <input type="email" id="contact-email" name="email" maxlength="254" class="form-input" autocomplete="email" inputmode="email" placeholder="name@company.com" data-translate-placeholder="form_email_ph" aria-describedby="err-contact-email" required>
                 <span id="err-contact-email" class="field-error" role="alert"></span>
               </div>
 
               <div class="form-field">
                 <label class="form-label" for="contact-subject" data-translate="form_subject_lbl">Subject</label>
-                <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="Role, AI advisory, or project scope" data-translate-placeholder="form_subject_ph" aria-describedby="err-contact-subject" required>
+                <input type="text" id="contact-subject" name="subject" maxlength="150" class="form-input" placeholder="Role, AI advisory, or project scope" data-translate-placeholder="form_subject_ph" aria-describedby="err-contact-subject" required>
                 <span id="err-contact-subject" class="field-error" role="alert"></span>
               </div>
 
               <div class="form-field">
                 <label class="form-label" for="contact-message" data-translate="form_msg_lbl">Message</label>
-                <textarea id="contact-message" name="message" class="form-textarea" rows="5" placeholder="Share your context, timeline, or technical goals..." data-translate-placeholder="form_msg_ph" aria-describedby="err-contact-message" required></textarea>
+                <textarea id="contact-message" name="message" maxlength="5000" class="form-textarea" rows="5" placeholder="Share your context, timeline, or technical goals..." data-translate-placeholder="form_msg_ph" aria-describedby="err-contact-message" required></textarea>
                 <span id="err-contact-message" class="field-error" role="alert"></span>
               </div>
 
@@ -911,7 +882,7 @@
 
   </main>
 
-  <!-- CASE STUDY 04 DIALOG (Native Modal) -->
+  <!-- Case study dialog (project 4) -->
   <dialog id="case-study-dialog" class="case-dialog" aria-labelledby="case-dialog-title">
     <div class="case-dialog-inner">
       <div class="case-dialog-header">
@@ -1025,8 +996,8 @@
   <!-- Scripts -->
   <script src="js/translations.js"></script>
   <script src="js/spatial.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
   <script src="js/motion.js" defer></script>
 </body>
 </html>

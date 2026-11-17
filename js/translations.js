@@ -1,6 +1,7 @@
 /**
- * Bilingual Translation Matrix (English & French)
- * Tactile Craft Bento Portfolio — Anandhu Krishna
+ * UI copy in English and French.
+ * Keys match the data-translate, data-translate-aria and data-translate-placeholder
+ * attributes in index.html; values may contain <strong> only.
  */
 
 const translations = {

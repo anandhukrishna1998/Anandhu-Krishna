@@ -1,6 +1,6 @@
 /**
- * TACTILE CRAFT BENTO — INTERACTIVE CONTROLLER
- * Anandhu Krishna Portfolio (js/spatial.js)
+ * Site interactions: sound, theme, mobile menu, copy email, project demos,
+ * case study dialog, contact form, language switch, footer year and scroll spy.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentLang = storedLang === 'fr' ? 'fr' : 'en';
 
   // --------------------------------------------------------------------------
-  // 1. SpatialSynth & #sound-toggle (Default Muted, Inline SVG Swap)
+  // 1. Interface sounds (#sound-toggle, off by default)
   // --------------------------------------------------------------------------
   const AUDIO_SVG_MUTED =
     '<path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"></path>' +
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const synth = new SpatialSynth();
 
   // --------------------------------------------------------------------------
-  // 2. Dual-Theme Toggle (#dark-mode-toggle) — Light Default & Persistence
+  // 2. Theme toggle (#dark-mode-toggle, light by default, choice saved)
   // --------------------------------------------------------------------------
   const THEME_SVG_MOON = '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>';
   const THEME_SVG_SUN =
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 3. Mobile Navigation Drawer (#mobile-nav-toggle, #mobile-drawer)
+  // 3. Mobile menu (#mobile-nav-toggle, #mobile-drawer)
   // --------------------------------------------------------------------------
   const MENU_SVG_HAMBURGER =
     '<line x1="4" x2="20" y1="6" y2="6"></line>' +
@@ -447,7 +447,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --------------------------------------------------------------------------
-  // 5. Clause -> Graph Node Explorer ([data-clause-tab])
+  // 5. Contracts demo: clause tabs update the graph and JSON ([data-clause-tab])
   // --------------------------------------------------------------------------
   const VALID_CLAUSES = ['liability', 'deductible', 'exclusions'];
   const clauseTabs = Array.from(document.querySelectorAll('[data-clause-tab]'));
@@ -521,7 +521,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 6. EU AI Act PII Guardrail Switch (#pii-toggle)
+  // 6. PII masking demo switch (#pii-toggle)
   // --------------------------------------------------------------------------
   const piiToggle = document.getElementById('pii-toggle');
   const piiStateLabel = document.getElementById('pii-state-label');
@@ -567,7 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 7. Accessible Case Study Dialog (#case-study-dialog)
+  // 7. Case study dialog (#case-study-dialog)
   // --------------------------------------------------------------------------
   const openModalBtn = document.getElementById('open-p4-modal');
   const caseDialog = document.getElementById('case-study-dialog');
@@ -708,7 +708,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 8. Hardened FormSubmit AJAX Handler (#spatial-contact-form)
+  // 8. Contact form: validation and submit to formsubmit.co (#spatial-contact-form)
   // --------------------------------------------------------------------------
   const contactForm = document.getElementById('spatial-contact-form');
   const submitBtn = document.getElementById('submit-btn');
@@ -885,7 +885,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 9. Bilingual Language Switcher (#lang-switch, localStorage['preferredLanguage'])
+  // 9. Language switch EN/FR (#lang-switch, saved as localStorage['preferredLanguage'])
   // --------------------------------------------------------------------------
   const langSwitchBtn = document.getElementById('lang-switch');
 
@@ -976,7 +976,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 10. Dynamic Copyright Year (#year) & Active Section Scroll Spy
+  // 10. Footer year (#year) and active nav link while scrolling
   // --------------------------------------------------------------------------
   const yearEl = document.getElementById('year');
   if (yearEl) {

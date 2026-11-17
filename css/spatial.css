@@ -1,6 +1,6 @@
 /* ==========================================================================
-   TACTILE CRAFT BENTO — DUAL-THEME DESIGN SYSTEM (OPTION 4)
-   Anandhu Krishna Portfolio · Light Default (:root) + Persisted Dark Mode
+   Anandhu Krishna portfolio — styles
+   Light theme by default (:root), dark via html[data-theme="dark"]. Tokens: DESIGN.md
    ========================================================================== */
 
 :root,
@@ -77,11 +77,8 @@ html[data-theme="light"] {
   --nav-offset: 96px;
 }
 
-/* Dark Mode Tokens (+ backward-compatible .dark-mode class aliases) */
-html[data-theme="dark"],
-[data-theme="dark"],
-html.dark-mode,
-body.dark-mode {
+/* Dark theme tokens */
+html[data-theme="dark"] {
   color-scheme: dark;
 
   --bg: #121316;
@@ -106,7 +103,7 @@ body.dark-mode {
 }
 
 /* ==========================================================================
-   BASE RESET, TYPOGRAPHY & MOBILE-NATIVE PLATFORM LAYER
+   BASE & TYPOGRAPHY
    ========================================================================== */
 
 *,
@@ -232,12 +229,6 @@ a {
   text-decoration-thickness: 1px;
 }
 
-.prose-link {
-  color: var(--accent-ink);
-  text-decoration: underline;
-  font-weight: 600;
-}
-
 strong {
   color: var(--text);
   font-weight: 700;
@@ -246,14 +237,12 @@ strong {
 code,
 kbd,
 samp,
-pre,
-.mono {
+pre {
   font-family: var(--font-mono);
 }
 
 .tabular-nums,
 .stat-value,
-.metric-value,
 .date-pill,
 .case-metric-val {
   font-variant-numeric: tabular-nums;
@@ -344,7 +333,7 @@ select {
   transform: translateY(0);
 }
 
-/* Unified inline SVG icons */
+/* Inline SVG icons */
 .icon {
   width: 1.125rem;
   height: 1.125rem;
@@ -358,13 +347,8 @@ select {
   height: 1rem;
 }
 
-.icon-lg {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
 /* ==========================================================================
-   DETACHED PILL HEADER & RESPONSIVE MOBILE DRAWER
+   HEADER & MOBILE MENU
    ========================================================================== */
 
 .site-header {
@@ -557,7 +541,7 @@ select {
   }
 }
 
-/* Mobile Navigation Drawer (< 768px) — Out-of-Flow Overlay */
+/* Mobile menu (< 768px), overlays the page */
 .mobile-drawer {
   position: absolute;
   top: calc(100% - var(--space-1));
@@ -684,7 +668,7 @@ select {
 }
 
 /* ==========================================================================
-   MAIN CONTAINER, SECTION RHYTHM & ASYMMETRIC BENTO GRIDS
+   LAYOUT & GRIDS
    ========================================================================== */
 
 .page-main {
@@ -742,15 +726,11 @@ select {
   }
 }
 
-/* Base Bento Grid & Asymmetric Presets */
-.bento-grid,
+/* Grid presets */
 .bento-r1,
 .bento-r2,
 .bento-r3,
-.bento-r3-alt,
-.bento-5-7,
 .bento-2x2,
-.specs-grid,
 .skills-grid,
 .contact-grid {
   display: grid;
@@ -761,10 +741,7 @@ select {
 @media (min-width: 768px) {
   .bento-r2,
   .bento-r3,
-  .bento-r3-alt,
-  .bento-5-7,
   .bento-2x2,
-  .specs-grid,
   .skills-grid,
   .contact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -776,12 +753,9 @@ select {
 }
 
 @media (min-width: 1024px) {
-  .bento-grid,
   .bento-r1,
   .bento-r2,
   .bento-r3,
-  .bento-r3-alt,
-  .bento-5-7,
   .bento-2x2,
   .skills-grid,
   .contact-grid {
@@ -789,9 +763,7 @@ select {
   }
 
   /* Hero Row 1: 8 / 4 */
-  .bento-r1,
-  .bento-grid.bento-r1,
-  .bento-grid:has(> .tile-hero) {
+  .bento-r1 {
     grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
     align-items: stretch;
   }
@@ -813,9 +785,7 @@ select {
   }
 
   /* Projects Row B: 5 / 7 */
-  .bento-r3.is-reversed,
-  .bento-r3-alt,
-  .bento-5-7 {
+  .bento-r3.is-reversed {
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     align-items: stretch;
   }
@@ -833,7 +803,7 @@ select {
 }
 
 /* ==========================================================================
-   HARDWARE DOUBLE-BEZEL BENTO TILE
+   BENTO TILES
    ========================================================================== */
 
 .bento-tile {
@@ -878,7 +848,7 @@ select {
 }
 
 /* ==========================================================================
-   HERO, PORTRAIT FRAME & SPEC TRAYS
+   HERO & ABOUT
    ========================================================================== */
 
 .tile-hero-copy {
@@ -1109,7 +1079,7 @@ select {
 }
 
 /* ==========================================================================
-   EXPERIENCE & EDUCATION HARDWARE STRIPS
+   EXPERIENCE & EDUCATION
    ========================================================================== */
 
 .career-list {
@@ -1241,7 +1211,7 @@ select {
 }
 
 /* ==========================================================================
-   PROJECTS, DUAL-THEME SVG WELLS & INTERACTIVE MICRO-DEMOS
+   PROJECTS & DEMOS
    ========================================================================== */
 
 .project-tile .bento-inner {
@@ -1295,7 +1265,7 @@ select {
   gap: var(--space-3);
 }
 
-/* Recessed Dual-Theme SVG Schematic Well */
+/* SVG diagram well */
 .svg-well {
   background: var(--tray);
   border: 1px solid var(--border-subtle);
@@ -1371,7 +1341,7 @@ select {
   transition: fill var(--duration-medium) var(--ease-smooth-out);
 }
 
-/* Interactive Micro-Demo Recessed Tray */
+/* Demo tray */
 .micro-tray {
   background: var(--tray);
   border: 1px solid var(--border-subtle);
@@ -1732,7 +1702,7 @@ select {
 }
 
 /* ==========================================================================
-   SKILLS HARDWARE TRAYS
+   SKILLS
    ========================================================================== */
 
 .skill-cluster-head {
@@ -1777,7 +1747,7 @@ select {
 }
 
 /* ==========================================================================
-   CONTACT CHANNELS & VALIDATED FORM STATES
+   CONTACT & FORM
    ========================================================================== */
 
 .contact-channels {
@@ -1877,7 +1847,6 @@ select {
   border-color: var(--status-error);
 }
 
-.form-error,
 .field-error {
   font-family: var(--font-mono);
   font-size: var(--text-mono-sm);
@@ -1885,7 +1854,6 @@ select {
   color: var(--status-error);
 }
 
-.form-error:empty,
 .field-error:empty {
   display: none;
 }
@@ -1995,7 +1963,7 @@ select {
 }
 
 /* ==========================================================================
-   FINE-POINTER HOVER GATING (PREVENT TOUCH STICKY HOVER)
+   HOVER STATES (MOUSE/TRACKPAD ONLY, NO STICKY HOVER ON TOUCH)
    ========================================================================== */
 
 @media (hover: hover) and (pointer: fine) {
@@ -2073,7 +2041,7 @@ select {
 }
 
 /* ==========================================================================
-   REDUCED MOTION ACCESSIBILITY OVERRIDE
+   REDUCED MOTION
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
@@ -2349,8 +2317,7 @@ html[data-theme="light"] {
   --band-warm: #F2E3D8;  /* accent-tinted */
 }
 
-html[data-theme="dark"],
-html.dark-mode {
+html[data-theme="dark"] {
   --band-cool: #0C0D10;  /* deeper than --bg so the band reads */
   --band-warm: #1D1916;  /* graphite, lightly warmed toward the accent */
 }
