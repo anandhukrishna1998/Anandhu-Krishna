@@ -1,0 +1,215 @@
+/* ==========================================================================
+   CV Viewer Page — Spatial Synapse 2026 styles (inherits tokens from spatial.css)
+   ========================================================================== */
+
+.cv-hud-island {
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 1120px;
+  width: calc(100% - 2rem);
+}
+
+.cv-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--chrome-border);
+  background: var(--void-surface);
+  transition: border-color 0.2s var(--ease-snappy), transform 0.2s var(--ease-snappy), background 0.2s var(--ease-snappy);
+}
+
+.cv-back-btn:hover {
+  border-color: var(--chrome-border-hover);
+  background: var(--void-surface-hover);
+  transform: translateY(-1px);
+}
+
+.cv-hud-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cv-hud-download {
+  padding: 0.55rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 999px;
+}
+
+.cv-main {
+  position: relative;
+  z-index: 2;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 6.75rem 1.5rem 4rem;
+}
+
+.cv-shell {
+  padding: 1.75rem;
+  border-radius: 24px;
+  background: var(--void-surface);
+  border: 1px solid var(--chrome-border);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cv-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--chrome-border);
+}
+
+.cv-heading-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cv-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ambient-color-1);
+}
+
+.cv-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+.cv-meta {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cv-viewer-frame-wrap {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--chrome-border);
+  background: var(--void-elevated);
+  min-height: 76vh;
+  height: clamp(680px, 84vh, 1180px);
+}
+
+.cv-pdf-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #ffffff;
+}
+
+.cv-fallback-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  border: 1px solid var(--chrome-border);
+  background: var(--void-elevated);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.cv-fallback-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cv-inline-link {
+  color: var(--ambient-color-1);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cv-footer {
+  position: relative;
+  z-index: 2;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.cv-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  list-style: none;
+}
+
+.cv-footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cv-footer-links a:hover {
+  color: var(--text-primary);
+}
+
+@media (max-width: 767px) {
+  .cv-main {
+    padding: 5.75rem 1rem 3rem;
+  }
+
+  .cv-shell {
+    padding: 1.125rem;
+    border-radius: 18px;
+  }
+
+  .cv-hud-download-label {
+    display: none;
+  }
+
+  .cv-actions {
+    width: 100%;
+  }
+
+  .cv-actions a {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .cv-viewer-frame-wrap {
+    min-height: 62vh;
+    height: 68vh;
+  }
+}
