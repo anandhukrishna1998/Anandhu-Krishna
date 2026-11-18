@@ -2,26 +2,32 @@
    CV Viewer Page — Spatial Synapse 2026 styles (inherits tokens from spatial.css)
    ========================================================================== */
 
+/* Header Navigation HUD */
 .cv-hud-island {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.75rem;
   max-width: 1120px;
-  width: calc(100% - 2rem);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .cv-back-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
   color: var(--text-primary);
   text-decoration: none;
   font-family: var(--font-display);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 600;
   padding: 0.5rem 0.9rem;
   border-radius: 999px;
   border: 1px solid var(--chrome-border);
   background: var(--void-surface);
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: border-color 0.2s var(--ease-snappy), transform 0.2s var(--ease-snappy), background 0.2s var(--ease-snappy);
 }
 
@@ -35,23 +41,36 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  flex-shrink: 0;
 }
 
 .cv-hud-download {
-  padding: 0.55rem 1rem;
-  font-size: 0.85rem;
+  width: auto !important;
+  max-width: none !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.85rem !important;
   border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
 }
 
+/* Page Main & Shell */
 .cv-main {
   position: relative;
   z-index: 2;
   max-width: 1120px;
+  width: 100%;
   margin: 0 auto;
-  padding: 6.75rem 1.5rem 4rem;
+  padding: 6.75rem 1.25rem 4rem;
+  box-sizing: border-box;
 }
 
 .cv-shell {
+  width: 100%;
+  box-sizing: border-box;
   padding: 1.75rem;
   border-radius: 24px;
   background: var(--void-surface);
@@ -61,22 +80,36 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  overflow: hidden;
 }
 
+/* Header & Action Toolbar */
 .cv-toolbar {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
   gap: 1.25rem;
   padding-bottom: 1.25rem;
   border-bottom: 1px solid var(--chrome-border);
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .cv-toolbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .cv-heading-group {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  min-width: 0;
 }
 
 .cv-eyebrow {
@@ -93,29 +126,51 @@
   font-weight: 700;
   line-height: 1.15;
   color: var(--text-primary);
+  margin: 0;
 }
 
 .cv-meta {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--text-secondary);
+  margin: 0;
 }
 
+/* Action Buttons */
 .cv-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem;
+  position: relative;
+  z-index: 6;
+  flex-shrink: 0;
 }
 
+.cv-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+/* Embedded PDF Frame Viewport */
 .cv-viewer-frame-wrap {
+  position: relative;
+  z-index: 1;
   width: 100%;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--chrome-border);
-  background: var(--void-elevated);
-  min-height: 76vh;
-  height: clamp(680px, 84vh, 1180px);
+  background: #ffffff;
+  min-height: 60vh;
+  height: clamp(540px, 80vh, 1100px);
+  box-sizing: border-box;
 }
 
 .cv-pdf-frame {
@@ -126,6 +181,7 @@
   background: #ffffff;
 }
 
+/* Mobile & Touch Fallback Bar */
 .cv-fallback-bar {
   display: flex;
   flex-wrap: wrap;
@@ -138,11 +194,20 @@
   background: var(--void-elevated);
   color: var(--text-secondary);
   font-size: 0.9rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.cv-fallback-bar p {
+  margin: 0;
+  max-width: 62ch;
+  line-height: 1.5;
 }
 
 .cv-fallback-links {
   display: inline-flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -151,14 +216,23 @@
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
+  padding: 4px 0;
+  touch-action: manipulation;
 }
 
+.cv-inline-link:hover {
+  color: var(--text-primary);
+}
+
+/* Footer */
 .cv-footer {
   position: relative;
   z-index: 2;
   max-width: 1120px;
+  width: 100%;
+  box-sizing: border-box;
   margin: 0 auto;
-  padding: 1.5rem 1.5rem 3rem;
+  padding: 1.5rem 1.25rem 3rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -168,48 +242,117 @@
   font-size: 0.875rem;
 }
 
+.cv-footer p {
+  margin: 0;
+}
+
 .cv-footer-links {
   display: flex;
   flex-wrap: wrap;
   gap: 1.25rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .cv-footer-links a {
   color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.2s ease;
+  padding: 4px 0;
 }
 
 .cv-footer-links a:hover {
   color: var(--text-primary);
 }
 
+/* Responsive Mobile Layout */
 @media (max-width: 767px) {
-  .cv-main {
-    padding: 5.75rem 1rem 3rem;
+  .spatial-hud {
+    padding: 0 12px;
+    top: 12px;
   }
 
-  .cv-shell {
-    padding: 1.125rem;
-    border-radius: 18px;
+  .cv-hud-island {
+    padding: 6px 10px;
+    gap: 0.4rem;
+    max-width: 100%;
+  }
+
+  .cv-back-btn {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .cv-hud-actions {
+    gap: 0.35rem;
+  }
+
+  .cv-hud-download {
+    padding: 0.45rem 0.75rem !important;
+    font-size: 0.8rem !important;
   }
 
   .cv-hud-download-label {
     display: none;
   }
 
+  .cv-main {
+    padding: 5.25rem 0.75rem 2.5rem;
+  }
+
+  .cv-shell {
+    padding: 1.1rem;
+    border-radius: 18px;
+    gap: 1.25rem;
+  }
+
+  .cv-title {
+    font-size: 1.5rem;
+  }
+
   .cv-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
     width: 100%;
+    box-sizing: border-box;
   }
 
   .cv-actions a {
-    flex: 1 1 auto;
+    width: 100% !important;
+    min-height: 48px;
+    padding: 13px 16px !important;
+    font-size: 0.9rem !important;
+    box-sizing: border-box;
     justify-content: center;
+    text-align: center;
   }
 
   .cv-viewer-frame-wrap {
-    min-height: 62vh;
-    height: 68vh;
+    min-height: 50vh;
+    height: 56vh;
+    border-radius: 12px;
+  }
+
+  .cv-fallback-bar {
+    padding: 0.9rem 1rem;
+    font-size: 0.85rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .cv-fallback-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+  .cv-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
   }
 }

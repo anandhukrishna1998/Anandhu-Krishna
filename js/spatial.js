@@ -110,29 +110,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Magnetic Elastic Buttons & Navigation Controls
-  const magneticEls = document.querySelectorAll('.magnetic-target');
-  magneticEls.forEach(el => {
-    let bound = null;
-    el.addEventListener('mouseenter', () => {
-      bound = el.getBoundingClientRect();
-      synth.playTone(820, 0.03, 'sine');
-    });
+  // 4. Magnetic Elastic Buttons & Navigation Controls (Desktop Fine Pointers Only, Clamped)
+  if (window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
+    const magneticEls = document.querySelectorAll('.magnetic-target');
+    magneticEls.forEach(el => {
+      let bound = null;
+      el.addEventListener('mouseenter', () => {
+        bound = el.getBoundingClientRect();
+        synth.playTone(820, 0.03, 'sine');
+      });
 
-    el.addEventListener('mousemove', (e) => {
-      if (!bound) bound = el.getBoundingClientRect();
-      const centerX = bound.left + bound.width / 2;
-      const centerY = bound.top + bound.height / 2;
-      const deltaX = (e.clientX - centerX) * 0.3;
-      const deltaY = (e.clientY - centerY) * 0.3;
-      el.style.transform = `translate3d(${deltaX.toFixed(1)}px, ${deltaY.toFixed(1)}px, 0)`;
-    });
+      el.addEventListener('mousemove', (e) => {
+        if (!bound) bound = el.getBoundingClientRect();
+        const centerX = bound.left + bound.width / 2;
+        const centerY = bound.top + bound.height / 2;
+        // Subtle magnetic pull clamped to max 6px so it never dodges the cursor
+        const deltaX = Math.max(-6, Math.min(6, (e.clientX - centerX) * 0.12));
+        const deltaY = Math.max(-6, Math.min(6, (e.clientY - centerY) * 0.12));
+        el.style.transform = `translate3d(${deltaX.toFixed(1)}px, ${deltaY.toFixed(1)}px, 0)`;
+      });
 
-    el.addEventListener('mouseleave', () => {
-      el.style.transform = 'translate3d(0, 0, 0)';
-      bound = null;
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = 'translate3d(0, 0, 0)';
+        bound = null;
+      });
     });
-  });
+  }
 
   // 5. Liquid Hover Ripples on Click
   document.querySelectorAll('.btn-spatial-primary, .glass-monolith').forEach(item => {
